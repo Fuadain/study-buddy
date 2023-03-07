@@ -1,7 +1,7 @@
 import React from 'react';
-import './quiz-gen.css';
+import './dashboard.css';
 
-export default function QuizGen(){
+export default function Dashboard(){
     return (
         <div>
             
