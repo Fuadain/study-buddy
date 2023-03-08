@@ -1,6 +1,6 @@
 import React from 'react';
 import { Stack } from '@mui/material';
-import Navbar from './navbar.jsx';
+import {Navbar, Body, Footer} from './';
 
 
 const homepage = () => {
@@ -9,6 +9,10 @@ const homepage = () => {
         <Stack>
 
             <Navbar />
+
+            <Body />
+
+            <Footer />
 
         </Stack>
 
