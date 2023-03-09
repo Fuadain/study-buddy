@@ -2,8 +2,6 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
-import Navbar from "./navbar/navbar"
-import Sidebar from "./sidebar/sidebar"
 import Homepage from "./pages/homepage/homepage"
 import Login from "./pages/login/login"
 import Registration from "./pages/registration/registration"
