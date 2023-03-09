@@ -3,7 +3,7 @@ import './navbar.css';
 
 export default function Navbar(){
     return (
-        <nav id="navbar">b
+        <nav id="navbar">
                <a href="#" id="logo"><i class="fa-solid fa-school fa-xl"></i></a>
         </nav>
     )
