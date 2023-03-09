@@ -1,6 +1,6 @@
 import React from 'react';
 import { Stack } from '@mui/material';
-import {Navbar, Body, Footer} from './';
+import { Navbar, Body, Footer } from './';
 
 
 const homepage = () => {

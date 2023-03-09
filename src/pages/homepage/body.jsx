@@ -24,14 +24,14 @@ const Body = () => (
             <Button variant="contained" sx={{ backgroundColor: 'red', mt: '20px' }}>Learn More</Button>
         </Box>
 
-        <img 
-          src={require('./logo.png')} 
-          alt={'logo'} 
-          style={{
-            height: '500px',
-            margin: '20px'
-          }}
-          
+        <img
+            src={require('./logo.png')}
+            alt={'logo'}
+            style={{
+                height: '500px',
+                margin: '20px'
+            }}
+
         />
     </Stack>
 
