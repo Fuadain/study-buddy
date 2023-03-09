@@ -39,31 +39,34 @@ export default function Quiz(){
 
     //subject to change based on backend
     function submitAnswers(){
-        const isFinished = true
-        quizData.map(element => {
+        let isFinished = true
+        const results = quizData.map(element => {
             if(!element.chosenAnswer){
                 isFinished = false
             }
+            return isFinished
         })
         if(isFinished){
             console.log("Finished Quiz")
             //Submit answer data
         }
     }
-
+    console.log("quiz ran")
     const QuestionListElements = quizData.map(element=><Question
+                                                key={element.id}
                                                 id={element.id}
                                                 question={element.question}
                                                 answers={element.answers}
                                                 isWritten={element.isWritten}
                                                 correctAnswer={element.correctAnswer}
-                                                choseAnswer={updateChosenAnswer}
+                                                chooseAnswer={updateChosenAnswer}
                                             />)
-
+    
+    
     return (
         <div>
             {QuestionListElements}
-            <button type="button" onClick={submitAnswers}></button>
+            <input type="button" onClick={submitAnswers} value="submit"/>
         </div>
     )
 }

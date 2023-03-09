@@ -13,7 +13,7 @@ export default function Question(props){
         answerElements = props.answers.map(answer => 
             (<p
                 style={answer===props.chosenAnswer?chosenAnswerStyle:answerStyle}
-                onClick={props.chosenAnswer(props.id, answer)}
+                onClick={props.chooseAnswer(props.id, answer)}
             >
                 {answer}
             </p>))

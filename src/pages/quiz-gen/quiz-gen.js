@@ -36,7 +36,7 @@ export default function QuizGen(){
         setInputData(prevData => {
             let newData = {
                 ...prevData,
-                [inputName]: input.type==="checkbox" ? !input.checked : input.value
+                [input.name]: input.type==="checkbox" ? !input.checked : input.value
             }
             return newData
         })

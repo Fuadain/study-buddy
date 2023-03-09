@@ -3,7 +3,7 @@ import './quiz-action.css';
 
 export default function QuizAction(){
     const [inputData, setInputData] = React.useState({
-        selectedClasses:"",
+        selectedClasses:[],
         startDate:"",
         dueDate:""
     })
@@ -35,6 +35,8 @@ export default function QuizAction(){
             return newData
         })
     }
+
+    console.log(classesElements)
 
     return (
         <form onSubmit={assignQuiz}>
