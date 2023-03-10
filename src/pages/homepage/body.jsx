@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Stack, Typography, Button, Box } from '@mui/material';
 
 const Body = () => (
@@ -21,7 +22,13 @@ const Body = () => (
                 in lecture the day before. Or the day after, who knows what a teacher really thinks!
 
             </Typography>
+
+            <Link
+          to='/learnMore'
+        >
             <Button variant="contained" sx={{ backgroundColor: 'red', mt: '20px' }}>Learn More</Button>
+        </Link>
+            
         </Box>
 
         <img

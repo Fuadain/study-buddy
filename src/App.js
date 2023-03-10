@@ -10,6 +10,8 @@ import Quiz from "./pages/quiz/quiz"
 import QuizGen from "./pages/quiz-gen/quiz-gen"
 import QuizAction from "./pages/quiz-action/quiz-action"
 import AccountPage from "./pages/account/account"
+import Contact from "./pages/homepage/components/contact"
+import LearnMore from "./pages/homepage/components/learnMore"
 
 function App() {
   return (
@@ -24,6 +26,9 @@ function App() {
           <Route path='/quiz-gen' element={<QuizGen/>} />
           <Route path='/quiz-action' element={<QuizAction/>} />
           <Route path='/account' element={<AccountPage/>} />
+
+          <Route path='/contact' element={<Contact/>} />
+          <Route path='/learnMore' element={<LearnMore/>} />
         </Routes>
       </Router>
     </div>
