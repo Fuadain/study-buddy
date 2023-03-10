@@ -51,7 +51,7 @@ export default function Quiz(){
             //Submit answer data
         }
     }
-    console.log("quiz ran")
+    
     const QuestionListElements = quizData.map(element=><Question
                                                 key={element.id}
                                                 id={element.id}
