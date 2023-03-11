@@ -1,31 +1,23 @@
 import React from 'react';
-import { Stack, Button, Box, Typography } from '@mui/material';
+import { Button, Box, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-import Form from './form';
 
-const Contact = () => {
+const Form = () => {
   return (
-    <Stack
-      display='flex'
-      alignItems='center'
-      justifyContent='center'
-      sx={{
-        flexDirection: { sx: "column", md: "row" }
-      }}
-    >
-
-
-      <Box
+    <Box
         display='flex'
         alignItems='center'
         justifyItems='center'
         sx={{
-          height: '90vh',
-          backgroundColor: '#00B2FF',
-          borderRadius: '0.5em'
+          height: '100vh',
+          backgroundColor: 'none'
         }}
       >
-        <Box>
+        <Box
+          sx={{
+            backgroundColor: 'blue'
+          }}
+        >
           <Typography
             sx={{
               color: '#000'
@@ -65,12 +57,8 @@ const Contact = () => {
           </Typography>
 
         </Box>
-
       </Box>
-      <Form />
-
-    </Stack>
   )
 }
 
-export default Contact
+export default Form
