@@ -67,6 +67,8 @@ const Contact = () => {
         </Box>
 
       </Box>
+      
+      {/* render form */}
       <Form />
 
     </Stack>
