@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function Sidebar(){
     return (
+        <div>
         <nav id="sidebar">
                 <ul>
                     <li><h2 id="sidebar-welcome">Welcome Student!</h2></li>
@@ -12,5 +13,6 @@ export default function Sidebar(){
                     <li><NavLink to="/logout" id="sidebar-logout" className="sidebar-option" activeClassName="active">Logout</NavLink></li>
                 </ul>
         </nav>
+        </div>
     )
 }

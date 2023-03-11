@@ -1,11 +1,13 @@
 import React from 'react';
 import './navbar.css';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Navbar(){
     return (
+        <div>
         <nav id="navbar">
-               <NavLink to="/dashboard" id="logo"><FontAwesomeIcon icon="fa-solid fa-school" /></NavLink>
+               <Link to="/dashboard" id="logo">Logo Here</Link>
         </nav>
+        </div>
     )
 }
