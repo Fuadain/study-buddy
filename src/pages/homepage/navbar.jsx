@@ -9,7 +9,9 @@ const Navbar = () => (
         sx={{ position: 'sticky', background: 'gray', top: 0, justifyContent: 'flex-end' }}
     >
 
-        <Button variant="contained" sx={{ marginRight: '20px' }}>login</Button>
+        <Link to='/login'>
+            <Button variant="contained" sx={{ marginRight: '20px' }}>login</Button>
+        </Link>
         <Button variant="contained">Sign Up</Button>
 
     </Stack>
