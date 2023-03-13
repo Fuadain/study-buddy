@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import{Stack, Typography, Button, Box, 
     FormControl, InputAdornment, OutlinedInput, 
     InputLabel, IconButton, FormLabel, RadioGroup, FormHelperText,
-FormControlLabel, Radio } from '@mui/material';
+FormControlLabel, Radio, Divider } from '@mui/material';
 import{Visibility, VisibilityOff} from '@mui/icons-material';
 import './login.css';
 
@@ -75,6 +75,7 @@ export default function Login(){
                 alignItems='center'
                 justifyContent='center'
             >   
+            <Stack>
                 <form class='login-form'onSubmit={handleSubmit}>
                 <Stack>
                 {/* Username Input Box */}
@@ -109,7 +110,7 @@ export default function Login(){
                     label="Password"
                 />
                 </FormControl>
-                <Link to="/forgotPassword">
+                <Link to="/forgot-password">
                     <Typography variant="overline" display="block" align="center" gutterBottom>
                         Forgot Password? 
                     </Typography>
@@ -124,15 +125,18 @@ export default function Login(){
                         name="row-radio-buttons-group"
                         onChange={handleRadioChange}
                     >
-                        <FormControlLabel value="Teacher" control={<Radio />} label="Teacher!" />
-                        <FormControlLabel value="Student" control={<Radio />} label="Student!" />
+                        <FormControlLabel value="Teacher" control={<Radio />} label="Teacher" />
+                        <FormControlLabel value="Student" control={<Radio />} label="Student" />
                     </RadioGroup>
                     <FormHelperText>{helperText}</FormHelperText>
                 </FormControl>
   
-                <Button sx={{width: '20ch', alignSelf: 'center'}} type="submit" variant="outlined" size="medium">Login</Button>
+                <Button sx={{width: '25ch', alignSelf: 'center'}} type="submit" variant="outlined" size="medium">Login</Button>
             </Stack>
             </form>
+            <Divider sx={{marginTop: 2, marginBottom: 2}} variant="middle" />
+                <Button sx={{color: 'white', backgroundColor: '#ef4443', width: '25ch', alignSelf: 'center'}} type="submit" variant="outlined" size="medium">Login with Google</Button>
+            </Stack>
             </Box>
         </Stack>
         </div>

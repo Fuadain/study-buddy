@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { Stack, Button, Box, Typography } from '@mui/material';
-
 import { Link } from 'react-router-dom';
 
 const LearnMore = () => {

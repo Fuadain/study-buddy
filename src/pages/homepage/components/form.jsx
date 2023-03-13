@@ -1,64 +1,96 @@
-import React from 'react';
-import { Button, Box, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Box, TextField, Button } from '@mui/material';
 
-const Form = () => {
+export default function Login() {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phoneNumber: '',
+    message: '',
+  });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(formData); // replace with your form submission logic
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  };
+
   return (
-    <Box
-        display='flex'
-        alignItems='center'
-        justifyItems='center'
+    <div className='container'>
+      <Box
         sx={{
-          height: '100vh',
-          backgroundColor: 'none'
+          width: '50%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          p: 2
         }}
+        component='form'
+        onSubmit={handleSubmit}
       >
-        <Box
+        <TextField
+          name='fullName'
+          label='Full Name'
+          value={formData.fullName}
+          onChange={handleChange}
+          sx={{ m: 1, width: '50ch' }}
+          variant='outlined'
+          fullWidth
+        />
+
+        <TextField
+          name='email'
+          label='Email'
+          type='email'
+          value={formData.email}
+          onChange={handleChange}
+          sx={{ m: 1, width: '50ch' }}
+          variant='outlined'
+          fullWidth
+        />
+
+        <TextField
+          name='phoneNumber'
+          label='Phone Number'
+          value={formData.phoneNumber}
+          onChange={handleChange}
+          sx={{ m: 1, width: '50ch' }}
+          variant='outlined'
+          fullWidth
+        />
+
+        <TextField
+          name='message'
+          label='Message'
+          multiline
+          rows={4}
+          value={formData.message}
+          onChange={handleChange}
+          sx={{ m: 1, width: '50ch' }}
+          variant='outlined'
+          fullWidth
+        />
+
+        <Button
           sx={{
-            backgroundColor: 'blue'
+            width: '20ch',
+            alignSelf: 'center',
+            mt: '20px',
+            backgroundColor: '#00B2FF',
+            color: 'black',
           }}
+          type='submit'
+          variant='contained'
+          size='medium'
         >
-          <Typography
-            sx={{
-              color: '#000'
-            }}
-            variant='h3'
-            padding={2}
-          >
-            GET IN TOUCH WITH US!
-          </Typography>
-          <Typography
-            sx={{
-              color: '#000'
-            }}
-            variant='body1'
-            padding={2}
-          >
-            Whether article spirits new her covered hastily sitting her. Money witty <br />
-            incididunt ut labore et dolore magna aliqua. <br /><br />
-            +1 (321)-321-3210<br /><br />
-            info@bayvalleytech.com<br /><br />
-            545, Street 11, Block F<br />
-            Modesto, California<br />
-            <Link
-              to='/'
-            >
-              <Button
-                variant="contained"
-                sx={{
-                  color: 'black',
-                  backgroundColor: 'red',
-                  mt: '20px'
-                }}
-              >
-                BACK TO HOMEPAGE
-              </Button>
-            </Link>
-          </Typography>
-
-        </Box>
+          Send Message
+        </Button>
       </Box>
-  )
+    </div>
+  );
 }
-
-export default Form

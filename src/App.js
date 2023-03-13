@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
 import Homepage from "./pages/homepage/homepage"
 import Login from "./pages/login/login"
+import ForgotPassword from "./pages/login/forgot-password"
+
 import Registration from "./pages/registration/registration"
 import Dashboard from "./pages/dashboard/dashboard"
 import Quiz from "./pages/quiz/quiz"
@@ -20,6 +22,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Homepage/>} />
           <Route path='/login' element={<Login/>} />
+          <Route path='/forgot-password' element={<ForgotPassword/>} />
           <Route path='/registration' element={<Registration/>} />
           <Route path='/dashboard' element={<Dashboard/>} />
           <Route path='/quiz' element={<Quiz/>} />
