@@ -1,5 +1,6 @@
 import React from 'react';
 import { Stack, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Footer = () => (
     <Stack
@@ -8,8 +9,13 @@ const Footer = () => (
         p={2}
         sx={{ position: 'sticky', background: 'gray', bottom: 0, justifyContent: 'flex-start' }}
     >
-
-        <Button variant="contained">Contact Us</Button>
+        <Link
+          to='/contact'
+        >
+          
+            <Button variant="contained">Contact Us</Button>
+        
+        </Link>
 
     </Stack>
 )

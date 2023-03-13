@@ -1,0 +1,13 @@
+.container{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.login-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

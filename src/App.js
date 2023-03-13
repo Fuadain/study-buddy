@@ -2,8 +2,6 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
-import Navbar from "./navbar/navbar"
-import Sidebar from "./sidebar/sidebar"
 import Homepage from "./pages/homepage/homepage"
 import Login from "./pages/login/login"
 import Registration from "./pages/registration/registration"
@@ -12,6 +10,8 @@ import Quiz from "./pages/quiz/quiz"
 import QuizGen from "./pages/quiz-gen/quiz-gen"
 import QuizAction from "./pages/quiz-action/quiz-action"
 import AccountPage from "./pages/account/account"
+import Contact from "./pages/homepage/components/contact"
+import LearnMore from "./pages/homepage/components/learnMore"
 
 function App() {
   return (
@@ -26,6 +26,9 @@ function App() {
           <Route path='/quiz-gen' element={<QuizGen/>} />
           <Route path='/quiz-action' element={<QuizAction/>} />
           <Route path='/account' element={<AccountPage/>} />
+
+          <Route path='/contact' element={<Contact/>} />
+          <Route path='/learnMore' element={<LearnMore/>} />
         </Routes>
       </Router>
     </div>
