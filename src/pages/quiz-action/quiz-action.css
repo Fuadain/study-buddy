@@ -1,0 +1,8 @@
+.quiz-action-form {
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 25%;
+    margin-top:5%;
+    justify-content: center;
+}
