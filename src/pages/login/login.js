@@ -110,7 +110,7 @@ export default function Login(){
                     label="Password"
                 />
                 </FormControl>
-                <Link to="/forgotPassword">
+                <Link to="/forgot-password">
                     <Typography variant="overline" display="block" align="center" gutterBottom>
                         Forgot Password? 
                     </Typography>
