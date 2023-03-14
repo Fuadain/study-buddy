@@ -1,5 +1,8 @@
 import React from 'react';
 import Question from './question'
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+
 export default function Quiz(){
     const [quizData, setQuizData] = React.useState([{
         id: 0,
@@ -64,9 +67,9 @@ export default function Quiz(){
     
     
     return (
-        <div>
+        <Container maxWidth="sm">
             {QuestionListElements}
-            <input type="button" onClick={submitAnswers} value="submit"/>
-        </div>
+            <Button onClick={submitAnswers} variant="contained">Submit</Button>
+        </Container>
     )
 }

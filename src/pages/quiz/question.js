@@ -1,17 +1,25 @@
 import React from 'react'
+import Divider from '@mui/material/Divider';
 
 export default function Question(props){
     let answerElements = ""
     //might be a better way to deal with changing answer style
     if(!props.isWritten){
         const answerStyle = {
+            border: "2px solid blue",
+            textAlign: 'center',
+            borderRadius: '5px',
+            paddingTop: '3px',
+            paddingBottom: '3px',
             backgroundColor: "white"
         }
         const chosenAnswerStyle = {
+            ...answerStyle,
             backgroundColor: "grey"
         }
         answerElements = props.answers.map(answer => 
             (<p
+                className="question"
                 style={answer===props.chosenAnswer?chosenAnswerStyle:answerStyle}
                 onClick={props.chooseAnswer(props.id, answer)}
             >
@@ -33,6 +41,7 @@ export default function Question(props){
             <div>
                 {answerElements}
             </div>}
+            <Divider/>
         </div>
     )
 }
