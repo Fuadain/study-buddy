@@ -6,6 +6,7 @@ import ClassSelectStyle from './class-select-style';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
+import Divider from '@mui/material/Divider';
 
 export default function QuizAction(){
     const [inputData, setInputData] = React.useState({
@@ -49,11 +50,21 @@ export default function QuizAction(){
     */
 
     function changeDate(date, name){
+        let newDate = date
         setInputData(prevData => {
-          return {
-            ...prevData,
-            [name]: date
-          }
+            //this if statement prevents the endDate from being before the start date
+            if(prevData.startDate && name==="endDate" && date < prevData.startDate){
+                newDate = prevData.startDate
+            } else if (prevData.endDate && name==="startDate" && date > prevData.endDate){
+                return {
+                    startDate: date,
+                    endDate: date
+                }
+            }
+            return {
+                ...prevData,
+                [name]: newDate
+            }
         })
     }
 
@@ -70,7 +81,7 @@ export default function QuizAction(){
     console.log(inputData.startDate)
     return (
         <Container maxWidth="sm">
-            <Stack spacing={2}>
+            <Stack spacing={4} mt={4}>
                 <Button
                     variant="contained" 
                     onClick={printQuiz}
@@ -78,6 +89,7 @@ export default function QuizAction(){
                 >
                     Print Out
                 </Button>
+                <Divider/>
                 <div>
                     <label>Assign Test To Class</label>
                     <Select

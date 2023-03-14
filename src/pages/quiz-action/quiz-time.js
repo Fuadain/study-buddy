@@ -11,7 +11,7 @@ export default function QuizTime(props){
         if(!isEnd){
           currentDate = new Date();
         } else {
-          currentDate = props.startDate
+          currentDate = props.startDate?props.startDate:new Date(time)
         }
         return currentDate.getTime() < selectedDate.getTime();
       }

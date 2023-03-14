@@ -9,7 +9,7 @@
 const classSelectStyle = {
     control: (baseStyles) => ({
         ...baseStyles,
-        width: "50%"
+        width: "100%"
     })
 }
 
