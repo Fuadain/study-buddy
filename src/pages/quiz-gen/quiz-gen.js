@@ -1,5 +1,8 @@
 import React from 'react';
 import './quiz-gen.css';
+import Container from '@mui/material/Container'
+import Stack from '@mui/material/Stack'
+import Button from '@mui/material/Button'
 
 export default function QuizGen(){
     //subject to change
@@ -18,7 +21,7 @@ export default function QuizGen(){
     React.useEffect(()=>{
         setGradeLevelElements(()=>{
             let newElements = []
-            for(var i = 0; i < 12; i++){
+            for(var i = 1; i <= 12; i++){
                 newElements.push(<option value={i.toString()}>{i}</option>)
             }
             return newElements
@@ -48,24 +51,50 @@ export default function QuizGen(){
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="testName" id="testName" required value={inputData.testName} onChange={changeInputData}/>
-                <select name="testType" id="testType" value={inputData.testType} required onChange={changeInputData}>
-                    <option value="math">Math</option>
-                    <option value="english">English</option>
-                    <option value="history">History</option>
-                </select>
-                <select name="gradeLevel" id="gradeLevel" value={inputData.gradeLevel} required onChange={changeInputData}>
-                    <option value="k">K</option>
-                    {gradeLevelElements}
-                </select>
-                <input type="number" name="numberOfQuestions" id="numberOfQuestions" required value={inputData.numberOfQuestions} onChange={changeInputData}/>
-                <input type="checkbox" name="hasMultipleChoice" id="hasMultipleChoice" checked={inputData.hasMultipleChoice} onChange={changeInputData}/>
-                <input type="checkbox" name="hasWritten" id="hasWritten" checked={inputData.hasWritten} onChange={changeInputData}/>
-                <input type="text" name="keywords" id="keywords" value={inputData.keywords} onChange={changeInputData}/>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+        <Container maxWidth="sm">
+            <Stack spacing={3}>
+                <Stack>
+                    <label>Test Name:</label>
+                    <input type="text" name="testName" id="testName" required value={inputData.testName} onChange={changeInputData}/>
+                </Stack>
+                <Stack>
+                    <label>Test Type:</label>
+                    <select name="testType" id="testType" value={inputData.testType} required onChange={changeInputData}>
+                        <option value="math">Math</option>
+                        <option value="english">English</option>
+                        <option value="history">History</option>
+                    </select>
+                </Stack>
+                <Stack>
+                    <label>Grade Level:</label>
+                    <select name="gradeLevel" id="gradeLevel" value={inputData.gradeLevel} required onChange={changeInputData}>
+                        <option value="k">K</option>
+                        {gradeLevelElements}
+                    </select>
+                </Stack>
+                <Stack>
+                    <label>Number of Questions:</label>
+                    <input type="number" name="numberOfQuestions" id="numberOfQuestions" required value={inputData.numberOfQuestions} onChange={changeInputData}/>
+                </Stack>
+                <Stack spacing={1}>
+                    <label>Question Types:</label>
+                    <Stack direction="row" spacing={2}>
+                        <div>
+                            <label>Multiple Choice</label>
+                            <input type="checkbox" name="hasMultipleChoice" id="hasMultipleChoice" checked={inputData.hasMultipleChoice} onChange={changeInputData}/>
+                        </div>
+                        <div>
+                            <label>Written Answer</label>
+                            <input type="checkbox" name="hasWritten" id="hasWritten" checked={inputData.hasWritten} onChange={changeInputData}/>
+                        </div>
+                    </Stack>
+                </Stack>
+                <Stack>
+                    <label>Keywords:</label>
+                    <textarea name="keywords" id="keywords" onChange={changeInputData}>{inputData.keywords}</textarea>
+                </Stack>
+                <Button onClick={handleSubmit} variant="contained">Submit</Button>
+            </Stack>
+        </Container>
     )
 }
