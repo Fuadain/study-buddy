@@ -1,0 +1,104 @@
+* {
+    padding: 0px;
+    margin: 0px;
+
+}
+
+.container {
+    background-color: lightgrey;
+    width: auto;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    height: 150px;
+    border: 2px solid black;
+    text-align: center;
+    background-color:#00B2FF;
+    line-height: 150px;
+
+}
+
+.class-container {
+    background-color: white;
+}
+
+.class {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: white;
+}
+
+.quiz-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.quiz {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: white;
+}
+
+.quiz-one {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+.quiz-two {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 50px;
+}
+
+.quiz-button {
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 40px;
+    background-color: lightgreen;
+}
+
+.student-title {
+    text-align: center;
+    border-top: 3px solid black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+.student-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 50px;
+    height: 60px;
+    width: 200px;
+    background-color: lightgreen;
+    padding-left: 10px;
+    padding-right: 30px;
+}
+
+.student-container {
+    display: grid;
+    grid-template: auto auto / repeat(3, 1fr);
+    gap: 50px;
+    align-content: center;
+    padding-left: 60px;
+}
