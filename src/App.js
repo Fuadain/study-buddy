@@ -1,19 +1,8 @@
 import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Routes, Route}
-    from 'react-router-dom';
-import Homepage from "./pages/homepage/homepage"
-import Login from "./pages/login/login"
-import ForgotPassword from "./pages/login/forgot-password"
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
-import Registration from "./pages/registration/registration"
-import Dashboard from "./pages/dashboard/dashboard"
-import Quiz from "./pages/quiz/quiz"
-import QuizGen from "./pages/quiz-gen/quiz-gen"
-import QuizAction from "./pages/quiz-action/quiz-action"
-import AccountPage from "./pages/account/account"
-import Contact from "./pages/homepage/components/contact"
-import LearnMore from "./pages/homepage/components/learnMore"
+import { Homepage, Login, ForgotPassword, Registration, Dashboard, 
+  Quiz, QuizGen, QuizAction, AccountPage, Contact, LearnMore } from './';
 
 function App() {
   return (
@@ -28,7 +17,7 @@ function App() {
           <Route path='/quiz' element={<Quiz/>} />
           <Route path='/quiz-gen' element={<QuizGen/>} />
           <Route path='/quiz-action' element={<QuizAction/>} />
-          <Route path='/profile' element={<AccountPage/>} />
+          <Route path='/account' element={<AccountPage/>} />
 
           <Route path='/contact' element={<Contact/>} />
           <Route path='/learnMore' element={<LearnMore/>} />
