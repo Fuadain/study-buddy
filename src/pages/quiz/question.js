@@ -1,5 +1,6 @@
 import React from 'react'
 import Divider from '@mui/material/Divider';
+import './question.css'
 
 export default function Question(props){
     let answerElements = ""
@@ -16,7 +17,7 @@ export default function Question(props){
         }
         const chosenAnswerStyle = {
             ...answerStyle,
-            backgroundColor: "grey"
+            backgroundColor: "#b7eef5"
         }
         
         answerElements = props.answers.map(answer => (<p
@@ -30,7 +31,7 @@ export default function Question(props){
     }
 
     function textChange(event){
-        const text = event.target.value()
+        const text = event.target.value
         props.chosenAnswer(props.id, text)
     }
 
@@ -38,7 +39,12 @@ export default function Question(props){
         <div>
             <h3>{props.question}</h3>
             {props.isWritten ? 
-            <input type="text" onChange={(event)=>textChange(event)}>{props.answer}</input>
+            <textarea 
+                className='text-question'   
+                onChange={(event)=>textChange(event)}
+            >
+                {props.answer}
+            </textarea>
             :
             <div>
                 {answerElements}
