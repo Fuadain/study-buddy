@@ -23,7 +23,8 @@ export default function Quiz(){
     }
 
     function updateChosenAnswer(id, choice){
-        /* previous method when not using id to directly change data
+        // previous method when not using id to directly change data
+        /*
         setQuizData(prevData=>{
             const newData = prevData.map(element=>{
                 return element.question === question ?
@@ -31,13 +32,15 @@ export default function Quiz(){
                     : {...element}
             })
             return newData
-        })*/
+        })
+        */
         //update method using id, should be faster than previous method
         setQuizData(prevData=>{
-            let newData = prevData
+            let newData = [...prevData]
             newData[id].chosenAnswer = choice
             return newData
         })
+        
     }
 
     //subject to change based on backend
@@ -54,22 +57,27 @@ export default function Quiz(){
             //Submit answer data
         }
     }
-    
     const QuestionListElements = quizData.map(element=><Question
-                                                key={element.id}
+                                                key={Math.random}
                                                 id={element.id}
                                                 question={element.question}
                                                 answers={element.answers}
                                                 isWritten={element.isWritten}
                                                 correctAnswer={element.correctAnswer}
                                                 chooseAnswer={updateChosenAnswer}
+                                                chosenAnswer={element.chosenAnswer}
                                             />)
     
     
     return (
         <Container maxWidth="sm">
             {QuestionListElements}
-            <Button onClick={submitAnswers} variant="contained">Submit</Button>
+            <Button 
+                onClick={submitAnswers} 
+                variant="contained"
+            >
+                    Submit
+            </Button>
         </Container>
     )
 }

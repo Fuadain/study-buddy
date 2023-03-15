@@ -33,7 +33,7 @@ export default function Sidebar(){
     }
     return (
         <nav id="sidebar">
-        {isTeacher ? teacherSidebar() : studentSidebar()}
+        {isTeacher ? teacherSidebar() : studentSidebar()}               
         </nav>
     )
 }
