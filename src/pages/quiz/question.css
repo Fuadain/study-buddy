@@ -1,6 +1,7 @@
-#keywords {
+.text-question {
     resize:none;
     overflow-y: scroll;
     width: 100%;
     height: 120px;
+    margin-bottom: 12px;
 }

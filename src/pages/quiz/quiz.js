@@ -2,6 +2,7 @@ import React from 'react';
 import Question from './question'
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
+import Stack from '@mui/material/Stack';
 
 export default function Quiz(){
     const [quizData, setQuizData] = React.useState([{
@@ -10,6 +11,14 @@ export default function Quiz(){
         answers: ["1","2","3"],
         isWritten: false,
         correctAnswer: "1",
+        chosenAnswer: ""
+    },
+    {
+        id: 1,
+        question: "test question 2",
+        answers: ["4","5","6"],
+        isWritten: true,
+        correctAnswer: "5",
         chosenAnswer: ""
     }])
 
@@ -71,13 +80,15 @@ export default function Quiz(){
     
     return (
         <Container maxWidth="sm">
-            {QuestionListElements}
-            <Button 
-                onClick={submitAnswers} 
-                variant="contained"
-            >
-                    Submit
-            </Button>
+            <Stack spacing={3}>
+                {QuestionListElements}
+                <Button 
+                    onClick={submitAnswers} 
+                    variant="contained"
+                >
+                        Submit
+                </Button>
+            </Stack>
         </Container>
     )
 }
