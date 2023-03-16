@@ -1,17 +1,14 @@
-
-
-import Sidebar from '../../sidebar/sidebar.js';
-import Navbar from '../../navbar/navbar.js';
-
-
 import * as React from 'react';
+import {
+  Navbar, Sidebar, EmailSettings, NameSettings, PasswordSettings, PictureSettings, VerificationSettings
+} from './';
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -38,7 +35,7 @@ const AccordionSummary = styled((props) => (
   flexDirection: 'row-reverse',
   '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
     transform: 'rotate(90deg)',
-  },
+},
   '& .MuiAccordionSummary-content': {
     marginLeft: theme.spacing(1),
   },
@@ -50,101 +47,67 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 const Account = () => {
-
-  const [expanded, setExpanded] = React.useState('panel1');
-
+  const [expanded, setExpanded] = React.useState('');
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
 
-  // const [settingsName, setSettingsName] = useState('Account Settings');
-
-  // const handleDrawerToggle = () => {
-  // };
-
-  // const drawer = (
-  //   <List sx={{ mt: '30vh', }}>
-  //     {[
-  //       'Profile Picture Settings',
-  //       'Name Settings',
-  //       'Password Settings',
-  //       'Email Settings',
-  //       '2-step Verification',
-  //     ].map((text, index) => (
-  //       <ListItem key={text} disablePadding>
-  //         <ListItemButton onClick={() => setSettingsName(text)}>
-  //           <ListItemText primary={text} />
-  //         </ListItemButton>
-  //       </ListItem>
-  //     ))}
-  //   </List>
-  // );
-
-
-
   return (
     <Box>
-
-      <Box >
-        <Navbar />
-      </Box>
+      <Navbar />
       <Box flexDirection='row'>
-        <Box>
-          <Sidebar />
-        </Box>
-
+        <Sidebar />
         <Box className='container' sx={{ backgroundColor: 'gray', ml: '20vw', }} height='90vh'>
+          <Box sx={{ mt: '1vh' }}>
 
-          <Box sx={{mt: '10vh'}}>
+            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} >
+              <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                <Typography>Profile Picture Settings</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <PictureSettings />
+              </AccordionDetails>
+            </Accordion>
 
-          <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} sx={{mt:'50vh'}}>
-            <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-              <Typography>Collapsible Group Item #1</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                sit amet blandit leo lobortis eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-            <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-              <Typography>Collapsible Group Item #2</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                sit amet blandit leo lobortis eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-            <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-              <Typography>Collapsible Group Item #3</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                sit amet blandit leo lobortis eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+            <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+              <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
+                <Typography>Name Settings</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <NameSettings />
+              </AccordionDetails>
+            </Accordion>
+
+            <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+              <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
+                <Typography>Password Settings</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <PasswordSettings />
+              </AccordionDetails>
+            </Accordion>
+
+            <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+              <AccordionSummary aria-controls="panel4d-content" id="panel4d-header">
+                <Typography>Email Settings</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <EmailSettings />
+              </AccordionDetails>
+            </Accordion>
+
+            <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
+              <AccordionSummary aria-controls="panel5d-content" id="panel5d-header">
+                <Typography>2-Step Verification Settings</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <VerificationSettings />
+              </AccordionDetails>
+            </Accordion>
 
           </Box>
-          
-
         </Box>
-
       </Box>
-
-
     </Box>
   );
 };
