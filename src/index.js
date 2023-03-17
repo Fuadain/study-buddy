@@ -6,6 +6,7 @@ import App from './App';
 export { default as Homepage } from './pages/homepage/homepage';
 export { default as Login } from './pages/login/login';
 export { default as ForgotPassword } from './pages/login/forgot-password';
+export { default as ForgotPasswordVerify } from './pages/login/forgot-password-verify';
 export { default as Registration } from './pages/registration/registration';
 export { default as Dashboard } from './pages/dashboard/dashboard';
 export { default as Quiz } from './pages/quiz/quiz';
