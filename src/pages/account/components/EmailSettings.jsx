@@ -50,7 +50,7 @@ const EmailSettings = () => {
         <input type="email" name="email" onChange={changeInputData} value={inputData.email}/>
         <p>{emailValidityStatement}</p>
         <label>Password:</label>
-        <input type="text" name="password" onChange={changeInputData} value={inputData.password}/>
+        <input type="password" name="password" onChange={changeInputData} value={inputData.password}/>
         <p>{/*put wrong password prompt here*/}</p>
         <Button variant="contained">Change Email</Button>
       </Stack>
