@@ -16,7 +16,13 @@ const PictureSettings = () => {
   }, [image]);
 
   function handleImage(e) {
-    setImage(e.target.files[0]);
+    const file = e.target.files[0];
+    if (file && file.type.includes("image")) {
+      setImage(file);
+    } else if (e.target.files.length > 0) { // prevent alert on cancel
+      setImage(null);
+      alert("Please select an image file.");
+    }
   }
 
   function handleUpload() {
@@ -25,31 +31,37 @@ const PictureSettings = () => {
 
   return (
     <Box className='container'
-      flexDirection='row' 
+      flexDirection='row'
       sx={{
         height: '10vh',
-        
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center'
       }}
       m={2}
     >
 
-      <Box 
-        
-      >
-      <img 
-        src={image ? URL.createObjectURL(image) : ''} 
-        alt='Uploaded File' 
+      <Box
         style={{
-          height: '100px', 
+          height: '100px',
+          width: '100px',
           borderRadius: '40px',
-          marginRight: '1em'
+          marginRight: '1em',
+          overflow: 'hidden' /* add overflow hidden to the box container */
         }}
-      />
+      >
+        <img
+          src={image ? URL.createObjectURL(image) : ''}
+          alt='Uploaded File'
+          style={{
+            maxWidth: '100%', /* add max-width and max-height to the image */
+            maxHeight: '100%'
+          }}
+        />
       </Box>
-      
 
       <Box display='flex' flexDirection='column'>
-        <Input type='file' onChange={handleImage} sx={{mb: '1em'}} />
+        <Input type='file' onChange={handleImage} sx={{ mb: '1em' }} />
         <Button variant='contained' onClick={handleUpload}>Upload Image</Button>
       </Box>
 

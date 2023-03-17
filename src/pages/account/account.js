@@ -57,8 +57,8 @@ const Account = () => {
       <Navbar />
       <Box flexDirection='row'>
         <Sidebar />
-        <Box className='container' sx={{ backgroundColor: 'gray', ml: '20vw', }} height='90vh'>
-          <Box sx={{ mt: '1vh' }}>
+        <Box className='container' sx={{ backgroundColor: 'none', ml: '20vw', }} height='90vh'>
+          <Box>
 
             <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} >
               <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
