@@ -32,7 +32,7 @@ export default function Question(props){
 
     function textChange(event){
         const text = event.target.value
-        props.chosenAnswer(props.id, text)
+        props.chooseAnswer(props.id, text)
     }
 
     return (
