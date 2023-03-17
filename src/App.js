@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
-import { Homepage, Login, ForgotPassword, Registration, Dashboard, 
+import { Homepage, Login, ForgotPassword, ForgotPasswordVerify, Registration, Dashboard, 
   Quiz, QuizGen, QuizAction, AccountPage, Contact, LearnMore } from './';
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
           <Route exact path='/' element={<Homepage/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/forgot-password' element={<ForgotPassword/>} />
+          <Route path='/forgot-password-verify' element={<ForgotPasswordVerify/>} />
           <Route path='/registration' element={<Registration/>} />
           <Route path='/dashboard' element={<Dashboard/>} />
           <Route path='/quiz' element={<Quiz/>} />
