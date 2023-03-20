@@ -7,7 +7,7 @@ const Contact = () => (
     <Box sx={{ height: '90vh', backgroundColor: '#00B2FF', borderRadius: '0.5em' }}>
       <Box>
         <Typography variant='h3' sx={{ color: '#000' }} padding={2}>GET IN TOUCH WITH US!</Typography>
-        <Typography variant='body1' sx={{ color: '#000' }} padding={2}>
+        <Typography variant='body1' sx={{ color: '#000', alignItems:'start' }} padding={2} flexDirection='column'>
           Whether article spirits new her covered hastily sitting her. Money witty<br/>
           incididunt ut labore et dolore magna aliqua.<br/><br/>
           +1 (321)-321-3210<br/><br/>

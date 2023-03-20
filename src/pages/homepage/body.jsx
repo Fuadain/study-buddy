@@ -16,7 +16,7 @@ const Body = () => (
                 AI For All <br />
                 And Your Go To When Quizzing!
             </Typography>
-            <Typography variant='body1' sx={{ mt: '50px' }}>
+            <Typography variant='body1' sx={{ mt: '50px', color: '#000' }}>
 
                 As a verb, quiz means to ask a series of questions. A teacher might quiz his students on the material covered  <br />
                 in lecture the day before. Or the day after, who knows what a teacher really thinks!
