@@ -20,7 +20,7 @@ export default function Login() {
   };
 
   return (
-    <div className='container'>
+    <div className='container' style={{backgroundColor: 'white'}}>
       <Box
         sx={{
           width: '50%',
@@ -28,7 +28,7 @@ export default function Login() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          p: 2
+          p: 2, 
         }}
         component='form'
         onSubmit={handleSubmit}

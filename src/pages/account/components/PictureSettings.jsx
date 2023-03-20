@@ -36,7 +36,8 @@ const PictureSettings = () => {
         height: '10vh',
         width: '100%',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: 'white'
       }}
       m={2}
     >
