@@ -1,13 +1,41 @@
 import React from 'react';
 import './dashboard.css';
-import Sidebar from '../../sidebar/sidebar.js';
- import Navbar from '../../navbar/navbar.js';
+import Header from './components/Header';
+import Class from './components/Class';
+import Quiz from './components/Quiz';
+import Student from './components/Student';
+import { Quizdata, Studentdata} from './mock-data';
 
 export default function Dashboard(){
+        const quizzes = Quizdata.map(item => {
+            return (
+                < Quiz
+                    key={item.id}
+                    item={item}
+                />
+            )
+        })
+
+        const students = Studentdata.map(item => {
+            return (
+                < Student
+                    key={item.id}
+                    item={item}
+                />
+            )
+        }) 
+
     return (
-        <div>
-            <Navbar />
-            <Sidebar />
+        <div className="container">
+            <Header />
+            <Class />
+            <section className="quiz-container">
+                {quizzes}
+            </section>
+            <h2 className="student-title">Students</h2>
+            <section className="student-container">
+                {students}
+            </section>
         </div>
     )
-}   
+}
