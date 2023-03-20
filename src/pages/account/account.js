@@ -57,7 +57,7 @@ const Account = () => {
       <Navbar />
       <Box flexDirection='row'>
         <Sidebar />
-        <Box className='container' sx={{ backgroundColor: 'none', ml: '20vw', }} height='90vh'>
+        <Box className='container' sx={{ backgroundColor: 'white', ml: '20vw', }} height='90vh'>
           <Box>
 
             <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} >
