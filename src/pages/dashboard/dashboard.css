@@ -5,7 +5,7 @@
 }
 
 /* Do not add background to container as it is a MUI component that leaks the background 
-to all components in the entire app. Instead give a class to a component individually and edit that class*/
+to all components in the entire app. Instead give a class name to a component individually*/
 
 .container {
     background-color: lightgrey;
