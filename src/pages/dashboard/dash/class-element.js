@@ -10,9 +10,9 @@ export default function ClassElement(props){
     return(
         <NavLink to='/classboard' >
             <div className="class-element">
-                <h2 className="class-name">{props.className}</h2>
-                <h3 className="quizzes">Available Quizzes: {props.quizzes}</h3>
-                <p className="teacher-name">{props.teacherName}</p>
+                <h2 className="class-element-name">{props.className}</h2>
+                <h3 className="class-element-quizzes">Available Quizzes: {props.quizzes}</h3>
+                <p className="class-element-teacher">{props.teacherName}</p>
             </div>
         </NavLink>
     )
