@@ -1,0 +1,21 @@
+.class-name{
+    padding-top: 10px;
+    padding-left:10px;
+}
+.teacher-name{
+    padding-top: 10px;
+    padding-left:10px;
+    padding-bottom: 10px;
+}
+.quizzes{
+    
+    margin-left: auto;
+    margin-right: 5px;
+    width:20%;
+}
+
+.class-element{
+    display:block;
+    background-color:lightgrey;
+    width: 70vw
+}

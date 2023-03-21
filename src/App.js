@@ -7,6 +7,7 @@ import {
   ForgotPassword,
   Registration,
   Dashboard,
+  ClassBoard,
   Quiz,
   QuizGen,
   QuizAction,
@@ -26,6 +27,7 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/classboard" element={<ClassBoard />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/quiz-gen" element={<QuizGen />} />
           <Route path="/quiz-action" element={<QuizAction />} />

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Quiz(props){
     return (
-        <div className="quiz">
+        <div className="quiz-card">
             <div className="quiz-one">
                 <h2>{props.item.number}</h2>
                 <h4>Questions {props.item.questions}</h4>

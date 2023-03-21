@@ -3,7 +3,7 @@ import React from 'react';
 export default function Class(){
     return (
         <div>
-            <div className="class">
+            <div className="class-section">
                 <h2>Class 1</h2>
                 <h2>Mr. Teacher</h2>
             </div>

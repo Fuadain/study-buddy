@@ -1,5 +1,5 @@
 import React from 'react';
-import './dashboard.css';
+import './classboard.css';
 import Header from './components/Header';
 import Class from './components/Class';
 import Quiz from './components/Quiz';
@@ -26,7 +26,7 @@ export default function Dashboard(){
         }) 
 
     return (
-        <div className="container">
+        <div className="class-container">
             <Header />
             <Class />
             <section className="quiz-container">
