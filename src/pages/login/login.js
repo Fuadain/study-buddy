@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import{Stack, Typography, Button, Box, 
+import{Stack, Typography, Button, 
     FormControl, InputAdornment, OutlinedInput, 
     InputLabel, IconButton, FormLabel, RadioGroup, FormHelperText,
 FormControlLabel, Radio, Divider } from '@mui/material';
 import{Visibility, VisibilityOff} from '@mui/icons-material';
-import './login.css';
 
 export default function Login(){
 
@@ -42,103 +41,93 @@ export default function Login(){
     };
 
     return (
-        <div class='container'>
         <Stack
             sx={{
+            margin: "0 auto",
             width: '50%',
             display: 'flex', 
             flexDirection: 'column', 
             alignItems:'center', 
             justifyContent: 'center',
-            p:2
+            alignSelf: 'center',
+            p:2,
         }}
             direction="column"
         >
             <Typography variant='h3' gutterBottom>
                 Login
             </Typography>
-            <Box
+            <Stack
                 sx={{
-                    width: '50ch',
+                    width: '70ch',
                     height: '100%',
-                    bgcolor: '#a1edd3',
+                    backgroundColor: '#a1edd3',
                     border: 1,
                     borderColor: 'black',
                     borderRadius: 2,
-                    padding: 2
-                    // maxWidth: '50%',
+                    padding: 2,
+                    display: 'flex', 
+                    justifyContent: 'center',
+                    alignItems: 'center'
                 }}
-                component='form'
-                noValidate
-                autoComplete='off'
-                display='flex'
-                alignItems='center'
-                justifyContent='center'
-            >   
-            <Stack>
-                <form class='login-form'onSubmit={handleSubmit}>
-                <Stack>
+            >
+                <form className='login-form' onSubmit={handleSubmit}>
                 {/* Username Input Box */}
-                <FormControl sx={{m:1, width: '50ch', maxWidth: '100%'}}>
+                    <FormControl sx={{width: '50ch', alignSelf: 'center'}}>
                     <InputLabel htmlFor="component-outlined">Username or email</InputLabel>
                     <OutlinedInput
-                        fullWidth
-                        id="component-outlined fullWidth"
+                        id="component-outlined"
                         label="Username or email"
                     />
-                </FormControl>
+                    </FormControl>
 
-                {/* Password Input Box */}
-                <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
-                <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-                <OutlinedInput
-                    fullWidth
-                    id="outlined-adornment-password fullWidth"
-                    type={showPassword ? 'text' : 'password'}
-                    endAdornment={
-                    <InputAdornment position="end">
-                        <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                        edge="end"
+                    {/* Password Input Box */}
+                    <FormControl sx={{width: '50ch', alignSelf: 'center'}} variant="outlined">
+                    <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                    <OutlinedInput
+                        id="outlined-adornment-password"
+                        type={showPassword ? 'text' : 'password'}
+                        endAdornment={
+                        <InputAdornment position="end">
+                            <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                            edge="end"
+                            >
+                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                            </IconButton>
+                        </InputAdornment>
+                        }
+                        label="Password"
+                    />
+                    </FormControl>
+                    <Link to="/forgot-password">
+                        <Typography variant="overline" display="block" align="center" gutterBottom>
+                            Forgot Password? 
+                        </Typography>
+                    </Link>
+
+                    {/* Teacher or Student Buttons */}
+                    <FormControl sx={{alignSelf: 'center'}} error={error} variant="standard">
+                        <FormLabel id="demo-row-radio-buttons-group-label">Are you a teacher or student?</FormLabel>
+                        <RadioGroup
+                            row
+                            aria-labelledby="demo-row-radio-buttons-group-label"
+                            name="row-radio-buttons-group"
+                            onChange={handleRadioChange}
                         >
-                        {showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
-                    </InputAdornment>
-                    }
-                    label="Password"
-                />
-                </FormControl>
-                <Link to="/forgot-password">
-                    <Typography variant="overline" display="block" align="center" gutterBottom>
-                        Forgot Password? 
-                    </Typography>
-                </Link>
-
-                {/* Teacher or Student Buttons */}
-                <FormControl sx={{alignSelf: 'center'}} error={error} variant="standard">
-                    <FormLabel id="demo-row-radio-buttons-group-label">Are you a teacher or student?</FormLabel>
-                    <RadioGroup
-                        row
-                        aria-labelledby="demo-row-radio-buttons-group-label"
-                        name="row-radio-buttons-group"
-                        onChange={handleRadioChange}
-                    >
-                        <FormControlLabel value="Teacher" control={<Radio />} label="Teacher" />
-                        <FormControlLabel value="Student" control={<Radio />} label="Student" />
-                    </RadioGroup>
-                    <FormHelperText>{helperText}</FormHelperText>
-                </FormControl>
-  
-                <Button sx={{width: '25ch', alignSelf: 'center'}} type="submit" variant="outlined" size="medium">Login</Button>
-            </Stack>
-            </form>
+                            <FormControlLabel value="Teacher" control={<Radio />} label="Teacher" />
+                            <FormControlLabel value="Student" control={<Radio />} label="Student" />
+                        </RadioGroup>
+                        <FormHelperText>{helperText}</FormHelperText>
+                    </FormControl>
+    
+                    <Button sx={{width: '25ch', alignSelf: 'center'}} type="submit" variant="outlined" size="medium">Login</Button>
+             </form>
             <Divider sx={{marginTop: 2, marginBottom: 2}} variant="middle" />
-                <Button sx={{color: 'white', backgroundColor: '#ef4443', width: '25ch', alignSelf: 'center'}} type="submit" variant="outlined" size="medium">Login with Google</Button>
+            <Button sx={{color: 'white', backgroundColor: '#ef4443', width: '25ch', alignSelf: 'center'}} type="submit" variant="outlined" size="medium">Login with Google</Button>
             </Stack>
-            </Box>
         </Stack>
-        </div>
     )
 }
