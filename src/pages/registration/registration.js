@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./registration.css";
@@ -20,7 +21,7 @@ const Register = () => {
     <>
       <div className="register">
         <h1>Create a New Account</h1>
-        <form action="">
+        <form className="registration-form" action="">
           <button className="google-btn">
             <i class="fa-brands fa-google"></i>Continue with Google
           </button>
