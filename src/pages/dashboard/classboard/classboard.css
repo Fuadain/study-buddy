@@ -1,39 +1,3 @@
-* {
-    padding: 0px;
-    margin: 0px;
-}
-
-.container {
-    background-color: lightgrey;
-    width: auto;
-    height: 100vh;
-}
-
-.header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.logo {
-    height: 150px;
-    border: 2px solid black;
-    text-align: center;
-    background-color:#00B2FF;
-    line-height: 150px;
-
-}
-
-.class-container {
-    background-color: white;
-}
-
-.class {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: white;
-}
 
 .quiz-title {
     display: flex;
@@ -42,7 +6,7 @@
 
 }
 
-.quiz {
+.quiz-card {
     border: 2px solid black;
     display: flex;
     flex-direction: column;
@@ -52,17 +16,17 @@
     background-color: white;
 }
 
-.quiz-one {
+.quiz-section-one {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 30px;
+    margin-top: 10px;
 }
-.quiz-two {
+.quiz-section-two {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding-top: 50px;
+    padding-top: 20px;
 }
 
 .quiz-button {
@@ -92,4 +56,11 @@
     background-color: lightgreen;
     padding-left: 10px;
     padding-right: 30px;
+}
+
+.student-container {
+    width: auto;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto auto
 }
