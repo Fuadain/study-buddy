@@ -1,14 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
-  Stack, Typography, Button, Box,
-  FormControl, InputAdornment, OutlinedInput,
-  InputLabel, IconButton, FormLabel, RadioGroup, FormHelperText,
-  FormControlLabel, Radio
+  Stack, Typography, Button,
+  FormControl, InputLabel, OutlinedInput
 } from '@mui/material';
 
 export default function ForgotPassword() {
   return (
-    <div class="container">
+    <main class="container">
       <Stack
         sx={{
           width: '50%',
@@ -16,28 +15,42 @@ export default function ForgotPassword() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          p: 2
+          p: 2,
+          backgroundColor: "#a1edd3",
+          border: 1,
+          borderColor: 'black',
+          borderRadius: 2
+
         }}
       >
-        <Typography variant="h2" gutterBottom>Forgot Password?</Typography>
+        <Typography variant="h2" sx={{ marginBottom: '10px', p: 2 }} gutterBottom>Forgot Password?</Typography>
         <Typography variant="h5" gutterBottom>Enter your email to reset your password. </Typography>
 
         <form>
           <Stack
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              p: 2
+            }}
           >
-            <FormControl sx={{ m: 1, width: '50ch', maxWidth: '100%' }}>
-              <InputLabel htmlFor="component-outlined">Email</InputLabel>
+            <FormControl sx={{ m: 1, width: '40vw', marginBottom: '20px' }}>
+              <InputLabel htmlFor="email">Email</InputLabel>
               <OutlinedInput
                 fullWidth
-                id="component-outlined fullWidth"
+                id="email"
                 label="email"
               />
             </FormControl>
-            <Button sx={{ width: '25ch', alignSelf: 'center' }} type="submit" variant="outlined" size="medium">Continue</Button>
+            <Link to='/forgot-password-verify'>
+              <Button sx={{ width: '25ch' }} type="submit" variant="outlined" size="medium">Continue</Button>
+            </Link>
           </Stack>
         </form>
       </Stack>
 
-    </div>
+    </main>
   )
 }

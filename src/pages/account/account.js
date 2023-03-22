@@ -35,7 +35,7 @@ const AccordionSummary = styled((props) => (
   flexDirection: 'row-reverse',
   '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
     transform: 'rotate(90deg)',
-},
+  },
   '& .MuiAccordionSummary-content': {
     marginLeft: theme.spacing(1),
   },
@@ -57,7 +57,12 @@ const Account = () => {
       <Navbar />
       <Box flexDirection='row'>
         <Sidebar />
-        <Box className='container' sx={{ backgroundColor: 'none', ml: '20vw', }} height='90vh'>
+        <Box sx={{
+          ml: '20vw', 
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }} height='90vh'>
           <Box>
 
             <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} >

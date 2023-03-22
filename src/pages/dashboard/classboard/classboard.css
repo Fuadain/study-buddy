@@ -94,11 +94,3 @@
     padding-left: 10px;
     padding-right: 30px;
 }
-
-.student-container {
-    display: grid;
-    grid-template: auto auto / repeat(3, 1fr);
-    gap: 50px;
-    align-content: center;
-    padding-left: 60px;
-}

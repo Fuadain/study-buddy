@@ -20,15 +20,13 @@ export default function Login() {
   };
 
   return (
-    <div className='container'>
+    
       <Box
         sx={{
           width: '50%',
-          display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          p: 2
         }}
         component='form'
         onSubmit={handleSubmit}
@@ -91,6 +89,6 @@ export default function Login() {
           Send Message
         </Button>
       </Box>
-    </div>
+  
   );
 }

@@ -61,6 +61,7 @@ const LearnMore = () => {
             }}
             variant='body1'
             padding={2}
+            flexDirection='column'
           >
             Whether article spirits new her covered hastily sitting her. Money witty <br />
             books nor son add. Chicken age had evening believe but proceed pretend mrs. <br />
