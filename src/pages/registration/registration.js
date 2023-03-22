@@ -20,75 +20,95 @@ const Register = () => {
   return (
     <>
       <div className="register">
-        <h1>Create a New Account</h1>
+        <h1 className="registration-header">Create a New Account</h1>
         <form className="registration-form" action="">
           <button className="google-btn">
-            <i class="fa-brands fa-google"></i>Continue with Google
+            <i class="fa-brands fa-google"></i>
+            <span className="registration-google-span">
+              Continue with Google
+            </span>
           </button>
-          <p>or</p>
+          <p className="registration-p">or</p>
 
           <input
-            className="input"
+            className="registration-input"
             required
             type="text"
-            placeholder="email"
+            placeholder="Email"
             name="email"
             onChange={handleChange}
           />
           <input
-            className="input"
+            className="registration-input"
             required
             type="text"
-            placeholder="username"
+            placeholder="Username"
             name="username"
             onChange={handleChange}
           />
           <input
-            className="input"
+            className="registration-input"
             required
             type="password"
-            placeholder="password"
+            placeholder="Password"
             name="password"
             onChange={handleChange}
           />
           <input
-            className="input"
+            className="registration-input"
             required
             type="password"
-            placeholder="confirm password"
+            placeholder="Confirm Password"
             name="confirm_password"
             onChange={handleChange}
           />
           <div className="radio">
-            <p>Are you a teacher or student?</p> 
-            <input
-              required
-              type="radio"
-              id="teacher"
-              name="teacher_student"
-              value="teacher"
-              onChange={handleChange}
-            />
-              <label for="teacher">Teacher</label>
-            <input
-              required
-              type="radio"
-              id="student"
-              name="teacher_student"
-              value="student"
-              onChange={handleChange}
-            />
-              <label for="student">Student</label>
+            <p className="registration-radio-p">
+              Are you a teacher or student?
+            </p>
+            <div className="registration-radio-input">
+              <input
+                required
+                className="registration-radio"
+                type="radio"
+                id="teacher"
+                name="teacher_student"
+                value="teacher"
+                onChange={handleChange}
+              />
+               {" "}
+              <label for="teacher" className="registration-label">
+                Teacher
+              </label>
+              <input
+                required
+                type="radio"
+                id="student"
+                name="teacher_student"
+                value="student"
+                className="registration-radio"
+                onChange={handleChange}
+              />
+               {" "}
+              <label for="student" className="registration-label">
+                Student
+              </label>
+            </div>
           </div>
-          <span className="terms">
+          <span className="registration-span">
             By submitting the form, you agree to the{" "}
-            <Link to="/terms">Terms of Service</Link>
+            <Link className="registration-link" to="/terms">
+              Terms of Service
+            </Link>
           </span>
           <button type="submit" className="sign-up-btn">
             Create account
           </button>
-          <span>
-            Already have an account? <Link to="/login">Log in</Link>
+          <span className="registration-span">
+            Already have an account?{" "}
+            <Link className="registration-link" to="/login">
+              Log in
+            </Link>
           </span>
         </form>
       </div>
