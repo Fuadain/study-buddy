@@ -10,6 +10,7 @@ import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box';
 
 export default function ClassList(){
+    let pageName = "Dashboard";
 
     const [classes, setClasses] = React.useState([])
     const [isTeacher, setIsTeacher] = React.useState(false)
@@ -37,7 +38,7 @@ export default function ClassList(){
 
     return(
         <Box>
-            <Navbar/>
+            <Navbar pageName={pageName}/>
             <Box flexDirection='row'>
                 <Sidebar/>
                 <Stack spacing={3} sx={{ml: '25vw', mr: '5vw', pt: '2vw'}}>

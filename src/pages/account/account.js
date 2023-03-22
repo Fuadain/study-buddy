@@ -47,6 +47,8 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 const Account = () => {
+  let pageName = "Account";
+
   const [expanded, setExpanded] = React.useState('');
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
@@ -54,7 +56,7 @@ const Account = () => {
 
   return (
     <Box>
-      <Navbar />
+      <Navbar pageName={pageName}/>
       <Box flexDirection='row'>
         <Sidebar />
         <Box sx={{
