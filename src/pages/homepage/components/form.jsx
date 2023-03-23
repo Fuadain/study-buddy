@@ -23,13 +23,13 @@ export default function Login() {
     
       <Box
         sx={{
-          width: '50%',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
+          width: '40%',
+          flexDirection: 'column'
+          
         }}
         component='form'
         onSubmit={handleSubmit}
+        p={2}
       >
         <TextField
           name='fullName'
@@ -77,14 +77,14 @@ export default function Login() {
         <Button
           sx={{
             width: '20ch',
-            alignSelf: 'center',
-            mt: '20px',
             backgroundColor: '#00B2FF',
             color: 'black',
+            ml: '25%'
           }}
           type='submit'
           variant='contained'
           size='medium'
+          
         >
           Send Message
         </Button>
