@@ -1,0 +1,2666 @@
+[
+    {
+        "id": 1,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 1,
+        "no_of_questions": 5,
+        "created_by_id": 2,
+        "create_by": "Simrat Bains",
+        "module": 2,
+        "description": "JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 1,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "What is the keyword used to declare a variable in JavaScript?",
+                "choices": [
+                    "let",
+                    "const",
+                    "var",
+                    "function"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 2,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "Which method is used to add an element to the end of an array in JavaScript?",
+                "choices": [
+                    "push()",
+                    "unshift()",
+                    "pop()",
+                    "shift()"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 4,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "Which operator is used to concatenate two strings in JavaScript?",
+                "choices": [
+                    ".",
+                    "+",
+                    "-",
+                    "*"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 5,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "What is the correct syntax for an if/else statement in JavaScript?",
+                "choices": [
+                    "if(condition) { // code to execute } else { // code to execute }",
+                    "if(condition) { // code to execute } else(condition) { // code to execute }",
+                    "if(condition) { // code to execute }; else { // code to execute };",
+                    "if(condition) { // code to execute }; else(condition) { // code to execute };"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 9,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "Which of the following is a valid way to declare a variable in JavaScript?",
+                "choices": [
+                    "var myVariable = \"Hello World\";",
+                    "let myVariable = \"Hello World\";",
+                    "const myVariable = \"Hello World\";",
+                    "All of the above"
+                ],
+                "answer": 3
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 1,
+        "no_of_questions": 3,
+        "created_by_id": 3,
+        "create_by": "Iqbal Kang",
+        "module": 2,
+        "description": "JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 3,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "What is the output of the following code: console.log(typeof \"Hello World\");",
+                "choices": [
+                    "\"string\"",
+                    "\"number\"",
+                    "\"boolean\"",
+                    "\"undefined\""
+                ],
+                "answer": 0
+            },
+            {
+                "id": 7,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "Which of the following is not a primitive data type in JavaScript?",
+                "choices": [
+                    "Number",
+                    "String",
+                    "Boolean",
+                    "Array"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 10,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "What is the purpose of the \"===\" operator in JavaScript?",
+                "choices": [
+                    "To compare two values for strict equality",
+                    "To assign a value to a variable",
+                    "To compare two values for loose equality",
+                    "To concatenate two strings"
+                ],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 1,
+        "no_of_questions": 3,
+        "created_by_id": 4,
+        "create_by": "Johnny Para",
+        "module": 2,
+        "description": "JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 4,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "Which operator is used to concatenate two strings in JavaScript?",
+                "choices": [
+                    ".",
+                    "+",
+                    "-",
+                    "*"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 6,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "What does the acronym DOM stand for in JavaScript?",
+                "choices": [
+                    "Document Object Model",
+                    "Data Output Method",
+                    "Digital Output Module",
+                    "Dynamic Object Method"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 8,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "What is the output of the following code snippet: console.log(2 + \"2\");",
+                "choices": [
+                    "4",
+                    "\"22\"",
+                    "22",
+                    "\"2 + 2\""
+                ],
+                "answer": 1
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 1,
+        "no_of_questions": 5,
+        "created_by_id": 1,
+        "create_by": "Soonmyung Hwang",
+        "module": 2,
+        "description": "JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 1,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "What is the keyword used to declare a variable in JavaScript?",
+                "choices": [
+                    "let",
+                    "const",
+                    "var",
+                    "function"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 3,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "What is the output of the following code: console.log(typeof \"Hello World\");",
+                "choices": [
+                    "\"string\"",
+                    "\"number\"",
+                    "\"boolean\"",
+                    "\"undefined\""
+                ],
+                "answer": 0
+            },
+            {
+                "id": 5,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "What is the correct syntax for an if/else statement in JavaScript?",
+                "choices": [
+                    "if(condition) { // code to execute } else { // code to execute }",
+                    "if(condition) { // code to execute } else(condition) { // code to execute }",
+                    "if(condition) { // code to execute }; else { // code to execute };",
+                    "if(condition) { // code to execute }; else(condition) { // code to execute };"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 8,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "What is the output of the following code snippet: console.log(2 + \"2\");",
+                "choices": [
+                    "4",
+                    "\"22\"",
+                    "22",
+                    "\"2 + 2\""
+                ],
+                "answer": 1
+            },
+            {
+                "id": 10,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "What is the purpose of the \"===\" operator in JavaScript?",
+                "choices": [
+                    "To compare two values for strict equality",
+                    "To assign a value to a variable",
+                    "To compare two values for loose equality",
+                    "To concatenate two strings"
+                ],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 1,
+        "no_of_questions": 4,
+        "created_by_id": 4,
+        "create_by": "Johnny Para",
+        "module": 2,
+        "description": "JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 2,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "Which method is used to add an element to the end of an array in JavaScript?",
+                "choices": [
+                    "push()",
+                    "unshift()",
+                    "pop()",
+                    "shift()"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 4,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "Which operator is used to concatenate two strings in JavaScript?",
+                "choices": [
+                    ".",
+                    "+",
+                    "-",
+                    "*"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 7,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "Which of the following is not a primitive data type in JavaScript?",
+                "choices": [
+                    "Number",
+                    "String",
+                    "Boolean",
+                    "Array"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 9,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "Which of the following is a valid way to declare a variable in JavaScript?",
+                "choices": [
+                    "var myVariable = \"Hello World\";",
+                    "let myVariable = \"Hello World\";",
+                    "const myVariable = \"Hello World\";",
+                    "All of the above"
+                ],
+                "answer": 3
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 1,
+        "no_of_questions": ,
+        "created_by_id": 3,
+        "create_by": "Iqbal Kang",
+        "module": 2,
+        "description": "JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 6,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "What does the acronym DOM stand for in JavaScript?",
+                "choices": [
+                    "Document Object Model",
+                    "Data Output Method",
+                    "Digital Output Module",
+                    "Dynamic Object Method"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 8,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "What is the output of the following code snippet: console.log(2 + \"2\");",
+                "choices": [
+                    "4",
+                    "\"22\"",
+                    "22",
+                    "\"2 + 2\""
+                ],
+                "answer": 1
+            },
+            {
+                "id": 10,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 1,
+                "question": "What is the purpose of the \"===\" operator in JavaScript?",
+                "choices": [
+                    "To compare two values for strict equality",
+                    "To assign a value to a variable",
+                    "To compare two values for loose equality",
+                    "To concatenate two strings"
+                ],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 2,
+        "no_of_questions": 3,
+        "created_by_id": 5,
+        "create_by": "Alexander Lucas",
+        "module": 2,
+        "description": "Level 2 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 11,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nx += 2;\nconsole.log(x);\n```",
+                "choices": [
+                    "2",
+                    "5",
+                    "7",
+                    "12"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 16,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "Which of the following is not a data type in JavaScript?",
+                "choices": [
+                    "string",
+                    "boolean",
+                    "float",
+                    "array"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 19,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the correct way to write a comment in JavaScript?",
+                "choices": [
+                    "// This is a comment",
+                    "<!-- This is a comment -->",
+                    "/* This is a comment */",
+                    "# This is a comment"
+                ],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 2,
+        "no_of_questions": 4,
+        "created_by_id": 2,
+        "create_by": "Simrat Bains",
+        "module": 2,
+        "description": "Level 2 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 11,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nx += 2;\nconsole.log(x);\n```",
+                "choices": [
+                    "2",
+                    "5",
+                    "7",
+                    "12"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 13,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "Which of the following is a valid way to declare a function in JavaScript?",
+                "choices": [
+                    "function = myFunction() {}",
+                    "function myFunction() {}",
+                    "myFunction() = function {}",
+                    "myFunction() = {}"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 17,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the correct syntax for a while loop in JavaScript?",
+                "choices": [
+                    "while (i < 10) {}",
+                    "while (i < 10;) {}",
+                    "while (i < 10) ;",
+                    "while i < 10;"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 20,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nvar y = 2;\nconsole.log(x * y);\n```",
+                "choices": [
+                    "7",
+                    "10",
+                    "12",
+                    "3"
+                ],
+                "answer": 2
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 2,
+        "no_of_questions": 4,
+        "created_by_id": 1,
+        "create_by": "Soonmyung Hwang",
+        "module": 2,
+        "description": "Level 2 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 11,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nx += 2;\nconsole.log(x);\n```",
+                "choices": [
+                    "2",
+                    "5",
+                    "7",
+                    "12"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 13,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "Which of the following is a valid way to declare a function in JavaScript?",
+                "choices": [
+                    "function = myFunction() {}",
+                    "function myFunction() {}",
+                    "myFunction() = function {}",
+                    "myFunction() = {}"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 17,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the correct syntax for a while loop in JavaScript?",
+                "choices": [
+                    "while (i < 10) {}",
+                    "while (i < 10;) {}",
+                    "while (i < 10) ;",
+                    "while i < 10;"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 20,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nvar y = 2;\nconsole.log(x * y);\n```",
+                "choices": [
+                    "7",
+                    "10",
+                    "12",
+                    "3"
+                ],
+                "answer": 2
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 2,
+        "no_of_questions": 4,
+        "created_by_id": 3,
+        "create_by": "Iqbal Kang",
+        "module": 2,
+        "description": "Level 2 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 11,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nx += 2;\nconsole.log(x);\n```",
+                "choices": [
+                    "2",
+                    "5",
+                    "7",
+                    "12"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 15,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nvar y = 2;\nif (x > y) {\n  console.log(\"x is greater than y\");\n} else {\n  console.log(\"y is greater than x\");\n}\n```",
+                "choices": [
+                    "x is greater than y",
+                    "y is greater than x",
+                    "5 is greater than 2",
+                    "Error"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 16,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "Which of the following is not a data type in JavaScript?",
+                "choices": [
+                    "string",
+                    "boolean",
+                    "float",
+                    "array"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 19,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the correct way to write a comment in JavaScript?",
+                "choices": [
+                    "// This is a comment",
+                    "<!-- This is a comment -->",
+                    "/* This is a comment */",
+                    "# This is a comment"
+                ],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 2,
+        "no_of_questions": 4,
+        "created_by_id": 5,
+        "create_by": "Alexander Lucas",
+        "module": 2,
+        "description": "Level 2 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 12,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the correct syntax for declaring a variable in JavaScript?",
+                "choices": [
+                    "variable x;",
+                    "x = 5;",
+                    "var x;",
+                    "x == 5;"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 17,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the correct syntax for a while loop in JavaScript?",
+                "choices": [
+                    "while (i < 10) {}",
+                    "while (i < 10;) {}",
+                    "while (i < 10) ;",
+                    "while i < 10;"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 19,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the correct way to write a comment in JavaScript?",
+                "choices": [
+                    "// This is a comment",
+                    "<!-- This is a comment -->",
+                    "/* This is a comment */",
+                    "# This is a comment"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 20,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nvar y = 2;\nconsole.log(x * y);\n```",
+                "choices": [
+                    "7",
+                    "10",
+                    "12",
+                    "3"
+                ],
+                "answer": 2
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 2,
+        "no_of_questions": 5,
+        "created_by_id": 2,
+        "create_by": "Simrat Bains",
+        "module": 2,
+        "description": "Level 2 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 11,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nx += 2;\nconsole.log(x);\n```",
+                "choices": [
+                    "2",
+                    "5",
+                    "7",
+                    "12"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 12,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the correct syntax for declaring a variable in JavaScript?",
+                "choices": [
+                    "variable x;",
+                    "x = 5;",
+                    "var x;",
+                    "x == 5;"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 14,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the result of the following code?\n```\nvar x = 10;\nvar y = \"5\";\nconsole.log(x + y);\n```",
+                "choices": [
+                    "15",
+                    "105",
+                    "\"10\" + \"5\"",
+                    "Error"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 17,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the correct syntax for a while loop in JavaScript?",
+                "choices": [
+                    "while (i < 10) {}",
+                    "while (i < 10;) {}",
+                    "while (i < 10) ;",
+                    "while i < 10;"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 20,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nvar y = 2;\nconsole.log(x * y);\n```",
+                "choices": [
+                    "7",
+                    "10",
+                    "12",
+                    "3"
+                ],
+                "answer": 2
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 2,
+        "no_of_questions": 5,
+        "created_by_id": 4,
+        "create_by": "Johnny Para",
+        "module": 2,
+        "description": "Level 2 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 13,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "Which of the following is a valid way to declare a function in JavaScript?",
+                "choices": [
+                    "function = myFunction() {}",
+                    "function myFunction() {}",
+                    "myFunction() = function {}",
+                    "myFunction() = {}"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 14,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the result of the following code?\n```\nvar x = 10;\nvar y = \"5\";\nconsole.log(x + y);\n```",
+                "choices": [
+                    "15",
+                    "105",
+                    "\"10\" + \"5\"",
+                    "Error"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 15,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nvar y = 2;\nif (x > y) {\n  console.log(\"x is greater than y\");\n} else {\n  console.log(\"y is greater than x\");\n}\n```",
+                "choices": [
+                    "x is greater than y",
+                    "y is greater than x",
+                    "5 is greater than 2",
+                    "Error"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 18,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nvar y = \"5\";\nif (x === y) {\n  console.log(\"x is equal to y\");\n} else {\n  console.log(\"x is not equal to y\");\n}\n```",
+                "choices": [
+                    "x is equal to y",
+                    "x is not equal to y",
+                    "Error",
+                    "Undefined"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 19,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the correct way to write a comment in JavaScript?",
+                "choices": [
+                    "// This is a comment",
+                    "<!-- This is a comment -->",
+                    "/* This is a comment */",
+                    "# This is a comment"
+                ],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 2,
+        "no_of_questions": 5,
+        "created_by_id": 1,
+        "create_by": "Soonmyung Hwang",
+        "module": 2,
+        "description": "Level 2 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 11,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nx += 2;\nconsole.log(x);\n```",
+                "choices": [
+                    "2",
+                    "5",
+                    "7",
+                    "12"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 13,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "Which of the following is a valid way to declare a function in JavaScript?",
+                "choices": [
+                    "function = myFunction() {}",
+                    "function myFunction() {}",
+                    "myFunction() = function {}",
+                    "myFunction() = {}"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 15,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nvar y = 2;\nif (x > y) {\n  console.log(\"x is greater than y\");\n} else {\n  console.log(\"y is greater than x\");\n}\n```",
+                "choices": [
+                    "x is greater than y",
+                    "y is greater than x",
+                    "5 is greater than 2",
+                    "Error"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 18,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nvar y = \"5\";\nif (x === y) {\n  console.log(\"x is equal to y\");\n} else {\n  console.log(\"x is not equal to y\");\n}\n```",
+                "choices": [
+                    "x is equal to y",
+                    "x is not equal to y",
+                    "Error",
+                    "Undefined"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 20,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nvar y = 2;\nconsole.log(x * y);\n```",
+                "choices": [
+                    "7",
+                    "10",
+                    "12",
+                    "3"
+                ],
+                "answer": 2
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 2,
+        "no_of_questions": 5,
+        "created_by_id": 3,
+        "create_by": "Iqbal Kang",
+        "module": 2,
+        "description": "Level 2 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 12,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the correct syntax for declaring a variable in JavaScript?",
+                "choices": [
+                    "variable x;",
+                    "x = 5;",
+                    "var x;",
+                    "x == 5;"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 16,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "Which of the following is not a data type in JavaScript?",
+                "choices": [
+                    "string",
+                    "boolean",
+                    "float",
+                    "array"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 17,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the correct syntax for a while loop in JavaScript?",
+                "choices": [
+                    "while (i < 10) {}",
+                    "while (i < 10;) {}",
+                    "while (i < 10) ;",
+                    "while i < 10;"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 18,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the output of the following code?\n```\nvar x = 5;\nvar y = \"5\";\nif (x === y) {\n  console.log(\"x is equal to y\");\n} else {\n  console.log(\"x is not equal to y\");\n}\n```",
+                "choices": [
+                    "x is equal to y",
+                    "x is not equal to y",
+                    "Error",
+                    "Undefined"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 19,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 2,
+                "question": "What is the correct way to write a comment in JavaScript?",
+                "choices": [
+                    "// This is a comment",
+                    "<!-- This is a comment -->",
+                    "/* This is a comment */",
+                    "# This is a comment"
+                ],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 3,
+        "no_of_questions": 3,
+        "created_by_id": 5,
+        "create_by": "Alexander Lucas",
+        "module": 2,
+        "description": "Level 3 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 21,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "What is the result of 5 + \"5\" in JavaScript?",
+                "choices": [
+                    "10",
+                    "55",
+                    "\"55\"",
+                    "TypeError"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 26,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "What is the output of the following code in JavaScript?\n\n```\nvar a = [1, 2, 3];\nvar b = a;\nb.push(4);\nconsole.log(a);\n```",
+                "choices": [
+                    "[1, 2, 3]",
+                    "[1, 2, 3, 4]",
+                    "[4, 3, 2, 1]",
+                    "[4, 3, 2]"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 28,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "What is the output of the following code in JavaScript?\n\n```\nvar x = 5;\nvar y = \"5\";\nconsole.log(x === y);\n```",
+                "choices": [
+                    "true",
+                    "false",
+                    "undefined",
+                    "null"
+                ],
+                "answer": 1
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 3,
+        "no_of_questions": 4,
+        "created_by_id": 1,
+        "create_by": "Soonmyung Hwang",
+        "module": 2,
+        "description": "Level 3 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 23,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "What is the output of the following code in JavaScript?\n\n```\nvar x = 5;\nvar y = 10;\nconsole.log(x == y);\n```",
+                "choices": [
+                    "true",
+                    "false",
+                    "undefined",
+                    "null"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 24,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "Which of the following is used to declare a variable in JavaScript?",
+                "choices": [
+                    "var",
+                    "let",
+                    "const",
+                    "all of the above"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 27,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "Which of the following is used to add an element to the end of an array in JavaScript?",
+                "choices": [
+                    "push()",
+                    "pop()",
+                    "shift()",
+                    "unshift()"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 30,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "Which of the following is used to check if a value is not a number in JavaScript?",
+                "choices": [
+                    "isNaN()",
+                    "isNotNumber()",
+                    "isNull()",
+                    "isUndefined()"
+                ],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 3,
+        "no_of_questions": 4,
+        "created_by_id": 5,
+        "create_by": "Alexander Lucas",
+        "module": 2,
+        "description": "Level 3 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 25,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "What is the difference between == and === in JavaScript?",
+                "choices": [
+                    "There is no difference",
+                    "== compares values and types while === compares only values",
+                    "== compares only values while === compares values and types",
+                    "=== is not a valid comparison operator in JavaScript"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 27,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "Which of the following is used to add an element to the end of an array in JavaScript?",
+                "choices": [
+                    "push()",
+                    "pop()",
+                    "shift()",
+                    "unshift()"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 29,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "Which of the following is NOT a valid way to declare a function in JavaScript?",
+                "choices": [
+                    "function myFunction() {}",
+                    "var myFunction = function() {}",
+                    "const myFunction = () => {}",
+                    "myFunction() {}"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 30,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "Which of the following is used to check if a value is not a number in JavaScript?",
+                "choices": [
+                    "isNaN()",
+                    "isNotNumber()",
+                    "isNull()",
+                    "isUndefined()"
+                ],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 3,
+        "no_of_questions": 3,
+        "created_by_id": 2,
+        "create_by": "Simrat Bains",
+        "module": 2,
+        "description": "Level 3 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 21,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "What is the result of 5 + \"5\" in JavaScript?",
+                "choices": [
+                    "10",
+                    "55",
+                    "\"55\"",
+                    "TypeError"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 25,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "What is the difference between == and === in JavaScript?",
+                "choices": [
+                    "There is no difference",
+                    "== compares values and types while === compares only values",
+                    "== compares only values while === compares values and types",
+                    "=== is not a valid comparison operator in JavaScript"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 29,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "Which of the following is NOT a valid way to declare a function in JavaScript?",
+                "choices": [
+                    "function myFunction() {}",
+                    "var myFunction = function() {}",
+                    "const myFunction = () => {}",
+                    "myFunction() {}"
+                ],
+                "answer": 3
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 3,
+        "no_of_questions": 4,
+        "created_by_id": 4,
+        "create_by": "Johnny Para",
+        "module": 2,
+        "description": "Level 3 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 22,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "Which of the following is NOT a primitive data type in JavaScript?",
+                "choices": [
+                    "String",
+                    "Boolean",
+                    "Object",
+                    "Integer"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 24,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "Which of the following is used to declare a variable in JavaScript?",
+                "choices": [
+                    "var",
+                    "let",
+                    "const",
+                    "all of the above"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 26,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "What is the output of the following code in JavaScript?\n\n```\nvar a = [1, 2, 3];\nvar b = a;\nb.push(4);\nconsole.log(a);\n```",
+                "choices": [
+                    "[1, 2, 3]",
+                    "[1, 2, 3, 4]",
+                    "[4, 3, 2, 1]",
+                    "[4, 3, 2]"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 30,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "Which of the following is used to check if a value is not a number in JavaScript?",
+                "choices": [
+                    "isNaN()",
+                    "isNotNumber()",
+                    "isNull()",
+                    "isUndefined()"
+                ],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 3,
+        "no_of_questions": 4,
+        "created_by_id": 1,
+        "create_by": "Soonmyung Hwang",
+        "module": 2,
+        "description": "Level 3 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 23,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "What is the output of the following code in JavaScript?\n\n```\nvar x = 5;\nvar y = 10;\nconsole.log(x == y);\n```",
+                "choices": [
+                    "true",
+                    "false",
+                    "undefined",
+                    "null"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 25,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "What is the difference between == and === in JavaScript?",
+                "choices": [
+                    "There is no difference",
+                    "== compares values and types while === compares only values",
+                    "== compares only values while === compares values and types",
+                    "=== is not a valid comparison operator in JavaScript"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 28,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "What is the output of the following code in JavaScript?\n\n```\nvar x = 5;\nvar y = \"5\";\nconsole.log(x === y);\n```",
+                "choices": [
+                    "true",
+                    "false",
+                    "undefined",
+                    "null"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 29,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 3,
+                "question": "Which of the following is NOT a valid way to declare a function in JavaScript?",
+                "choices": [
+                    "function myFunction() {}",
+                    "var myFunction = function() {}",
+                    "const myFunction = () => {}",
+                    "myFunction() {}"
+                ],
+                "answer": 3
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 4,
+        "no_of_questions": 4,
+        "created_by_id": 5,
+        "create_by": "Alexander Lucas",
+        "module": 2,
+        "description": "Level 4 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 31,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "Which of the following is a valid way to declare a variable in JavaScript?",
+                "choices": [
+                    "let variableName = \"value\";",
+                    "variableName = \"value\";",
+                    "const variableName = \"value\";",
+                    "variableName == \"value\";"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 37,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the output of the following code?\n```\nlet x = 5;\nlet y = \"5\";\nif (x === y) {\n  console.log(\"x is equal to y\");\n} else {\n  console.log(\"x is not equal to y\");\n}\n```",
+                "choices": [
+                    "x is equal to y",
+                    "x is not equal to y",
+                    "Error",
+                    "Undefined"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 38,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the correct syntax for a function declaration in JavaScript?",
+                "choices": [
+                    "function functionName() { }",
+                    "functionName() { }",
+                    "func functionName() { }",
+                    "functionName = () => { }"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 39,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "Which of the following is not a looping structure in JavaScript?",
+                "choices": [
+                    "for loop",
+                    "while loop",
+                    "foreach loop",
+                    "do-while loop"
+                ],
+                "answer": 2
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 4,
+        "no_of_questions": 5,
+        "created_by_id": 4,
+        "create_by": "Johnny Para",
+        "module": 2,
+        "description": "Level 4 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 32,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the output of the following code?\n```\nlet x = 5;\nconsole.log(x++);\n```",
+                "choices": [
+                    "4",
+                    "5",
+                    "6",
+                    "Error"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 33,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the correct syntax for an if-else statement in JavaScript?",
+                "choices": [
+                    "if (condition) { statement1; else { statement2; }",
+                    "if { condition (statement1); else (statement2); }",
+                    "if (condition) { statement1; } else { statement2; }",
+                    "if { condition (statement1); } else { condition (statement2); }"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 34,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "Which of the following is a valid JavaScript array?",
+                "choices": [
+                    "[1, 2, \"three\", 4];",
+                    "{1, 2, 3, 4};",
+                    "(1, 2, 3, 4);",
+                    "<1, 2, 3, 4>;"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 36,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "Which of the following is not a primitive data type in JavaScript?",
+                "choices": [
+                    "string",
+                    "number",
+                    "boolean",
+                    "object"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 40,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the output of the following code?\n```\nlet x = [1, 2, 3];\nx.push(4);\nconsole.log(x);\n```",
+                "choices": [
+                    "[1, 2, 3]",
+                    "[1, 2, 3, 4]",
+                    "[4, 1, 2, 3]",
+                    "[1, 2, 4, 3]"
+                ],
+                "answer": 1
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 4,
+        "no_of_questions": 5,
+        "created_by_id": 3,
+        "create_by": "Iqbal Kang",
+        "module": 2,
+        "description": "Level 4 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 35,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the output of the following code?\n```\nlet x = 10;\nif (x > 5 && x < 15) {\n  console.log(\"x is between 5 and 15\");\n} else {\n  console.log(\"x is not between 5 and 15\");\n}\n```",
+                "choices": [
+                    "x is between 5 and 10",
+                    "x is between 10 and 15",
+                    "x is between 5 and 15",
+                    "x is not between 5 and 15"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 37,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the output of the following code?\n```\nlet x = 5;\nlet y = \"5\";\nif (x === y) {\n  console.log(\"x is equal to y\");\n} else {\n  console.log(\"x is not equal to y\");\n}\n```",
+                "choices": [
+                    "x is equal to y",
+                    "x is not equal to y",
+                    "Error",
+                    "Undefined"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 38,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the correct syntax for a function declaration in JavaScript?",
+                "choices": [
+                    "function functionName() { }",
+                    "functionName() { }",
+                    "func functionName() { }",
+                    "functionName = () => { }"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 39,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "Which of the following is not a looping structure in JavaScript?",
+                "choices": [
+                    "for loop",
+                    "while loop",
+                    "foreach loop",
+                    "do-while loop"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 40,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the output of the following code?\n```\nlet x = [1, 2, 3];\nx.push(4);\nconsole.log(x);\n```",
+                "choices": [
+                    "[1, 2, 3]",
+                    "[1, 2, 3, 4]",
+                    "[4, 1, 2, 3]",
+                    "[1, 2, 4, 3]"
+                ],
+                "answer": 1
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 4,
+        "no_of_questions": 4,
+        "created_by_id": 1,
+        "create_by": "Soonmyung Hwang",
+        "module": 2,
+        "description": "Level 4 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 31,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "Which of the following is a valid way to declare a variable in JavaScript?",
+                "choices": [
+                    "let variableName = \"value\";",
+                    "variableName = \"value\";",
+                    "const variableName = \"value\";",
+                    "variableName == \"value\";"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 32,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the output of the following code?\n```\nlet x = 5;\nconsole.log(x++);\n```",
+                "choices": [
+                    "4",
+                    "5",
+                    "6",
+                    "Error"
+                ],
+                "answer": 1
+            }
+              {
+                "id": 34,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "Which of the following is a valid JavaScript array?",
+                "choices": [
+                    "[1, 2, \"three\", 4];",
+                    "{1, 2, 3, 4};",
+                    "(1, 2, 3, 4);",
+                    "<1, 2, 3, 4>;"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 35,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the output of the following code?\n```\nlet x = 10;\nif (x > 5 && x < 15) {\n  console.log(\"x is between 5 and 15\");\n} else {\n  console.log(\"x is not between 5 and 15\");\n}\n```",
+                "choices": [
+                    "x is between 5 and 10",
+                    "x is between 10 and 15",
+                    "x is between 5 and 15",
+                    "x is not between 5 and 15"
+                ],
+                "answer": 2
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 4,
+        "no_of_questions": 5,
+        "created_by_id": 2,
+        "create_by": "Simrat Bains",
+        "module": 2,
+        "description": "Level 4 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 36,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "Which of the following is not a primitive data type in JavaScript?",
+                "choices": [
+                    "string",
+                    "number",
+                    "boolean",
+                    "object"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 37,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the output of the following code?\n```\nlet x = 5;\nlet y = \"5\";\nif (x === y) {\n  console.log(\"x is equal to y\");\n} else {\n  console.log(\"x is not equal to y\");\n}\n```",
+                "choices": [
+                    "x is equal to y",
+                    "x is not equal to y",
+                    "Error",
+                    "Undefined"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 38,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the correct syntax for a function declaration in JavaScript?",
+                "choices": [
+                    "function functionName() { }",
+                    "functionName() { }",
+                    "func functionName() { }",
+                    "functionName = () => { }"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 39,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "Which of the following is not a looping structure in JavaScript?",
+                "choices": [
+                    "for loop",
+                    "while loop",
+                    "foreach loop",
+                    "do-while loop"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 40,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the output of the following code?\n```\nlet x = [1, 2, 3];\nx.push(4);\nconsole.log(x);\n```",
+                "choices": [
+                    "[1, 2, 3]",
+                    "[1, 2, 3, 4]",
+                    "[4, 1, 2, 3]",
+                    "[1, 2, 4, 3]"
+                ],
+                "answer": 1
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 4,
+        "no_of_questions": 6,
+        "created_by_id": 3,
+        "create_by": "Iqbal Kang",
+        "module": 2,
+        "description": "Level 4 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 31,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "Which of the following is a valid way to declare a variable in JavaScript?",
+                "choices": [
+                    "let variableName = \"value\";",
+                    "variableName = \"value\";",
+                    "const variableName = \"value\";",
+                    "variableName == \"value\";"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 32,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the output of the following code?\n```\nlet x = 5;\nconsole.log(x++);\n```",
+                "choices": [
+                    "4",
+                    "5",
+                    "6",
+                    "Error"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 33,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the correct syntax for an if-else statement in JavaScript?",
+                "choices": [
+                    "if (condition) { statement1; else { statement2; }",
+                    "if { condition (statement1); else (statement2); }",
+                    "if (condition) { statement1; } else { statement2; }",
+                    "if { condition (statement1); } else { condition (statement2); }"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 34,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "Which of the following is a valid JavaScript array?",
+                "choices": [
+                    "[1, 2, \"three\", 4];",
+                    "{1, 2, 3, 4};",
+                    "(1, 2, 3, 4);",
+                    "<1, 2, 3, 4>;"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 35,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "What is the output of the following code?\n```\nlet x = 10;\nif (x > 5 && x < 15) {\n  console.log(\"x is between 5 and 15\");\n} else {\n  console.log(\"x is not between 5 and 15\");\n}\n```",
+                "choices": [
+                    "x is between 5 and 10",
+                    "x is between 10 and 15",
+                    "x is between 5 and 15",
+                    "x is not between 5 and 15"
+                ],
+                "answer": 2
+            },
+            {
+                "id": 36,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 4,
+                "question": "Which of the following is not a primitive data type in JavaScript?",
+                "choices": [
+                    "string",
+                    "number",
+                    "boolean",
+                    "object"
+                ],
+                "answer": 3
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 5,
+        "no_of_questions": 6,
+        "created_by_id": 5,
+        "create_by": "Alexander Lucas",
+        "module": 2,
+        "description": "Level 4 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 41,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What will be the output of the following code?\n```\nconsole.log(typeof null);\n```",
+                "choices": [
+                    "\"object\"",
+                    "\"null\"",
+                    "\"undefined\"",
+                    "\"string\""
+                ],
+                "answer": 0
+            },
+            {
+                "id": 42,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "Which of the following is not a valid JavaScript data type?",
+                "choices": [
+                    "string",
+                    "integer",
+                    "boolean",
+                    "undefined"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 44,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "Which of the following is not a valid way to declare a variable in JavaScript?",
+                "choices": [
+                    "let",
+                    "const",
+                    "var",
+                    "int"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 46,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet name = \"John\";\nconsole.log(`Hello ${name}!`);\n```",
+                "choices": [
+                    "\"Hello John!\"",
+                    "\"Hello ${name}!\"",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 48,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet x = 0;\nwhile(x < 5) {\n  console.log(x);\n  x++;\n}\n```",
+                "choices": [
+                    "0 1 2 3 4",
+                    "1 2 3 4 5",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 50,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet x = 5;\nlet y = \"5\";\nif(x == y) {\n  console.log(\"Equal\");\n} else {\n  console.log(\"Not equal\");\n}\n```",
+                "choices": [
+                    "\"Equal\"",
+                    "\"Not equal\"",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 5,
+        "no_of_questions": 5,
+        "created_by_id": 4,
+        "create_by": "Johnny Para",
+        "module": 2,
+        "description": "Level 4 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 41,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What will be the output of the following code?\n```\nconsole.log(typeof null);\n```",
+                "choices": [
+                    "\"object\"",
+                    "\"null\"",
+                    "\"undefined\"",
+                    "\"string\""
+                ],
+                "answer": 0
+            },
+            {
+                "id": 43,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet x = 5;\nconsole.log(x++);\n```",
+                "choices": [
+                    "5",
+                    "6",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 45,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet x = 10;\nif(x > 5 && x < 15) {\n  console.log(\"x is between 5 and 15\");\n} else {\n  console.log(\"x is not between 5 and 15\");\n}\n```",
+                "choices": [
+                    "\"x is between 5 and 15\"",
+                    "\"x is not between 5 and 15\"",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 47,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "Which of the following is a valid way to define a function in JavaScript?",
+                "choices": [
+                    "function myFunction() {}",
+                    "let myFunction = function() {};",
+                    "const myFunction = () => {};",
+                    "All of the above"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 49,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "Which of the following is not a comparison operator in JavaScript?",
+                "choices": [
+                    "==",
+                    "!=",
+                    "<=",
+                    "++"
+                ],
+                "answer": 3
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 5,
+        "no_of_questions": 6,
+        "created_by_id": 1,
+        "create_by": "Soonmyung Hwang",
+        "module": 2,
+        "description": "Level 4 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 41,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What will be the output of the following code?\n```\nconsole.log(typeof null);\n```",
+                "choices": [
+                    "\"object\"",
+                    "\"null\"",
+                    "\"undefined\"",
+                    "\"string\""
+                ],
+                "answer": 0
+            },
+            {
+                "id": 42,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "Which of the following is not a valid JavaScript data type?",
+                "choices": [
+                    "string",
+                    "integer",
+                    "boolean",
+                    "undefined"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 43,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet x = 5;\nconsole.log(x++);\n```",
+                "choices": [
+                    "5",
+                    "6",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 44,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "Which of the following is not a valid way to declare a variable in JavaScript?",
+                "choices": [
+                    "let",
+                    "const",
+                    "var",
+                    "int"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 46,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet name = \"John\";\nconsole.log(`Hello ${name}!`);\n```",
+                "choices": [
+                    "\"Hello John!\"",
+                    "\"Hello ${name}!\"",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 48,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet x = 0;\nwhile(x < 5) {\n  console.log(x);\n  x++;\n}\n```",
+                "choices": [
+                    "0 1 2 3 4",
+                    "1 2 3 4 5",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 5,
+        "no_of_questions": 6,
+        "created_by_id": 2,
+        "create_by": "Simrat Bains",
+        "module": 2,
+        "description": "Level 4 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 41,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What will be the output of the following code?\n```\nconsole.log(typeof null);\n```",
+                "choices": [
+                    "\"object\"",
+                    "\"null\"",
+                    "\"undefined\"",
+                    "\"string\""
+                ],
+                "answer": 0
+            },
+            {
+                "id": 44,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "Which of the following is not a valid way to declare a variable in JavaScript?",
+                "choices": [
+                    "let",
+                    "const",
+                    "var",
+                    "int"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 45,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet x = 10;\nif(x > 5 && x < 15) {\n  console.log(\"x is between 5 and 15\");\n} else {\n  console.log(\"x is not between 5 and 15\");\n}\n```",
+                "choices": [
+                    "\"x is between 5 and 15\"",
+                    "\"x is not between 5 and 15\"",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 46,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet name = \"John\";\nconsole.log(`Hello ${name}!`);\n```",
+                "choices": [
+                    "\"Hello John!\"",
+                    "\"Hello ${name}!\"",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 47,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "Which of the following is a valid way to define a function in JavaScript?",
+                "choices": [
+                    "function myFunction() {}",
+                    "let myFunction = function() {};",
+                    "const myFunction = () => {};",
+                    "All of the above"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 49,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "Which of the following is not a comparison operator in JavaScript?",
+                "choices": [
+                    "==",
+                    "!=",
+                    "<=",
+                    "++"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 50,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet x = 5;\nlet y = \"5\";\nif(x == y) {\n  console.log(\"Equal\");\n} else {\n  console.log(\"Not equal\");\n}\n```",
+                "choices": [
+                    "\"Equal\"",
+                    "\"Not equal\"",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 5,
+        "no_of_questions": 6,
+        "created_by_id": 2,
+        "create_by": "Simrat Bains",
+        "module": 2,
+        "description": "Level 4 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 41,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What will be the output of the following code?\n```\nconsole.log(typeof null);\n```",
+                "choices": [
+                    "\"object\"",
+                    "\"null\"",
+                    "\"undefined\"",
+                    "\"string\""
+                ],
+                "answer": 0
+            },
+            {
+                "id": 44,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "Which of the following is not a valid way to declare a variable in JavaScript?",
+                "choices": [
+                    "let",
+                    "const",
+                    "var",
+                    "int"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 45,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet x = 10;\nif(x > 5 && x < 15) {\n  console.log(\"x is between 5 and 15\");\n} else {\n  console.log(\"x is not between 5 and 15\");\n}\n```",
+                "choices": [
+                    "\"x is between 5 and 15\"",
+                    "\"x is not between 5 and 15\"",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 46,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet name = \"John\";\nconsole.log(`Hello ${name}!`);\n```",
+                "choices": [
+                    "\"Hello John!\"",
+                    "\"Hello ${name}!\"",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 47,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "Which of the following is a valid way to define a function in JavaScript?",
+                "choices": [
+                    "function myFunction() {}",
+                    "let myFunction = function() {};",
+                    "const myFunction = () => {};",
+                    "All of the above"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 48,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet x = 0;\nwhile(x < 5) {\n  console.log(x);\n  x++;\n}\n```",
+                "choices": [
+                    "0 1 2 3 4",
+                    "1 2 3 4 5",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            }
+        ]
+    },
+    {
+        "id": 33,
+        "subject_id": 1,
+        "subject":"JavaScript",
+        "difficulty": 5,
+        "no_of_questions": 6,
+        "created_by_id": 1,
+        "create_by": "Soonmyung Hwang",
+        "module": 2,
+        "description": "Level 4 JavaScript multiple choice quiz",
+        "question": [
+            {
+                "id": 42,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "Which of the following is not a valid JavaScript data type?",
+                "choices": [
+                    "string",
+                    "integer",
+                    "boolean",
+                    "undefined"
+                ],
+                "answer": 1
+            },
+            {
+                "id": 43,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet x = 5;\nconsole.log(x++);\n```",
+                "choices": [
+                    "5",
+                    "6",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 44,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "Which of the following is not a valid way to declare a variable in JavaScript?",
+                "choices": [
+                    "let",
+                    "const",
+                    "var",
+                    "int"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 45,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet x = 10;\nif(x > 5 && x < 15) {\n  console.log(\"x is between 5 and 15\");\n} else {\n  console.log(\"x is not between 5 and 15\");\n}\n```",
+                "choices": [
+                    "\"x is between 5 and 15\"",
+                    "\"x is not between 5 and 15\"",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            },
+            {
+                "id": 49,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "Which of the following is not a comparison operator in JavaScript?",
+                "choices": [
+                    "==",
+                    "!=",
+                    "<=",
+                    "++"
+                ],
+                "answer": 3
+            },
+            {
+                "id": 50,
+                "type": "mcq",
+                "subject_id": 1,
+                "subject": "JavaScript",
+                "difficulty": 5,
+                "question": "What is the output of the following code?\n```\nlet x = 5;\nlet y = \"5\";\nif(x == y) {\n  console.log(\"Equal\");\n} else {\n  console.log(\"Not equal\");\n}\n```",
+                "choices": [
+                    "\"Equal\"",
+                    "\"Not equal\"",
+                    "undefined",
+                    "Error"
+                ],
+                "answer": 0
+            }
+        ]
+    }
+]
