@@ -1,6 +1,7 @@
 import React from 'react'
-import Divider from '@mui/material/Divider';
+import Divider from '@mui/material/Divider'
 import './question.css'
+
 
 export default function Question(props){
     let answerElements = ""
@@ -28,11 +29,25 @@ export default function Question(props){
             >
                 {answer}
             </p>))
-    }
 
-    function textChange(event){
-        const text = event.target.value
-        props.chooseAnswer(props.id, text)
+    }
+    let chosenAnswerStyle
+
+    console.log(props.choices[props.answer])
+
+    const renderChosenAnswerStyle = () => {
+      const { answer, choices, chosenAnswer } = props
+      if (choices[answer] === chosenAnswer) {
+        return (chosenAnswerStyle = {
+          ...answerStyle,
+          backgroundColor: '#55f371',
+        })
+      } else {
+        return (chosenAnswerStyle = {
+          ...answerStyle,
+          backgroundColor: '#fa3e41',
+        })
+      }
     }
 
     return (
@@ -54,3 +69,4 @@ export default function Question(props){
         </div>
     )
 }
+

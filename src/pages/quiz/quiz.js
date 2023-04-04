@@ -1,9 +1,10 @@
-import React from 'react';
+import React from 'react'
 import Question from './question'
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import Stack from '@mui/material/Stack';
-import parsingMultipleMCQ from '../../regex';
+import Button from '@mui/material/Button'
+import Container from '@mui/material/Container'
+import Stack from '@mui/material/Stack'
+import parsingMultipleMCQ from '../../regex'
+
 
 export default function Quiz(){
     const [quizData, setQuizData] = React.useState([{
@@ -38,24 +39,25 @@ export default function Quiz(){
         `Answer: B\n`+
         `On a scale from 1 to 10 with 10 being the hardest and 1 being the easiest, Using the formatting of the example above, generate ${total} different multiple choice ${difficulty} out of 10 difficulty JavaScript question.`;
 
-        const body = {
-            "model": "gpt-3.5-turbo",
-            "messages": [
-                {"role": "system", "content": "You are a quiz making bot."},
-                {"role": "user", "content": customTemplate}
-            ],
-            "temperature": 0.7,
-            "top_p": 1
-        }
 
-        const requestOptions = {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
-            },
-            body: JSON.stringify(body)
-        }
+    const body = {
+      model: 'gpt-3.5-turbo',
+      messages: [
+        { role: 'system', content: 'You are a quiz making bot.' },
+        { role: 'user', content: customTemplate },
+      ],
+      temperature: 0.7,
+      top_p: 1,
+    }
+
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+      },
+      body: JSON.stringify(body),
+    }
 
         fetch('https://api.openai.com/v1/chat/completions', requestOptions)
             .then(res => res.json())
@@ -83,14 +85,15 @@ export default function Quiz(){
             })
     },[])
 
-    //subject to change based on api
-    function changeQuizData(data){
-        setQuizData(data)
-    }
 
-    function updateChosenAnswer(id, choice){
-        // previous method when not using id to directly change data
-        /*
+  //subject to change based on api
+  function changeQuizData(data) {
+    setQuizData(data)
+  }
+
+  function updateChosenAnswer(id, choice) {
+    // previous method when not using id to directly change data
+    /*
         setQuizData(prevData=>{
             const newData = prevData.map(element=>{
                 return element.question === question ?
@@ -100,29 +103,32 @@ export default function Quiz(){
             return newData
         })
         */
-        //update method using id, should be faster than previous method
-        setQuizData(prevData=>{
-            let newData = [...prevData]
-            newData[id].chosenAnswer = choice
-            return newData
-        })
-        
+    //update method using id, should be faster than previous method
+    if (quizData[id].chosenAnswer) return
+    console.log(quizData[id])
+    setQuizData(prevData => {
+      let newData = [...prevData]
+      newData[id].chosenAnswer = choice
+      return newData
+    })
+  }
+
+  //   console.log(quizData)
+
+  //subject to change based on backend
+  function submitAnswers() {
+    let isFinished = true
+    const results = quizData.map(element => {
+      if (!element.chosenAnswer) {
+        isFinished = false
+      }
+      return isFinished
+    })
+    if (isFinished) {
+      console.log('Finished Quiz')
+      //Submit answer data
     }
 
-    //subject to change based on backend
-    function submitAnswers(){
-        let isFinished = true
-        const results = quizData.map(element => {
-            if(!element.chosenAnswer){
-                isFinished = false
-            }
-            return isFinished
-        })
-        if(isFinished){
-            console.log("Finished Quiz")
-            //Submit answer data
-        }
-    }
     const QuestionListElements = quizData.map(element=><Question
                                                 key={Math.random}
                                                 id={element.id}
@@ -149,4 +155,5 @@ export default function Quiz(){
             </Stack>
         </Container>
     )
+
 }
