@@ -128,7 +128,7 @@ export default function Quiz(){
                                                 id={element.id}
                                                 question={element.question}
                                                 choices={element.choices}
-                                                isWritten={element.isWritten}
+                                                /*isWritten={element.isWritten}*/
                                                 type = {element.type}
                                                 answer={element.answer}
                                                 chooseAnswer={updateChosenAnswer}
