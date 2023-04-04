@@ -20,7 +20,7 @@ export default function Question(props){
             backgroundColor: "#b7eef5"
         }
         
-        answerElements = props.answers.map(answer => (<p
+        answerElements = props.choices.map(answer => (<p
                 key={answer}
                 className="question"
                 style={answer===props.chosenAnswer?chosenAnswerStyle:answerStyle}
