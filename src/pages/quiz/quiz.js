@@ -9,24 +9,26 @@ export default function Quiz(){
     const [quizData, setQuizData] = React.useState([{
         id: 0,
         question: "test question",
-        choices: ["1","2","3"],
-        isWritten: false,
+        choices: ["1","2","3","4"],
+        // isWritten: false,
+        type : 'mcq',
         answer: "1",
         chosenAnswer: ""
     },
-    {
-        id: 1,
-        question: "test question 2",
-        choices: ["4","5","6"],
-        isWritten: true,
-        answer: "5",
-        chosenAnswer: ""
-    }])
+    // {
+    //     id: 1,
+    //     question: "test question 2",
+    //     choices: ["4","5","6"],
+    //     isWritten: true,
+    //     answer: "5",
+    //     chosenAnswer: ""
+    // }
+])
 
     React.useEffect(()=>{
         //fetch api and update question data here
         let difficulty = 7;
-        let total = 2;
+        let total = 5;
         const customTemplate = `Example of a multiple choice question:\n`+
         `Q1. What is the syntax for a for loop in JavaScript?\n`+
         `A. for(i=0, i < 10, i++\n`+
@@ -73,7 +75,7 @@ export default function Quiz(){
                         question.option4
                     ],
                     answer: question.answer,
-                    isWritten: false,
+                    // isWritten: false,
                     chosenAnswer: ''
                     });
                 });
@@ -127,6 +129,7 @@ export default function Quiz(){
                                                 question={element.question}
                                                 choices={element.choices}
                                                 isWritten={element.isWritten}
+                                                type = {element.type}
                                                 answer={element.answer}
                                                 chooseAnswer={updateChosenAnswer}
                                                 chosenAnswer={element.chosenAnswer}

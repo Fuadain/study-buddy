@@ -5,7 +5,7 @@ import './question.css'
 export default function Question(props){
     let answerElements = ""
     //might be a better way to deal with changing answer style
-    if(!props.isWritten){
+    if(props.type === 'mcq'){
         const answerStyle = {
             border: "2px solid blue",
             borderRadius: '5px',
@@ -38,17 +38,18 @@ export default function Question(props){
     return (
         <div>
             <h3>{props.question}</h3>
-            {props.isWritten ? 
+            {/* {props.isWritten ? 
             <textarea 
                 className='text-question'   
                 onChange={(event)=>textChange(event)}
             >
                 {props.answer}
             </textarea>
-            :
+            : */}
             <div>
                 {answerElements}
-            </div>}
+            </div>
+            {/* } */}
             <Divider/>
         </div>
     )
