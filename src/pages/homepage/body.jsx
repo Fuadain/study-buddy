@@ -1,48 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Stack, Typography, Button, Box } from '@mui/material';
+import { Grid, Typography, Button, Box } from '@mui/material';
 
 const Body = () => (
-    <Stack
+    <Grid
+        container
         direction="row"
+        justifyContent="space-between"
         alignItems="center"
         p={2}
-        sx={{ position: 'sticky', background: '#00B2FF', top: 0, justifyContent: 'flex-start' }}
+        sx={{ background: '#00B2FF', justifyContent: 'flex-start', height: '100%' }}
     >
-        <Box>
+        <Grid item xs={12} sm={6}>
+            <Box>
+                <Typography variant="h3">
+                    Study Buddy! <br />
+                    AI For All <br />
+                    And Your Go To When Quizzing!
+                </Typography>
+                <Typography variant="body1" sx={{ mt: '50px', color: '#000' }}>
+                    As a verb, quiz means to ask a series of questions. A teacher might quiz his students on the material covered{' '}
+                    in lecture the day before. Or the day after, who knows what a teacher really thinks!
+                </Typography>
+                <Link to="/learnMore">
+                    <Button variant="contained" sx={{ backgroundColor: 'red', mt: '20px' }}>
+                        Learn More
+                    </Button>
+                </Link>
+            </Box>
+        </Grid>
 
-            <Typography variant='h3'>
-                Study Buddy! <br />
-                AI For All <br />
-                And Your Go To When Quizzing!
-            </Typography>
-            <Typography variant='body1' sx={{ mt: '50px', color: '#000' }}>
+        <Grid item xs={12} sm={6}>
+            <img src={require('./logo.png')} alt={'logo'} style={{ height: '500px', margin: '20px' }} />
+        </Grid>
+    </Grid>
+);
 
-                As a verb, quiz means to ask a series of questions. A teacher might quiz his students on the material covered  <br />
-                in lecture the day before. Or the day after, who knows what a teacher really thinks!
-
-            </Typography>
-
-            <Link
-          to='/learnMore'
-        >
-            <Button variant="contained" sx={{ backgroundColor: 'red', mt: '20px' }}>Learn More</Button>
-        </Link>
-            
-        </Box>
-
-        <img
-            src={require('./logo.png')}
-            alt={'logo'}
-            style={{
-                height: '500px',
-                margin: '20px'
-            }}
-
-        />
-    </Stack>
-
-)
-
-
-export default Body
+export default Body;

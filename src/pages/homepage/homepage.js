@@ -2,21 +2,14 @@ import React from 'react';
 import { Stack } from '@mui/material';
 import { Navbar, Body, Footer } from './';
 
-
-const homepage = () => {
+const Homepage = () => {
     return (
-
-        <Stack>
-
+        <Stack height="100vh">
             <Navbar />
-
             <Body />
-
             <Footer />
-
         </Stack>
+    );
+};
 
-    )
-}
-
-export default homepage
+export default Homepage;
