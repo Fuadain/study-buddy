@@ -31,7 +31,10 @@ const Body = () => (
         </Grid>
 
         <Grid item xs={12} sm={6}>
-            <img src={require('./logo.png')} alt={'logo'} style={{ height: '500px', margin: '20px' }} />
+            <Box height={{xs:'200px', sm: '400px', md: '500px'}}>
+            <img src={require('./logo.png')} alt={'logo'} height='100%' />
+            </Box>
+            
         </Grid>
     </Grid>
 );
