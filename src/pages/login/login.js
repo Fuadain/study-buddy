@@ -19,10 +19,21 @@ export default function Login(){
     const [error, setError] = React.useState(false);
     const [helperText, setHelperText] = React.useState('');
 
+     /* 
+  placeholder post request to server
+
+  axios.post('/login', {
+    username: username,
+    password: password,
+    profileType: teacher_student
+  })
+  */
+
     const handleRadioChange = (event) => {
         setValue(event.target.value);
         setHelperText(' ');
         setError(false);
+
     };
 
     const handleSubmit = (event) => {
@@ -43,37 +54,35 @@ export default function Login(){
     return (
         <Stack
             sx={{
-            margin: "0 auto",
-            width: '50%',
-            display: 'flex', 
-            flexDirection: 'column', 
+            padding: "7% 0 12.7% 0",
+            width: '100%',
+            height: '100%',
             alignItems:'center', 
             justifyContent: 'center',
-            alignSelf: 'center',
-            p:2,
+            backgroundColor: '#00b3ff83'
         }}
-            direction="column"
         >
             <Typography variant='h3' gutterBottom>
                 Login
             </Typography>
+            <form className='login-form' onSubmit={handleSubmit}>
             <Stack
                 sx={{
-                    width: '70ch',
+                    width: '60ch',
                     height: '100%',
-                    backgroundColor: '#a1edd3',
+                    backgroundColor: '#00B2FF',
                     border: 1,
                     borderColor: 'black',
                     borderRadius: 2,
-                    padding: 2,
-                    display: 'flex', 
-                    justifyContent: 'center',
+                    padding: 5,
                     alignItems: 'center'
                 }}
             >
-                <form className='login-form' onSubmit={handleSubmit}>
+                
                 {/* Username Input Box */}
-                    <FormControl sx={{width: '50ch', alignSelf: 'center'}}>
+                    <FormControl sx={{width: '50ch', 
+                                    backgroundColor:'white', 
+                                    margin:'0 0 1rem 2%'}}>
                     <InputLabel htmlFor="component-outlined">Username or email</InputLabel>
                     <OutlinedInput
                         id="component-outlined"
@@ -82,7 +91,11 @@ export default function Login(){
                     </FormControl>
 
                     {/* Password Input Box */}
-                    <FormControl sx={{width: '50ch', alignSelf: 'center'}} variant="outlined">
+                    <FormControl sx={{width: '50ch', 
+                                    backgroundColor:'white', 
+                                    margin:'0 0 1rem 2%'
+                                    }}
+                                    variant="outlined">
                     <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                     <OutlinedInput
                         id="outlined-adornment-password"
@@ -103,13 +116,13 @@ export default function Login(){
                     />
                     </FormControl>
                     <Link to="/forgot-password">
-                        <Typography variant="overline" display="block" align="center" gutterBottom>
+                        <Typography variant="overline" display="block" align="center" color="rgba(50,50,50,1)" gutterBottom>
                             Forgot Password? 
                         </Typography>
                     </Link>
 
                     {/* Teacher or Student Buttons */}
-                    <FormControl sx={{alignSelf: 'center'}} error={error} variant="standard">
+                    <FormControl sx={{}} error={error} variant="standard">
                         <FormLabel id="demo-row-radio-buttons-group-label">Are you a teacher or student?</FormLabel>
                         <RadioGroup
                             row
@@ -123,11 +136,11 @@ export default function Login(){
                         <FormHelperText>{helperText}</FormHelperText>
                     </FormControl>
     
-                    <Button sx={{width: '25ch', alignSelf: 'center'}} type="submit" variant="outlined" size="medium">Login</Button>
-             </form>
+                    <Button sx={{width: '25ch', alignSelf: 'center', backgroundColor:'#00b3ff8', color: 'black'}} type="submit" variant="contained" size="medium">Login</Button>
+             
             <Divider sx={{marginTop: 2, marginBottom: 2}} variant="middle" />
             <Button sx={{color: 'white', backgroundColor: '#ef4443', width: '25ch', alignSelf: 'center'}} type="submit" variant="outlined" size="medium">Login with Google</Button>
-            </Stack>
+            </Stack></form>
         </Stack>
     )
 }

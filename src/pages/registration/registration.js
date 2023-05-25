@@ -13,8 +13,20 @@ const Register = () => {
   });
 
   const handleChange = (e) => {
+    e.preventDefault();
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+
+  /* 
+  placeholder post request to server
+
+  axios.post('/registration', {
+    username: inputs.username,
+    email: inputs.email,
+    password: inputs.password,
+    profileType: inputs.teacher_student
+  })
+  */
 
   console.log(inputs);
   return (
