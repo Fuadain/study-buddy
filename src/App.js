@@ -1,5 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useCookies } from 'react-cookie';
+
+import ProtectedRoute from "./components/protected-route";
+import UnprotectedRoute from "./components/unprotected-route";
 
 import {
   Homepage,
@@ -9,8 +13,8 @@ import {
   Dashboard,
   ClassBoard,
   Quiz,
-  QuizGen,
-  QuizAction,
+  QuizAssign,
+  QuizCreator,
   AccountPage,
   Contact,
   LearnMore,
@@ -18,20 +22,55 @@ import {
 } from "./";
 
 function App() {
+  const [cookies, setCookie, removeCookie] = useCookies(['authToken'])
+  const authToken = "test"//cookies.authToken
+  const hostname = "http://localhost:3000"
+  
+  let axiosConfig = null
+  if(authToken)
+    axiosConfig = { headers: {Authorization: `Bearer ${authToken}`} }
+    
+  function saveToken(token){
+    setCookie('authToken', token, { path: '/' })
+  }
+
+  //need to also tell server to close session
+  function logout(){
+    removeCookie('authToken')
+  }
+  
   return (
     <div>
       <Router>
         <Routes>
           <Route exact path="/" element={<Homepage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/registration" element={<Registration />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/classboard" element={<ClassBoard />} />
-          <Route path="/quiz" element={<Quiz />} />
-          <Route path="/quiz-gen" element={<QuizGen />} />
-          <Route path="/quiz-action" element={<QuizAction />} />
-          <Route path="/account" element={<AccountPage />} />
+          <Route path="/login" element={<UnprotectedRoute authToken={authToken}>
+              <Login saveToken={(token)=>saveToken(token)}/>
+            </UnprotectedRoute>} />
+          <Route path="/forgot-password" element={<UnprotectedRoute authToken={authToken}>
+              <ForgotPassword />
+            </UnprotectedRoute>} />
+          <Route path="/registration" element={<UnprotectedRoute authToken={authToken}>
+              <Registration />
+            </UnprotectedRoute>} />
+          <Route path="/dashboard" element={<ProtectedRoute authToken={authToken}>
+              <Dashboard />
+            </ProtectedRoute>} />
+          <Route path="/classboard" element={<ProtectedRoute authToken={authToken}>
+              <ClassBoard />
+            </ProtectedRoute>} />
+          <Route path="/quiz" element={<ProtectedRoute authToken={authToken}>
+              <Quiz />
+            </ProtectedRoute>} />
+            <Route path="/quiz-assign" element={<ProtectedRoute authToken={authToken}>
+              <QuizAssign />
+            </ProtectedRoute>} />
+          <Route path="/quiz-creator" element={<ProtectedRoute authToken={authToken}>
+              <QuizCreator />
+            </ProtectedRoute>} />
+          <Route path="/account" element={<ProtectedRoute authToken={authToken}>
+              <AccountPage />
+            </ProtectedRoute>} />
 
           <Route path="/contact" element={<Contact />} />
           <Route path="/learnMore" element={<LearnMore />} />

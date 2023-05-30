@@ -1,8 +1,8 @@
 import React from 'react';
-import './quiz-action.css';
-import QuizTime from './quiz-time'
+import './quiz-assign.css';
+import QuizTime from './comp/quiz-time'
 import Select from 'react-select';
-import ClassSelectStyle from './class-select-style';
+import ClassSelectStyle from './comp/class-select-style';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';

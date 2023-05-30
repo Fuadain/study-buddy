@@ -1,12 +1,31 @@
 import React from 'react'
-import Divider from '@mui/material/Divider';
-import './question.css'
+import Divider from '@mui/material/Divider'
+
 
 export default function Question(props){
     let answerElements = ""
     //might be a better way to deal with changing answer style
-    if(!props.isWritten){
-        const answerStyle = {
+    let chosenAnswerStyle;
+    let answerStyle;
+    
+    //Renders red for wrong answer green for correct answer
+    const renderChosenAnswerStyle = () => {
+      const { answer, choices, chosenAnswer } = props
+      if (choices[answer] === chosenAnswer) {
+        return (chosenAnswerStyle = {
+          ...answerStyle,
+          backgroundColor: '#55f371',
+        })
+      } else {
+        return (chosenAnswerStyle = {
+          ...answerStyle,
+          backgroundColor: '#fa3e41',
+        })
+      }
+    }
+    
+    if(props.type === 'mcq'){
+        answerStyle = {
             border: "2px solid blue",
             borderRadius: '5px',
             paddingTop: '3px',
@@ -15,40 +34,27 @@ export default function Question(props){
             paddingRight: '6px',
             backgroundColor:'white',
         }
-        const chosenAnswerStyle = {
-            ...answerStyle,
-            backgroundColor: "#b7eef5"
-        }
         
-        answerElements = props.answers.map(answer => (<p
+        
+        answerElements = props.choices.map(answer => (<p
                 key={answer}
-                className="question"
-                style={answer===props.chosenAnswer?chosenAnswerStyle:answerStyle}
+                className='question'
+                style={answer===props.chosenAnswer ? renderChosenAnswerStyle() : answerStyle}
                 onClick={()=>props.chooseAnswer(props.id, answer)}
             >
                 {answer}
             </p>))
+
     }
 
-    function textChange(event){
-        const text = event.target.value
-        props.chooseAnswer(props.id, text)
-    }
+    
 
     return (
         <div>
             <h3>{props.question}</h3>
-            {props.isWritten ? 
-            <textarea 
-                className='text-question'   
-                onChange={(event)=>textChange(event)}
-            >
-                {props.answer}
-            </textarea>
-            :
             <div>
                 {answerElements}
-            </div>}
+            </div>
             <Divider/>
         </div>
     )
