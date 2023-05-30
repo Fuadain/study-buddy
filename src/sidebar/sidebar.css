@@ -1,23 +1,32 @@
 
-#sidebar{
-    margin-top: -10.1vh;
+#sidebar-container{
+    top: 0;
     background-color: #00B2FF;
     position: absolute;
     width: 20vw;
     height: 100vh;
     display: flex;
     flex-flow: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-start;
 }
 #sidebar-welcome{
     font-size: 2rem;
+    overflow: auto;
 }
-.sidebar-option{
+.sidebar-list-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sidebar-option-link{
     font-size: 1.5rem;
+    text-align: center;
+    width: 20vw;
+
 }
-nav#sidebar > ul{
-    width: 80%;
+#sidebar-container ul{
+    width: 100%;
     list-style: none;
     line-height: 50px;
 }

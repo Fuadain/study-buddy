@@ -10,9 +10,7 @@ export default function ForgotPassword() {
     <main class="container">
       <Stack
         sx={{
-          width: '50%',
-          display: 'flex',
-          flexDirection: 'column',
+          width: '100%',
           alignItems: 'center',
           justifyContent: 'center',
           p: 2,
