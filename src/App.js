@@ -22,6 +22,8 @@ import {
 } from "./";
 
 function App() {
+  //to access unprotected routes like login and register, uncomment cookies.authToken
+  //to access protected routes, add a value to authToken
   const [cookies, setCookie, removeCookie] = useCookies(['authToken'])
   const authToken = "test"//cookies.authToken
   const hostname = "http://localhost:3000"
