@@ -12,27 +12,27 @@ export default function Sidebar(){
 
     function studentSidebar(){
         return (
-            <ul>
+            <ul className="sidebar-list-container">
             <li><h2 id="sidebar-welcome">Welcome {firstName}!</h2></li>
-            <li><NavLink to="/dashboard" id="sidebar-profile" className="sidebar-option" activeClassName="active">Home</NavLink></li>
-            <li><NavLink to="/account" id="sidebar-profile" className="sidebar-option" activeClassName="active">Account</NavLink></li>
-            <li><NavLink to="/logout" id="sidebar-logout" className="sidebar-option" activeClassName="active">Logout</NavLink></li>
+            <NavLink to="/dashboard" id="sidebar-profile" className="sidebar-option-link" activeClassName="active"><li className="sidebar-option">Home</li></NavLink>
+            <NavLink to="/account" id="sidebar-profile" className="sidebar-option-link" activeClassName="active"><li className="sidebar-option">Account</li></NavLink>
+            <NavLink to="/logout" id="sidebar-logout" className="sidebar-option-link" activeClassName="active"><li className="sidebar-option">Logout</li></NavLink>
         </ul>
         )
     }
 
     function teacherSidebar(){
         return (
-            <ul>
+            <ul className="sidebar-list-container">
             <li><h2 id="sidebar-welcome">Welcome {firstName}!</h2></li>
-            <li><NavLink to="/dashboard" id="sidebar-profile" className="sidebar-option" activeClassName="active">Home</NavLink></li>
-            <li><NavLink to="/account" id="sidebar-profile" className="sidebar-option" activeClassName="active">Account</NavLink></li>
-            <li><NavLink to="/logout" id="sidebar-logout" className="sidebar-option" activeClassName="active">Logout</NavLink></li>
+            <NavLink to="/dashboard" id="sidebar-profile" className="sidebar-option-link" activeClassName="active"><li className="sidebar-option">Home</li></NavLink>
+            <NavLink to="/account" id="sidebar-profile" className="sidebar-option-link" activeClassName="active"><li className="sidebar-option">Account</li></NavLink>
+            <NavLink to="/logout" id="sidebar-logout" className="sidebar-option-link" activeClassName="active"><li className="sidebar-option">Logout</li></NavLink>
         </ul>
         )
     }
     return (
-        <nav id="sidebar">
+        <nav id="sidebar-container">
         {isTeacher ? teacherSidebar() : studentSidebar()}               
         </nav>
     )
