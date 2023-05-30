@@ -41,5 +41,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Note: this version does not include the React modules",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
