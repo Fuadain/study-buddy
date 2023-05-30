@@ -3,7 +3,7 @@ import Question from './question'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import Stack from '@mui/material/Stack'
-import parsingMultipleMCQ from '../../../../regex'
+import parsingMultipleMCQ from '../../../regex'
 
 export default function QuizPreview(props){
     const [quizData, setQuizData] = React.useState([{

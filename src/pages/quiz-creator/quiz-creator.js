@@ -1,5 +1,5 @@
 import React from 'react';
-import './quiz-creation.css';
+import './quiz-creator.css';
 import Container from '@mui/material/Container'
 import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
@@ -32,7 +32,7 @@ export default function QuizGen(){
 
     function changeInputData(event){
         const input = event.target
-
+ 
         setInputData(prevData => {
             let newData = {
                 ...prevData,
@@ -42,7 +42,7 @@ export default function QuizGen(){
         })
     }
 
-    function handleSubmit(){
+    function getPreview(){
         setPreviewQuiz(true)
     }
 
@@ -71,7 +71,7 @@ export default function QuizGen(){
                     <label>Number of Questions:</label>
                     <input type="number" name="questionNum" id="questionNum" required value={inputData.questionNum} onChange={changeInputData}/>
                 </Stack>
-                <Button onClick={handleSubmit} variant="contained">Generate Quiz</Button>
+                <Button onClick={getPreview} variant="contained">Generate Quiz</Button>
             </Stack>
             {previewQuiz?<QuizPreview difficulty={inputData.difficulty} subject={inputData.subject} questionNum={inputData.questionNum}/>:""}
         </Container>

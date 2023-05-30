@@ -11,7 +11,7 @@ export { default as Dashboard } from "./pages/dashboard/dash/dashboard";
 export { default as ClassBoard } from "./pages/dashboard/classboard/classboard";
 export { default as Quiz } from "./pages/quiz/quiz";
 export { default as QuizAssign } from "./pages/quiz-assign/quiz-assign";
-export { default as QuizCreator } from "./pages/quiz-creation/quiz-creation";
+export { default as QuizCreator } from "./pages/quiz-creator/quiz-creator";
 export { default as AccountPage } from "./pages/account/account";
 export { default as Contact } from "./pages/homepage/components/contact";
 export { default as LearnMore } from "./pages/homepage/components/learnMore.jsx";
