@@ -1,6 +1,13 @@
-#keywords {
-    resize:none;
-    overflow-y: scroll;
-    width: 100%;
-    height: 120px;
+.preview > *{
+ margin-top: 1em;
+ margin-bottom: 1em;
+}
+
+.preview-question{
+    cursor: pointer;
+}
+
+.preview-question:hover{
+    color: white;
+    background-color: black;
 }

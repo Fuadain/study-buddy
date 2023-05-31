@@ -1,5 +1,8 @@
 import React from 'react'
-import Divider from '@mui/material/Divider'
+import { Divider } from '@mui/material'
+
+//could use stopPropagation and place an onClick for changeEditData(false)
+//in QuizPreview to exit the edit state when clicking away from a question or choice
 
 // if question or choice is clicked, it's content can be edited
 export default function Question(props){
@@ -15,7 +18,7 @@ export default function Question(props){
                 <input type="button" value="Save" onClick={()=>props.changeEditData(false)}/>
                 </div>)
         else
-            return (<p key={choiceIndex} onClick={()=>props.changeEditData(true, props.index, choiceIndex)}>
+            return (<p key={choiceIndex} className="preview-question" onClick={()=>props.changeEditData(true, props.index, choiceIndex)}>
                 {choice}
             </p>)
     })
@@ -26,10 +29,10 @@ export default function Question(props){
         <input type="textbox" value={props.question} onChange={(e)=>props.changeQuestionData(props.index, "question", e)}/>
         <input type="button" value="Save" onClick={()=>props.changeEditData(false)}/>
     </div>
-    :<h3 onClick={()=>props.changeEditData(true, props.index)}>{props.question}</h3>
+    :<h3 className="preview-question" onClick={()=>props.changeEditData(true, props.index)}>{props.index + 1}) {props.question}</h3>
 
     return (
-        <div>
+        <div className="preview">
             {questionElement}
             <div>
                 {choiceElements}
