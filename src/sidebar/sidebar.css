@@ -1,8 +1,8 @@
 
 #sidebar-container{
+    position: fixed;
     top: 0;
     background-color: #00B2FF;
-    position: absolute;
     width: 20vw;
     height: 100vh;
     display: flex;
