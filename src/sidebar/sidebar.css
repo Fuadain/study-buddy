@@ -5,6 +5,7 @@
     background-color: #00B2FF;
     width: 20vw;
     height: 100vh;
+    min-width: 130px;
     display: flex;
     flex-flow: column;
     align-items: flex-end;
