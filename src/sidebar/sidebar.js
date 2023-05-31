@@ -5,7 +5,12 @@ import { NavLink } from 'react-router-dom';
 export default function Sidebar(){
     const [isTeacher, identifyUser] = React.useState(false);
     const [firstName, inputFirstName] = React.useState("Student")
-
+/* 
+USE URL that obtains info from SQL db
+axios.get('/login',{
+    name: name, (set state using this name)
+    profileType: teacher_student
+}) */
     React.useEffect(() => {
         isTeacher ? inputFirstName('Teacher') : inputFirstName('Student');
       }, [isTeacher]);
