@@ -6,18 +6,17 @@ import {
 } from '@mui/material';
 
 export default function ForgotPassword() {
+  //Should there be a back button to go back to login?
   return (
-    <main class="container">
       <Stack
         sx={{
           width: '100%',
+          height: '100%',
           alignItems: 'center',
           justifyContent: 'center',
-          p: 2,
-          backgroundColor: "#a1edd3",
-          border: 1,
-          borderColor: 'black',
-          borderRadius: 2
+          pt: 15,
+          pb: 29,
+          backgroundColor: "#a1edd3"
 
         }}
       >
@@ -27,11 +26,13 @@ export default function ForgotPassword() {
         <form>
           <Stack
             sx={{
-              display: 'flex',
-              flexDirection: 'column',
+              border: 2,
+              borderRadius: 2,
+              borderColor: 'rgba(0,0,0,0.4)',
+              mt: 6,
               alignItems: 'center',
               justifyContent: 'center',
-              p: 2
+              p: 3
             }}
           >
             <FormControl sx={{ m: 1, width: '40vw', marginBottom: '20px' }}>
@@ -48,7 +49,5 @@ export default function ForgotPassword() {
           </Stack>
         </form>
       </Stack>
-
-    </main>
   )
 }

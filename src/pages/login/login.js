@@ -31,9 +31,8 @@ export default function Login(){
 
     const handleRadioChange = (event) => {
         setValue(event.target.value);
-        setHelperText(' ');
+        setHelperText('');
         setError(false);
-
     };
 
     const handleSubmit = (event) => {
@@ -81,8 +80,8 @@ export default function Login(){
                 
                 {/* Username Input Box */}
                     <FormControl sx={{width: '50ch', 
-                                    backgroundColor:'white', 
-                                    margin:'0 0 1rem 2%'}}>
+                                    margin:'0 0 1rem 2%'}}
+                                    >
                     <InputLabel htmlFor="component-outlined">Username or email</InputLabel>
                     <OutlinedInput
                         id="component-outlined"
@@ -92,7 +91,6 @@ export default function Login(){
 
                     {/* Password Input Box */}
                     <FormControl sx={{width: '50ch', 
-                                    backgroundColor:'white', 
                                     margin:'0 0 1rem 2%'
                                     }}
                                     variant="outlined">
@@ -133,7 +131,7 @@ export default function Login(){
                             <FormControlLabel value="Teacher" control={<Radio />} label="Teacher" />
                             <FormControlLabel value="Student" control={<Radio />} label="Student" />
                         </RadioGroup>
-                        <FormHelperText>{helperText}</FormHelperText>
+                        {helperText ? <FormHelperText>{helperText}</FormHelperText> : ""}
                     </FormControl>
     
                     <Button sx={{width: '25ch', alignSelf: 'center', backgroundColor:'#00b3ff8', color: 'black'}} type="submit" variant="contained" size="medium">Login</Button>
