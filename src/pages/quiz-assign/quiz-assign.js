@@ -3,12 +3,13 @@ import './quiz-assign.css';
 import QuizTime from './comp/quiz-time'
 import Select from 'react-select';
 import ClassSelectStyle from './comp/class-select-style';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import Container from '@mui/material/Container';
-import Divider from '@mui/material/Divider';
+import { Button, Box, Stack, Container, Divider } from '@mui/material';
+import { useNavigate } from 'react-router-dom'
+import Navbar from '../../navbar/navbar'
+import Sidebar from '../../sidebar/sidebar';
 
 export default function QuizAction(){
+    const navigate = useNavigate()
     const [inputData, setInputData] = React.useState({
         classes:[],
         startDate:null,
@@ -77,43 +78,60 @@ export default function QuizAction(){
         })
     }
 
-    // for assigning to multiple classes, need something better than select
-    console.log(inputData.startDate)
+    //didn't use navlink because it messed with the mui button's styling
+    function goCreator(){
+        navigate("/quiz-creator")
+    }
+
     return (
-        <Container maxWidth="sm">
-            <Stack spacing={4} mt={4}>
-                <Button
-                    variant="contained" 
-                    onClick={printQuiz}
-                    sx={{width:"50%", alignSelf: "center"}}
-                >
-                    Print Out
-                </Button>
-                <Divider/>
-                <div>
-                    <label>Assign Test To Class</label>
-                    <Select
-                        isMulti
-                        name="classes"
-                        options={classOptions}
-                        className="basic-multi-select"
-                        classNamePrefix="select"
-                        onChange={changeSelectedClasses}
-                        defaultValue={inputData.classes}
-                        styles={ClassSelectStyle}
-                        required
-                    />
-                </div>
-                <QuizTime startDate={inputData.startDate} endDate={inputData.endDate} changeDate={changeDate}/>
-                <Button 
-                    variant="contained" 
-                    onClick={assignQuiz}
-                    sx={{width:"50%", alignSelf: "center"}}
-                >
-                    Assign Quiz
-                </Button>
-            </Stack>
-        </Container>
+        <Box>
+            <Navbar pageName="Assign Quiz"/>
+            <Sidebar/>
+            <Container maxWidth="sm" sx={{ml: '25vw', mr: '5vw', pt: '3vh'}}>
+                <Stack spacing={4} mt={4}>
+                    <Stack direction="row" spacing={1}>
+                        <Button
+                            variant="contained" 
+                            onClick={printQuiz}
+                            sx={{width:"50%", alignSelf: "center"}}
+                        >
+                            Print Out
+                        </Button>
+                        <Button
+                            variant="contained" 
+                            sx={{width:"50%", alignSelf: "center"}}
+                            onClick={goCreator}
+                            >
+                            Return to Creator
+                        </Button>
+                        
+                    </Stack>
+                    <Divider/>
+                    <div>
+                        <label>Assign Test To Class</label>
+                        <Select
+                            isMulti
+                            name="classes"
+                            options={classOptions}
+                            className="basic-multi-select"
+                            classNamePrefix="select"
+                            onChange={changeSelectedClasses}
+                            defaultValue={inputData.classes}
+                            styles={ClassSelectStyle}
+                            required
+                        />
+                    </div>
+                    <QuizTime startDate={inputData.startDate} endDate={inputData.endDate} changeDate={changeDate}/>
+                    <Button 
+                        variant="contained" 
+                        onClick={assignQuiz}
+                        sx={{width:"50%", alignSelf: "center"}}
+                    >
+                        Assign Quiz
+                    </Button>
+                </Stack>
+            </Container>
+        </Box>
     )
 }
 

@@ -60,8 +60,10 @@ export default function QuizCreator(){
             <Navbar pageName={pageName}/>
             <Sidebar />
             <Stack direction="row" height="88vh" sx={{ml: '25vw', mr: '5vw', pt: '3vh'}}>
-            {previewQuiz?<QuizPreview difficulty={inputData.difficulty} subject={inputData.subject} questionNum={inputData.questionNum}/>:""}
-                <Box maxWidth="sm" sx={{ml: "auto"}}>
+                <Box width="50vw" height="auto" sx={{pl:"4px", pr:"4px", mr:"5px", overflowY: 'auto', backgroundColor: "#f2f2f4"}}>
+                    {previewQuiz?<QuizPreview difficulty={inputData.difficulty} subject={inputData.subject} questionNum={inputData.questionNum}/>:""}
+                </Box>
+                <Box minWidth="240px" sx={{ml: "auto"}}>
                     <Stack spacing={3}>
                         <Stack>
                             <label>Test Name:</label>

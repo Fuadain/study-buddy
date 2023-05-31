@@ -94,11 +94,9 @@ export default function QuizPreview(props){
       />)
 
     return (
-        <Box width="50vw" height="auto" sx={{mr:"5px", overflowY: 'auto', backgroundColor: "#f2f2f4"}}>
           <Stack spacing={3} >
             {QuestionListElements}
           </Stack>
-        </Box>
       )
 }
 
