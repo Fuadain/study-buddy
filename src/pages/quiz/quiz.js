@@ -50,12 +50,12 @@ export default function Quiz({location}) {
   }
 
   function updateChosenAnswer(id, choice) {
-    if (quizData[id].chosenAnswer) return
-    setQuizData(prevData => {
-      let newData = [...prevData]
-      newData[id].chosenAnswer = choice
-      return newData
-    })
+    if (quizData[id].chosenAnswer)
+      setQuizData(prevData => {
+        let newData = [...prevData]
+        newData[id].chosenAnswer = choice
+        return newData
+      })
   }
 
   //subject to change based on backend

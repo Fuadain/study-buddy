@@ -9,7 +9,7 @@ export default function Question(props){
     let answerStyle;
     
     //Renders red for wrong answer green for correct answer
-    const renderChosenAnswerStyle = () => {
+    const renderAnswers = () => {
       const { answer, choices, chosenAnswer } = props
       if (choices[answer] === chosenAnswer) {
         return (chosenAnswerStyle = {
@@ -23,7 +23,7 @@ export default function Question(props){
         })
       }
     }
-    
+
     if(props.type === 'mcq'){
         answerStyle = {
             border: "2px solid blue",
@@ -34,12 +34,16 @@ export default function Question(props){
             paddingRight: '6px',
             backgroundColor:'white',
         }
+        chosenAnswerStyle = {
+          ...answerStyle,
+          backgroundColor: "#d2d7db"
+        }
         
         
         answerElements = props.choices.map(answer => (<p
                 key={answer}
                 className='question'
-                style={answer===props.chosenAnswer ? renderChosenAnswerStyle() : answerStyle}
+                style={answer===props.chosenAnswer ? chosenAnswerStyle : answerStyle}
                 onClick={()=>props.chooseAnswer(props.id, answer)}
             >
                 {answer}
