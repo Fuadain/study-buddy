@@ -15,39 +15,19 @@ export default function Login(){
           event.preventDefault();
     };
 
-    const [value, setValue] = React.useState('');
-    const [error, setError] = React.useState(false);
-    const [helperText, setHelperText] = React.useState('');
-
      /* 
   placeholder post request to server
 
   axios.post('/login', {
     username: username,
     password: password,
-    profileType: teacher_student
+    type: teacher_student
   })
   */
 
-    const handleRadioChange = (event) => {
-        setValue(event.target.value);
-        setHelperText('');
-        setError(false);
-    };
-
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        if (value === 'Teacher') {
-            setError(false);
-        } 
-        else if (value === 'Student') {
-            setError(false);
-        } 
-        else {
-            setHelperText('Please select an option.');
-            setError(true);
-        }
+        //put a regex to ensure an email is inputted?
     };
 
     return (
@@ -82,7 +62,7 @@ export default function Login(){
                     <FormControl sx={{width: '50ch', 
                                     margin:'0 0 1rem 2%'}}
                                     >
-                    <InputLabel htmlFor="component-outlined">Username or email</InputLabel>
+                    <InputLabel htmlFor="component-outlined">Email</InputLabel>
                     <OutlinedInput
                         id="component-outlined"
                         label="Username or email"
@@ -118,21 +98,6 @@ export default function Login(){
                             Forgot Password? 
                         </Typography>
                     </Link>
-
-                    {/* Teacher or Student Buttons */}
-                    <FormControl sx={{}} error={error} variant="standard">
-                        <FormLabel id="demo-row-radio-buttons-group-label">Are you a teacher or student?</FormLabel>
-                        <RadioGroup
-                            row
-                            aria-labelledby="demo-row-radio-buttons-group-label"
-                            name="row-radio-buttons-group"
-                            onChange={handleRadioChange}
-                        >
-                            <FormControlLabel value="Teacher" control={<Radio />} label="Teacher" />
-                            <FormControlLabel value="Student" control={<Radio />} label="Student" />
-                        </RadioGroup>
-                        {helperText ? <FormHelperText>{helperText}</FormHelperText> : ""}
-                    </FormControl>
     
                     <Button sx={{width: '25ch', alignSelf: 'center', backgroundColor:'#00b3ff8', color: 'black'}} type="submit" variant="contained" size="medium">Login</Button>
              

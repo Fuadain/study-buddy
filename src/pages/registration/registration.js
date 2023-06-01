@@ -5,11 +5,12 @@ import "./registration.css";
 
 const Register = () => {
   const [inputs, setInputs] = useState({
-    username: "",
     email: "",
+    firstname: "",
+    lastname: "",
     password: "",
     confirm_password: "",
-    teacher_student: "",
+    type: "",
   });
 
   const handleChange = (e) => {
@@ -24,7 +25,7 @@ const Register = () => {
     username: inputs.username,
     email: inputs.email,
     password: inputs.password,
-    profileType: inputs.teacher_student
+    type: inputs.type
   })
   */
 
@@ -34,13 +35,7 @@ const Register = () => {
       <div className="register">
         <h1 className="registration-header">Create a New Account</h1>
         <form className="registration-form" action="">
-          <button className="google-btn">
-            <i class="fa-brands fa-google"></i>
-            <span className="registration-google-span">
-              Continue with Google
-            </span>
-          </button>
-          <p className="registration-p">or</p>
+          
 
           <input
             className="registration-input"
@@ -54,8 +49,16 @@ const Register = () => {
             className="registration-input"
             required
             type="text"
-            placeholder="Username"
-            name="username"
+            placeholder="First Name"
+            name="firstname"
+            onChange={handleChange}
+          />
+          <input
+            className="registration-input"
+            required
+            type="text"
+            placeholder="Last Name"
+            name="lastname"
             onChange={handleChange}
           />
           <input
@@ -84,7 +87,7 @@ const Register = () => {
                 className="registration-radio"
                 type="radio"
                 id="teacher"
-                name="teacher_student"
+                name="type"
                 value="teacher"
                 onChange={handleChange}
               />
@@ -96,7 +99,7 @@ const Register = () => {
                 required
                 type="radio"
                 id="student"
-                name="teacher_student"
+                name="type"
                 value="student"
                 className="registration-radio"
                 onChange={handleChange}
@@ -115,6 +118,12 @@ const Register = () => {
           </span>
           <button type="submit" className="sign-up-btn">
             Create account
+          </button>
+          <button className="google-btn">
+            <i class="fa-brands fa-google"></i>
+            <span className="registration-google-span">
+              Continue with Google
+            </span>
           </button>
           <span className="registration-span">
             Already have an account?{" "}
