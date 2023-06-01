@@ -1,36 +1,49 @@
 import React from 'react'
 import Question from './question'
-import Button from '@mui/material/Button'
-import Container from '@mui/material/Container'
-import Stack from '@mui/material/Stack'
+import {Button, Box, Container, Stack} from '@mui/material'
 import parsingMultipleMCQ from '../../../regex'
 
 export default function QuizPreview(props){
-    const [quizData, setQuizData] = React.useState([{
-      id: 0,
-      type: 'mcq',
-      subject: 'test subject',
-      question: "test question",
-      choices: [
-        "question 1",
-        "question 2",
-        "question 3",
-        "question 4"
-      ],
-      answer: 4
-    }, {
-      id: 1,
-      type: 'mcq',
-      subject: 'test subject',
-      question: "test question 1",
-      choices: [
-        "question 1",
-        "question 2",
-        "question 3",
-        "question 4"
-      ],
-      answer: 4
-    }])
+    const [quizData, setQuizData] = React.useState([
+      {
+        id: 0,
+        type: 'mcq',
+        subject: 'test subject',
+        question: "test question",
+        choices: [
+          "question 1",
+          "question 2",
+          "question 3",
+          "question 4"
+        ],
+        answer: 4
+      }, {
+        id: 1,
+        type: 'mcq',
+        subject: 'test subject',
+        question: "test question 1",
+        choices: [
+          "question 1",
+          "question 2",
+          "question 3",
+          "question 4"
+        ],
+        answer: 4
+      },
+      {
+        id: 2,
+        type: 'mcq',
+        subject: 'test subject',
+        question: "test question 2",
+        choices: [
+          "question 1",
+          "question 2",
+          "question 3",
+          "question 4"
+        ],
+        answer: 4
+      }
+    ])
     const [editData, setEditData] = React.useState({
       editing: false,
       questionIndex: null,
@@ -81,11 +94,9 @@ export default function QuizPreview(props){
       />)
 
     return (
-        <Container maxWidth="sm">
-          <Stack spacing={3}>
+          <Stack spacing={3} >
             {QuestionListElements}
           </Stack>
-        </Container>
       )
 }
 

@@ -1,12 +1,17 @@
 import React from 'react'
 import Question from './question'
-import Button from '@mui/material/Button'
-import Container from '@mui/material/Container'
-import Stack from '@mui/material/Stack'
+import { Button, Box, Container, Stack } from '@mui/material'
 import parsingMultipleMCQ from '../../regex'
+import { Link, useLocation } from 'react-router-dom';
+import Navbar from '../../navbar/navbar';
+import Sidebar from '../../sidebar/sidebar';
 
+//add timer and place submit to side of quiz?
 
-export default function Quiz() {
+//location holds quiz id passed to it to pull quiz
+export default function Quiz({location}) {
+  //need to have page not pull up if quizId is null
+  const {quizId=null} = useLocation()
   const [quizData, setQuizData] = React.useState([{
     id: 0,
     question: "test question",
@@ -28,7 +33,14 @@ export default function Quiz() {
 
   React.useEffect(() => {
     //fetch api and update question data here
-    
+    /*
+    axios.get(`${props.hostname}/quiz/${quizId}`)
+    .then(res=>{
+      need:
+        quiz name
+        question list {question, choices, correct answer}
+    })
+    */
   }, [])
 
 
@@ -38,24 +50,12 @@ export default function Quiz() {
   }
 
   function updateChosenAnswer(id, choice) {
-    // previous method when not using id to directly change data
-    /*
-        setQuizData(prevData=>{
-            const newData = prevData.map(element=>{
-                return element.question === question ?
-                    {...element, chosenAnswer: choice}
-                    : {...element}
-            })
-            return newData
-        })
-        */
-    //update method using id, should be faster than previous method
-    if (quizData[id].chosenAnswer) return
-    setQuizData(prevData => {
-      let newData = [...prevData]
-      newData[id].chosenAnswer = choice
-      return newData
-    })
+    if (quizData[id].chosenAnswer)
+      setQuizData(prevData => {
+        let newData = [...prevData]
+        newData[id].chosenAnswer = choice
+        return newData
+      })
   }
 
   //subject to change based on backend
@@ -86,18 +86,21 @@ export default function Quiz() {
     />)
 
 
-    return (
-      <Container maxWidth="sm">
-        <Stack spacing={3}>
-          {QuestionListElements}
-          <Button
-            onClick={submitAnswers}
-            variant="contained"
-          >
-            Submit
-          </Button>
-        </Stack>
-      </Container>
+    return (<Box>
+        <Navbar pageName="Quiz"/>
+        <Sidebar/>
+        <Container maxWidth="sm" sx={{ml: '25vw', mr: '5vw', pt: '3vh'}}>
+          <Stack spacing={3}>
+            {QuestionListElements}
+            <Button
+              onClick={submitAnswers}
+              variant="contained"
+            >
+              Submit
+            </Button>
+          </Stack>
+        </Container>
+      </Box>
     )
 
   }

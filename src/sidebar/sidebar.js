@@ -19,9 +19,9 @@ axios.get('/login',{
         return (
             <ul className="sidebar-list-container">
             <li><h2 id="sidebar-welcome">Welcome {firstName}!</h2></li>
-            <NavLink to="/dashboard" id="sidebar-profile" className="sidebar-option-link" activeClassName="active"><li className="sidebar-option">Home</li></NavLink>
-            <NavLink to="/account" id="sidebar-profile" className="sidebar-option-link" activeClassName="active"><li className="sidebar-option">Account</li></NavLink>
-            <NavLink to="/logout" id="sidebar-logout" className="sidebar-option-link" activeClassName="active"><li className="sidebar-option">Logout</li></NavLink>
+            <NavLink to="/dashboard" id="sidebar-profile" className="sidebar-option-link"><li className="sidebar-option">Home</li></NavLink>
+            <NavLink to="/account" id="sidebar-profile" className="sidebar-option-link"><li className="sidebar-option">Account</li></NavLink>
+            <NavLink to="/logout" id="sidebar-logout" className="sidebar-option-link"><li className="sidebar-option">Logout</li></NavLink>
         </ul>
         )
     }
@@ -30,9 +30,9 @@ axios.get('/login',{
         return (
             <ul className="sidebar-list-container">
             <li><h2 id="sidebar-welcome">Welcome {firstName}!</h2></li>
-            <NavLink to="/dashboard" id="sidebar-profile" className="sidebar-option-link" activeClassName="active"><li className="sidebar-option">Home</li></NavLink>
-            <NavLink to="/account" id="sidebar-profile" className="sidebar-option-link" activeClassName="active"><li className="sidebar-option">Account</li></NavLink>
-            <NavLink to="/logout" id="sidebar-logout" className="sidebar-option-link" activeClassName="active"><li className="sidebar-option">Logout</li></NavLink>
+            <NavLink to="/dashboard" id="sidebar-profile" className="sidebar-option-link"><li className="sidebar-option">Home</li></NavLink>
+            <NavLink to="/account" id="sidebar-profile" className="sidebar-option-link"><li className="sidebar-option">Account</li></NavLink>
+            <NavLink to="/logout" id="sidebar-logout" className="sidebar-option-link"><li className="sidebar-option">Logout</li></NavLink>
         </ul>
         )
     }
