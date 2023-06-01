@@ -21,7 +21,7 @@
 .registration-form {
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  padding: 30px;
   background-color: white;
   width: 200px;
   gap: 20px;
@@ -45,16 +45,6 @@
   font-weight: 700;
   font-family:'Inter,sans-serif';
 }
-
-.registration-p {
-  margin: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: gray;
-  font-size: 15px;
-}
-
 .registration-input {
   padding: 10px;
   border-bottom: 10px;
