@@ -5,29 +5,41 @@ import{Stack, Typography, Button,
     InputLabel, IconButton, FormLabel, RadioGroup, FormHelperText,
 FormControlLabel, Radio, Divider } from '@mui/material';
 import{Visibility, VisibilityOff} from '@mui/icons-material';
+import axios from 'axios'
 
-export default function Login(){
+export default function Login(props){
 
-    
+    const [inputData, setInputData] = React.useState({
+        email: "",
+        password: ""
+    })
     const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show);
     const handleMouseDownPassword = (event) => {
           event.preventDefault();
     };
 
-     /* 
-  placeholder post request to server
 
-  axios.post('/login', {
-    username: username,
-    password: password,
-    type: teacher_student
-  })
-  */
+    const changeInputData = (event) => {
+        const input = event.target
+        setInputData(prevInput=>{
+            return {
+                ...prevInput,
+                [input.name]: input.value
+            }
+        })
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        //put a regex to ensure an email is inputted?
+        axios.post("https://study-buddy-api.herokuapp.com/login", 
+        {
+            email: inputData.email,
+            password: inputData.password
+        })
+        .then(res=>{
+            props.saveToken(res.data.token)
+        })
     };
 
     return (
@@ -65,7 +77,10 @@ export default function Login(){
                     <InputLabel htmlFor="component-outlined">Email</InputLabel>
                     <OutlinedInput
                         id="component-outlined"
-                        label="Username or email"
+                        label="Email"
+                        name="email"
+                        value={inputData.email}
+                        onChange={changeInputData}
                     />
                     </FormControl>
 
@@ -91,6 +106,9 @@ export default function Login(){
                         </InputAdornment>
                         }
                         label="Password"
+                        name="password"
+                        value={inputData.password}
+                        onChange={changeInputData}
                     />
                     </FormControl>
                     <Link to="/forgot-password">
