@@ -4,7 +4,8 @@ import { useCookies } from 'react-cookie';
 
 import ProtectedRoute from "./components/protected-route";
 import UnprotectedRoute from "./components/unprotected-route";
-import HostnameContext from "./components/hostname-context";
+
+import AxiosContext from "./components/axios-context";
 
 import {
   Homepage,
@@ -42,8 +43,7 @@ function App() {
   
   return (
     <div>
-      <HostnameContext.Provider value={hostname}>
-      <>
+      <AxiosContext.Provider value={{hostname: hostname, axiosConfig: axiosConfig}}>
       <Router>
         <Routes>
           <Route exact path="/" element={<Homepage />} />
@@ -80,8 +80,7 @@ function App() {
           <Route path="/terms" element={<Terms />} />
         </Routes>
       </Router>
-      </>
-      </HostnameContext.Provider>
+      </AxiosContext.Provider>
     </div>
   );
 }
