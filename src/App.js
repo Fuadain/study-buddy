@@ -4,6 +4,7 @@ import { useCookies } from 'react-cookie';
 
 import ProtectedRoute from "./components/protected-route";
 import UnprotectedRoute from "./components/unprotected-route";
+import HostnameContext from "./components/hostname-context";
 
 import {
   Homepage,
@@ -22,11 +23,9 @@ import {
 } from "./";
 
 function App() {
-  //to access unprotected routes like login and register, uncomment cookies.authToken
-  //to access protected routes, add a value to authToken
   const [cookies, setCookie, removeCookie] = useCookies(['authToken'])
-  const authToken = "test"//cookies.authToken
-  const hostname = "http://localhost:3000"
+  const authToken = cookies.authToken
+  const hostname = "https://study-buddy-api.herokuapp.com"
   
   let axiosConfig = null
   if(authToken)
@@ -43,6 +42,8 @@ function App() {
   
   return (
     <div>
+      <HostnameContext.Provider value={hostname}>
+      <>
       <Router>
         <Routes>
           <Route exact path="/" element={<Homepage />} />
@@ -79,6 +80,8 @@ function App() {
           <Route path="/terms" element={<Terms />} />
         </Routes>
       </Router>
+      </>
+      </HostnameContext.Provider>
     </div>
   );
 }
