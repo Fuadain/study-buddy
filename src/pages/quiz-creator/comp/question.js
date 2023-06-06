@@ -6,6 +6,7 @@ import { Divider } from '@mui/material'
 
 // if question or choice is clicked, it's content can be edited
 export default function Question(props){
+
     //if editing mode engaged and specific question index and choice index used,
     //render choice as text input for user to change
     const choiceElements = props.choices.map((choice, choiceIndex)=>{
@@ -19,7 +20,7 @@ export default function Question(props){
                 </div>)
         else
             return (<p key={choiceIndex} className="preview-question" onClick={()=>props.changeEditData(true, props.index, choiceIndex)}>
-                {choice}
+                {indexToLetter(choiceIndex)}. {choice}
             </p>)
     })
     //if editing mode engaged and specific question used, while choice index is null,
@@ -37,7 +38,21 @@ export default function Question(props){
             <div>
                 {choiceElements}
             </div>
+            <p>Answer: {indexToLetter(props.answer)}</p>
             <Divider/>
         </div>
     )
+}
+
+function indexToLetter(i){
+    switch(i){
+        case 0:
+            return 'A'
+        case 1:
+            return 'B'
+        case 2:
+            return 'C'
+        case 3:
+            return 'D'
+    }
 }

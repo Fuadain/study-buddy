@@ -5,22 +5,24 @@ import QuizPreview from './comp/quiz-preview'
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../../navbar/navbar'
 import Sidebar from '../../sidebar/sidebar';
+import AxiosContext from '../../components/axios-context';
 
 export default function QuizCreator(){
     const pageName = "Quiz Creator"
     const navigate = useNavigate()
     const [inputData, setInputData] = React.useState({
-        testName: "",
-        testType: "",
+        quizName: "",
+        quizType: "",
         difficulty: 1,
         questionNum: 1,
         hasMultipleChoice: true,
-        hasWritten: false,
-        keywords: ""
+        testing: false
     })
     const [difficultyElements, setDifficultyElements] = React.useState()
-    const testTypes = ["Math", "English", "History", "Javascript"]
+    const quizTypes = ["Math", "English", "History", "Javascript"]
     const [previewQuiz, setPreviewQuiz] = React.useState(false)
+
+    const {hostname} = React.useContext(AxiosContext)
 
     React.useEffect(()=>{
         setDifficultyElements(()=>{
@@ -45,7 +47,13 @@ export default function QuizCreator(){
     }
 
     function getPreview(){
-        setPreviewQuiz(true)
+        if(!previewQuiz)
+            setPreviewQuiz(true)
+        else{
+            //remount
+            setPreviewQuiz(false)
+            setPreviewQuiz(true)
+        }
     }
 
     function saveQuiz(){
@@ -53,7 +61,7 @@ export default function QuizCreator(){
         navigate("/quiz-assign")
     }
 
-    const testTypeElements = testTypes.map(testType=><option key={testType} value={testType}>{testType}</option>)
+    const quizTypeElements = quizTypes.map(quizType=><option key={quizType} value={quizType}>{quizType}</option>)
 
     return (
         <Box>
@@ -61,18 +69,19 @@ export default function QuizCreator(){
             <Sidebar />
             <Stack direction="row" height="88vh" sx={{ml: '25vw', mr: '5vw', pt: '3vh'}}>
                 <Box width="50vw" height="auto" sx={{pl:"4px", pr:"4px", mr:"5px", overflowY: 'auto', backgroundColor: "#f2f2f4"}}>
-                    {previewQuiz?<QuizPreview difficulty={inputData.difficulty} subject={inputData.subject} questionNum={inputData.questionNum}/>:""}
+                    {previewQuiz?<QuizPreview difficulty={inputData.difficulty} subject={inputData.subject} questionNum={inputData.questionNum} testing={inputData.testing}/>:""}
                 </Box>
+                
                 <Box minWidth="240px" sx={{ml: "auto"}}>
                     <Stack spacing={3}>
                         <Stack>
-                            <label>Test Name:</label>
-                            <input type="text" name="testName" id="testName" required value={inputData.testName} onChange={changeInputData}/>
+                            <label>Quiz Name:</label>
+                            <input type="text" name="quizName" id="quizName" required value={inputData.testName} onChange={changeInputData}/>
                         </Stack>
                         <Stack>
-                            <label>Test Type:</label>
-                            <select name="testType" id="testType" value={inputData.testType} required onChange={changeInputData}>
-                                {testTypeElements}
+                            <label>Quiz Type:</label>
+                            <select name="quizType" id="quizType" value={inputData.quizType} required onChange={changeInputData}>
+                                {quizTypeElements}
                             </select>
                         </Stack>
                         <Stack>
@@ -83,12 +92,18 @@ export default function QuizCreator(){
                         </Stack>
                         <Stack>
                             <label>Number of Questions:</label>
-                            <input type="number" name="questionNum" id="questionNum" required value={inputData.questionNum} onChange={changeInputData}/>
+                            <input type="number" name="questionNum" id="questionNum" min="1" max="100" required value={inputData.questionNum} onChange={changeInputData}/>
                         </Stack>
                         <Stack direction="row" spacing={1}>
                             <Button onClick={getPreview} variant="contained">Generate Quiz</Button>
                             {previewQuiz?<Button onClick={saveQuiz} variant="contained">Save</Button>:""}
                         </Stack>
+                        {process.env.NODE_ENV=="development"?<Stack direction="row">
+                        <h5>Testing Generation:</h5>
+                        <input type="checkbox" name="testing" onChange={changeInputData}/>
+                        </Stack>:
+                        ""
+                        }
                     </Stack>
                 </Box>
             </Stack>
