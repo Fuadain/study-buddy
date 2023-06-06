@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Box, TextField, Button } from '@mui/material';
+import axios from 'axios'
+import AxiosContext from '../../../components/axios-context';
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -8,10 +10,18 @@ export default function Login() {
     phoneNumber: '',
     message: '',
   });
+  const {hostname} = useContext(AxiosContext)
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData); // replace with your form submission logic
+    axios.post(`${hostname}/emailService`,{...formData})
+    .then(res=>{
+      if(res.data.message){
+        console.log(res.data.message)
+      }else{
+        console.log("Response Error")
+      }
+    })
   };
 
   const handleChange = (event) => {
