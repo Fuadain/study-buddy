@@ -15,9 +15,9 @@ export default function QuizCreator(){
         quizType: "",
         difficulty: 1,
         questionNum: 1,
-        hasMultipleChoice: true,
         testing: false
     })
+    const [quizData, setQuizData] = React.useState([])
     const [difficultyElements, setDifficultyElements] = React.useState()
     const quizTypes = ["Math", "English", "History", "Javascript"]
     const [previewQuiz, setPreviewQuiz] = React.useState(false)
@@ -58,7 +58,8 @@ export default function QuizCreator(){
 
     function saveQuiz(){
         //api jargon, get id to navigate to quiz assign
-        navigate("/quiz-assign")
+        //axios.post(`${hostname}/`)
+        //navigate("/quiz-assign")
     }
 
     const quizTypeElements = quizTypes.map(quizType=><option key={quizType} value={quizType}>{quizType}</option>)
@@ -69,7 +70,15 @@ export default function QuizCreator(){
             <Sidebar />
             <Stack direction="row" height="88vh" sx={{ml: '25vw', mr: '5vw', pt: '3vh'}}>
                 <Box width="50vw" height="auto" sx={{pl:"4px", pr:"4px", mr:"5px", overflowY: 'auto', backgroundColor: "#f2f2f4"}}>
-                    {previewQuiz?<QuizPreview difficulty={inputData.difficulty} subject={inputData.subject} questionNum={inputData.questionNum} testing={inputData.testing}/>:""}
+                    {previewQuiz?<QuizPreview 
+                        difficulty={inputData.difficulty} 
+                        subject={inputData.subject} 
+                        questionNum={inputData.questionNum} 
+                        testing={inputData.testing}
+                        quizData={quizData}
+                        setQuizData={setQuizData}
+                        />
+                        :""}
                 </Box>
                 
                 <Box minWidth="240px" sx={{ml: "auto"}}>

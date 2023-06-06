@@ -3,8 +3,7 @@ import Question from './question'
 import {Button, Box, Container, Stack} from '@mui/material'
 import axios from 'axios'
 
-export default function QuizPreview(props){
-    const [quizData, setQuizData] = React.useState([])
+export default function QuizPreview({quizData,setQuizData, ...props}){
     const [editData, setEditData] = React.useState({
       editing: false,
       questionIndex: null,
@@ -17,7 +16,7 @@ export default function QuizPreview(props){
         difficulty: props.difficulty, 
         subject: props.subject, 
         questionNum: props.questionNum,
-        test: props.testing
+        test: true
       })
       .then(res=>{
         setQuizData(res.data.quiz)
