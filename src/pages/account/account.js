@@ -1,14 +1,13 @@
 import * as React from 'react';
 import {
-  Navbar, Sidebar, EmailSettings, NameSettings, PasswordSettings, PictureSettings, VerificationSettings
+  Navbar, Sidebar, EmailSettings, NameSettings, PasswordSettings, PictureSettings
 } from './';
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -100,15 +99,6 @@ const Account = () => {
               </AccordionSummary>
               <AccordionDetails>
                 <EmailSettings />
-              </AccordionDetails>
-            </Accordion>
-
-            <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
-              <AccordionSummary aria-controls="panel5d-content" id="panel5d-header">
-                <Typography>2-Step Verification Settings</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <VerificationSettings />
               </AccordionDetails>
             </Accordion>
 

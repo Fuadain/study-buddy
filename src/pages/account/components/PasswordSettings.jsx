@@ -1,6 +1,13 @@
 import React from 'react'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
+import AxiosContext from '../../../components/axios-context'
+
+function passwordCheck(password){
+  console.log("Password Checked")
+  //Password Validity check jargon
+  return null
+}
 
 const PasswordSettings = () => {
   const [inputData, setInputData] = React.useState({
@@ -8,6 +15,7 @@ const PasswordSettings = () => {
     password: "",
     isPasswordValid: null
   })
+  const {hostname, axiosConfig} = React.useContext(AxiosContext)
 
   function changeInputData(event){
     const input = event.target
@@ -26,10 +34,11 @@ const PasswordSettings = () => {
     })
   }
 
-  function passwordCheck(password){
-    console.log("Password Checked")
-    //Password Validity check jargon
-    return null
+  function submitChange(){
+    axios.post(`${hostname}/`, axiosConfig)
+    .then(res=>{
+      //check if password was correct
+    })
   }
 
   let passwordValidityStatement = ""

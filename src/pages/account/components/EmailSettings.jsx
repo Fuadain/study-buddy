@@ -1,6 +1,19 @@
 import React from 'react'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
+import AxiosContext from '../../../components/axios-context'
+import axios from 'axios'
+
+function emailCheck(email){
+  if(email == "")
+     return null
+
+  const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  if(emailRegex.test(email))
+    return true
+  else
+    return false
+}
 
 const EmailSettings = () => {
   const [inputData, setInputData] = React.useState(
@@ -10,6 +23,7 @@ const EmailSettings = () => {
       isEmailValid: null
     }
   )
+  const {hostname, axiosConfig} = React.useContext(AxiosContext)
 
   function changeInputData(event) {
     const input = event.target
@@ -27,11 +41,13 @@ const EmailSettings = () => {
       }
     })
   }
-    
-  function emailCheck(email){
-    console.log("Email Checked")
-    //Email Validity check jargon
-    return null
+
+  function submitChange(){
+    axios.post(`${hostname}/`, axiosConfig)
+    .then(res=>{
+      //check if password was correct
+      //check if email exists
+    })
   }
 
   let emailValidityStatement = ""
@@ -40,7 +56,8 @@ const EmailSettings = () => {
     "Email is valid"
     :
     "Email is not valid"
-  }
+  } else
+    emailValidityStatement = ""
   
   return (
     <div>
@@ -52,7 +69,7 @@ const EmailSettings = () => {
         <label>Password:</label>
         <input type="password" name="password" onChange={changeInputData} value={inputData.password}/>
         <p>{/*put wrong password prompt here*/}</p>
-        <Button variant="contained">Change Email</Button>
+        <Button variant="contained" onClick={submitChange}>Change Email</Button>
       </Stack>
     </div>
   )
