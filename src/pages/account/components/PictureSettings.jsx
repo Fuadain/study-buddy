@@ -1,8 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Box, Button, Input } from '@mui/material';
+import AxiosContext from '../../../components/axios-context'
+import axios from 'axios'
 
 const PictureSettings = () => {
   const [image, setImage] = useState();
+  const {hostname, axiosConfig} = useContext(AxiosContext)
 
   useEffect(() => {
     // Check if image is not set and then fetch the image
@@ -27,6 +30,10 @@ const PictureSettings = () => {
 
   function handleUpload() {
     //code to send image to server
+    axios.post(`${hostname}/`, {image: image}, axiosConfig)
+    .then(res=>{
+      
+    })
   }
 
   return (
