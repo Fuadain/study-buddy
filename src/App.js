@@ -23,10 +23,11 @@ import {
   Terms,
 } from "./";
 
+const hostname = "https://study-buddy-api.herokuapp.com"
+
 function App() {
   const [cookies, setCookie, removeCookie] = useCookies(['authToken'])
   const authToken = cookies.authToken
-  const hostname = "https://study-buddy-api.herokuapp.com"
   
   let axiosConfig = null
   if(authToken)
