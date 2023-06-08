@@ -8,7 +8,9 @@ const Navbar = () => (
             <Link to='/login'>
                 <Button variant="contained" sx={{ marginRight: '20px' }}>Login</Button>
             </Link>
-            <Button variant="contained">Sign Up</Button>
+            <Link to='/registration'>
+                <Button variant="contained">Sign Up</Button>
+            </Link>
         </Toolbar>
     </AppBar>
 );
