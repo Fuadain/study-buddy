@@ -4,16 +4,19 @@ import './dashboard.css'
 //need to change if file moved
 import Navbar from '../../../navbar/navbar'
 import Sidebar from '../../../sidebar/sidebar'
-import ClassElement from './class-element'
+import ClassElement from './components/class-element'
+import CreateClass from './components/create-class'
 
-import Stack from '@mui/material/Stack'
-import Box from '@mui/material/Box';
+import {Button, Box, Stack} from '@mui/material'
+import AxiosContext from '../../../components/axios-context'
 
 export default function ClassList(){
     let pageName = "Dashboard";
 
     const [classes, setClasses] = React.useState([])
-    const [isTeacher, setIsTeacher] = React.useState(false)
+    const [isTeacher, setIsTeacher] = React.useState(true)
+    const [creatingClass, setCreatingClass] = React.useState(false)
+    const {hostname, axiosConfig} = React.useContext(AxiosContext)
 
     React.useEffect(()=>{
         //api jargon
@@ -27,8 +30,18 @@ export default function ClassList(){
             teacherName: "Teacher 2",
             quizzes: 2
         }
+        /*
+        axios.get(`${hostname}/`, axiosConfig)
+        .then(res=>{
+            setClasses()
+        })
+        */
     ])
     },[])
+
+    function classView(bool=true){
+        setCreatingClass(bool)
+    }
 
     const classListElements = classes.map(classElement => <ClassElement
                                                             className={classElement.className}
@@ -39,13 +52,16 @@ export default function ClassList(){
     return(
         <Box>
             <Navbar pageName={pageName}/>
-            <Box flexDirection='row'>
+            <Box flexDirection='row' className="dashboard">
                 <Sidebar/>
                 <Stack spacing={3} sx={{ml: '25vw', mr: '5vw', pt: '2vw'}}>
                     <h1>{isTeacher?"Classes you teach":"Classes you attend"}</h1>
                     {classListElements}
+                    {isTeacher?<Button variant="contained" onClick={classView}>Create New Class</Button>:""}
                 </Stack>
+                
             </Box>
+            {creatingClass?<CreateClass closePopup={()=>classView(false)}/>:""}
         </Box>
     )
 }

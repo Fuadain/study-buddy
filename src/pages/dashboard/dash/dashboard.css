@@ -19,3 +19,8 @@
     background-color:lightgrey;
     width: 70vw
 }
+
+.dashboard h1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}

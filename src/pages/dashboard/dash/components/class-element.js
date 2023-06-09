@@ -1,5 +1,4 @@
 import React from 'react'
-import './dashboard.css'
 import { NavLink } from 'react-router-dom';
 
 // need to change link when dashboard changes name
