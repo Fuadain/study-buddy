@@ -11,7 +11,7 @@ export default function QuizTime(props){
         if(!isEnd){
           currentDate = new Date();
         } else {
-          currentDate = props.startDate?props.startDate:new Date(time)
+          currentDate = props.dueDate?props.dueDate:new Date(time)
         }
         return currentDate.getTime() < selectedDate.getTime();
       }
@@ -23,39 +23,15 @@ export default function QuizTime(props){
         return date > yesterday
       }
     
-      console.log(props.startDate)
-    
       return (
-        <Stack direction="row" spacing={2}>
-          <div>
-            <label>Start Time</label>
             <DatePicker 
-              selected={props.startDate} 
-              onChange={(date)=>props.changeDate(date, "startDate")}
+              selected={props.dueDate} 
+              onChange={(date)=>props.changeDate(date)}
               selectsStart
-              startDate={props.startDate}
-              endDate={props.endDate}
               filterTime={(time)=>filterPassedTime(time, false)}
               filterDate={(date)=>filterPassedDays(date)}
               showTimeSelect
               dateFormat="MMMM d, yyyy h:mm aa"
             />
-          </div>
-          <div>
-            <label>End Time</label>
-            <DatePicker 
-              selected={props.endDate}
-              onChange={(date)=>props.changeDate(date, "endDate")}
-              selectsEnd
-              startDate={props.startDate}
-              endDate={props.endDate}
-              minDate={props.startDate}
-              filterTime={(time)=>filterPassedTime(time, true)}
-              filterDate={(date)=>filterPassedDays(date)}
-              showTimeSelect
-              dateFormat="MMMM d, yyyy h:mm aa"
-            />
-          </div>
-        </Stack>
       )
 }

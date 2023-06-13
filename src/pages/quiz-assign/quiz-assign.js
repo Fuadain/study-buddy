@@ -3,19 +3,22 @@ import './quiz-assign.css';
 import QuizTime from './comp/quiz-time'
 import Select from 'react-select';
 import ClassSelectStyle from './comp/class-select-style';
-import { Button, Box, Stack, Container, Divider } from '@mui/material';
+import { Button, Box, Stack, Divider } from '@mui/material';
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../../navbar/navbar'
 import Sidebar from '../../sidebar/sidebar';
+import axios from 'axios'
+import AxiosContext from '../../components/axios-context';
 
 export default function QuizAction(){
     const navigate = useNavigate()
     const [inputData, setInputData] = React.useState({
         classes:[],
-        startDate:null,
-        endDate: null
+        dueDate: null,
+        timeLimit: 30
     })
     const [classOptions, setClassOptions] = React.useState()
+    const {hostname, axiosConfig} = React.useContext(AxiosContext)
 
     React.useEffect(()=>{
         setClassOptions(()=>{
@@ -26,6 +29,9 @@ export default function QuizAction(){
             ] //api class jargon
             return newClasses
         })
+        /*
+        
+        */
     },[])
 
     function printQuiz(){
@@ -34,37 +40,31 @@ export default function QuizAction(){
     }
 
     function assignQuiz(){
-        console.log("Quiz Assigned")
-        console.log(inputData)
         //quiz assign backend jargon
+        if(inputData.classes && inputData.dueDate){
+            axios.post(`${hostname}/`, inputData, axiosConfig)
+        } else {
+            alert("Invalid input")
+        }
     }
 
     //Keeping this here to deal with any addition inputs that don't need a library
-    /*
-    function inputChange(event){
-        const input = event.target
+    function changeInput(event){
+        const name = event.target.name
+        let value = event.target.value
+        if(name == "timeLimit" && value < 30)
+            value = 30
         setInputData(prevData=>{
-            const newData = {...prevData, [input.name]: input.value}
+            const newData = {...prevData, [name]: value}
             return newData
         })
     }
-    */
 
-    function changeDate(date, name){
-        let newDate = date
-        setInputData(prevData => {
-            //this if statement prevents the endDate from being before the start date
-            if(prevData.startDate && name==="endDate" && date < prevData.startDate){
-                newDate = prevData.startDate
-            } else if (prevData.endDate && name==="startDate" && date > prevData.endDate){
-                return {
-                    startDate: date,
-                    endDate: date
-                }
-            }
+    function changeDate(date){
+        setInputData(prevData=>{
             return {
                 ...prevData,
-                [name]: newDate
+                dueDate: date
             }
         })
     }
@@ -87,7 +87,7 @@ export default function QuizAction(){
         <Box>
             <Navbar pageName="Assign Quiz"/>
             <Sidebar/>
-            <Container maxWidth="sm" sx={{ml: '25vw', mr: '5vw', pt: '3vh'}}>
+            <Box sx={{ml: '25vw', mr: '5vw', pt: '2vw'}}>
                 <Stack spacing={4} mt={4}>
                     <Stack direction="row" spacing={1}>
                         <Button
@@ -101,14 +101,14 @@ export default function QuizAction(){
                             variant="contained" 
                             sx={{width:"50%", alignSelf: "center"}}
                             onClick={goCreator}
-                            >
+                        >
                             Return to Creator
                         </Button>
                         
                     </Stack>
                     <Divider/>
-                    <div>
-                        <label>Assign Test To Class</label>
+                    <Box>
+                        <label>Assign Test To Class:</label>
                         <Select
                             isMulti
                             name="classes"
@@ -120,8 +120,17 @@ export default function QuizAction(){
                             styles={ClassSelectStyle}
                             required
                         />
-                    </div>
-                    <QuizTime startDate={inputData.startDate} endDate={inputData.endDate} changeDate={changeDate}/>
+                    </Box>
+                    <Stack direction="row" spacing={4} justifyContent="center">
+                        <Stack>
+                            <label>Due Date:</label>
+                            <QuizTime dueDate={inputData.dueDate} changeDate={changeDate}/>
+                        </Stack>
+                        <Stack>
+                            <label>Time Limit (minutes):</label>
+                            <input name="timeLimit" type="number" min="30" value={inputData.timeLimit} onChange={changeInput}/>
+                        </Stack>
+                    </Stack>
                     <Button 
                         variant="contained" 
                         onClick={assignQuiz}
@@ -130,7 +139,7 @@ export default function QuizAction(){
                         Assign Quiz
                     </Button>
                 </Stack>
-            </Container>
+            </Box>
         </Box>
     )
 }
