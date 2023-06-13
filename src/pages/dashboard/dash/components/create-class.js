@@ -4,6 +4,11 @@ import CloseIcon from '@mui/icons-material/Close'
 import AxiosContext from '../../../../components/axios-context'
 import axios from 'axios'
 
+const popupStyle = { backgroundColor: "white", boxShadow: "1px 2px 4px -1px", 
+position: "absolute", left: "0", right: "0", top: "0", bottom: "0", margin: "auto",
+width: "300px", height: "200px",
+}
+
 export default function CreateClass(props){
     const [inputData, setInputData] = React.useState({
         className: ""
@@ -26,13 +31,10 @@ export default function CreateClass(props){
                 //confirm class was made
             })
         else
-            alert("A new class needs")
+            alert("A new class needs a name")
     }
 
-    return(<Container  sx={{ backgroundColor: "white", boxShadow: "1px 2px 4px -1px", 
-        position: "absolute", left: "0", right: "0", top: "0", bottom: "0", margin: "auto",
-        width: "300px", height: "200px",
-        }}>
+    return(<Container  sx={popupStyle}>
             <IconButton onClick={props.closePopup} sx={{position:"absolute", right: "5px", top: "5px"}}>
                 <CloseIcon/>
             </IconButton>
