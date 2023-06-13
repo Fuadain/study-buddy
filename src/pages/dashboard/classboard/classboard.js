@@ -2,47 +2,51 @@ import React from 'react';
 import './classboard.css';
 import Navbar from '../../../navbar/navbar'
 import Sidebar from '../../../sidebar/sidebar'
-import Quiz from './components/Quiz';
-import Student from './components/Student';
-import { Quizdata, Studentdata} from './mock-data';
-import Stack from '@mui/material/Stack'
+import QuizList from './quiz-list/quiz-list';
+import StudentList from './student-list/student-list';
+import {Button, Box, Stack} from '@mui/material'
+import axios from 'axios'
+import AxiosContext from '../../../components/axios-context';
 
 export default function Dashboard(){
     const pageName = "Class Name"
-    const quizzes = Quizdata.map(item => {
-        return (
-            < Quiz
-                key={item.id}
-                item={item}
-            />
-        )
-    })
+    
+    const [classPage, setClassPage] = React.useState("quiz")
+    const [isTeacher, setIsTeacher] = React.useState(false)
 
-    const students = Studentdata.map(item => {
-        return (
-            < Student
-                key={item.id}
-                item={item}
-            />
-        )
-    }) 
+    React.useEffect(()=>{
+        setIsTeacher(true)
+    },[])
+
+
+    function switchPage(page){
+        setClassPage(page)
+    }
+
+    let currentPage
+    if(classPage == "quiz")
+        currentPage = <QuizList isTeacher={isTeacher}/>
+    if(classPage == "students")
+        currentPage = <StudentList isTeacher={isTeacher}/>
 
     return (
         <div>
             <Navbar pageName={pageName}/>
             <Sidebar />
-            <Stack spacing={3} sx={{ml: '25vw', mr: '5vw', pt: '2vw'}}>
-                <div className="quiz-title">
-                    <h3>Available Quizzes</h3>
-                </div> 
-                <section className="quiz-container">
-                    {quizzes}
-                </section>
-                <h2 className="student-title">Students</h2>
-                <section className="student-container">
-                    {students}
-                </section>
+            <Box sx={{ml: '25vw', mr: '5vw', pt: '2vw'}}>
+            <Stack spacing={4} direction="row" height="100%">
+                <Box sx={{width: '70vw'}}>
+                    {currentPage}
+                </Box>
+                <Stack className="class-pages" 
+                direction="column" spacing={2} justifyContent="flex-start" 
+                pt="70px" pl="20px" ml="10px" 
+                sx={{borderLeft:"solid black 1px", minHeight:"70vh"}}>
+                    <h3 onClick={()=>switchPage("quiz")}>Quizzes</h3>
+                    <h3 onClick={()=>switchPage("students")}>Students</h3>
+                </Stack>
             </Stack>
+            </Box>
         </div>
     )
 }
