@@ -1,6 +1,5 @@
 import React from 'react'
-import Button from '@mui/material/Button'
-import Stack from '@mui/material/Stack'
+import {Button, Stack, TextField} from '@mui/material/'
 import AxiosContext from '../../../components/axios-context'
 import axios from 'axios'
 
@@ -25,6 +24,17 @@ const EmailSettings = () => {
   )
   const {hostname, axiosConfig} = React.useContext(AxiosContext)
 
+  React.useEffect(()=>{
+    /*
+    axios.get(`${hostname}/`, axiosConfig)
+    .then(res=>{
+      setInputData(prev=>{
+        return {...prev, email: res.data.email}
+      })
+    })
+    */
+  },[])
+
   function changeInputData(event) {
     const input = event.target
 
@@ -43,7 +53,10 @@ const EmailSettings = () => {
   }
 
   function submitChange(){
-    axios.post(`${hostname}/`, axiosConfig)
+    axios.post(`${hostname}/update-email`,{
+      newEmail: inputData.email,
+      password: inputData.password
+    }, axiosConfig)
     .then(res=>{
       //check if password was correct
       //check if email exists
@@ -63,12 +76,13 @@ const EmailSettings = () => {
     <div>
       <h3>Change Email</h3>
       <Stack spacing={2}>
-        <label>New Email:</label>
-        <input type="email" name="email" onChange={changeInputData} value={inputData.email}/>
+        <TextField id="standard-basic" label="Email" variant="standard"
+        type="email" name="email" onChange={changeInputData} value={inputData.email}
+        />
         <p>{emailValidityStatement}</p>
-        <label>Password:</label>
-        <input type="password" name="password" onChange={changeInputData} value={inputData.password}/>
-        <p>{/*put wrong password prompt here*/}</p>
+        <TextField id="standard-basic" label="Password" variant="standard"
+        type="password" name="password" onChange={changeInputData} value={inputData.password}
+        />
         <Button variant="contained" onClick={submitChange}>Change Email</Button>
       </Stack>
     </div>

@@ -1,6 +1,5 @@
 import React from 'react'
-import Button from '@mui/material/Button'
-import Stack from '@mui/material/Stack'
+import {Button, Stack, TextField} from '@mui/material/'
 import axios from 'axios'
 import AxiosContext from '../../../components/axios-context'
 
@@ -52,10 +51,18 @@ const NameSettings = () => {
   }
 
   function submitChange(){
-    axios.post(`${hostname}/`, axiosConfig)
-    .then(res=>{
-      //check if password was correct
-    })
+    if(inputData.isNameValid){
+      axios.post(`${hostname}/update-name`,{
+        firstName:inputData.firstName,
+        lastName:inputData.lastName,
+        password:inputData.password
+      }, axiosConfig)
+      .then(res=>{
+        //check if password was correct
+      })
+    }else{
+      alert("Name invalid")
+    }
   }
 
   let nameValidityStatement = ""
@@ -70,15 +77,17 @@ const NameSettings = () => {
     <div>
       <h3>Change Name</h3>
       <Stack spacing={2}>
-        <label>First name:</label>
-        <input type="text" name="firstName" value={changeInputData}/>
-        <label>Last Name:</label>
-        <input type="text" name="lastName" value={changeInputData}/>
+        <TextField id="standard-basic" label="First Name" variant="standard" 
+        type="text" name="firstName" value={inputData.firstName} onChange={changeInputData}
+        />
+        <TextField id="standard-basic" label="Last Name" variant="standard" 
+        type="text" name="lastName" value={inputData.lastName} onChange={changeInputData}
+        />
         <p>{nameValidityStatement}</p>
-        <label>Password:</label>
-        <input type="password" name="password" value={changeInputData}/>
-        <p>{/*Wrong password prompt*/}</p>
-        <Button variant="contained">Change Name</Button>
+        <TextField id="standard-basic" label="Password" variant="standard" 
+        type="password" name="password" value={inputData.password} onChange={changeInputData}
+        />
+        <Button variant="contained" onClick={submitChange}>Change Name</Button>
       </Stack>
     </div>
   )
