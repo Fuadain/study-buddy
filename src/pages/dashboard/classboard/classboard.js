@@ -2,32 +2,38 @@ import React from 'react';
 import './classboard.css';
 import Navbar from '../../../navbar/navbar'
 import Sidebar from '../../../sidebar/sidebar'
-import QuizList from './quiz-list/quiz-list';
-import StudentList from './student-list/student-list';
+import QuizList from './components/quiz-list/quiz-list';
+import StudentList from './components/student-list/student-list';
+import ClassSettings from './components/class-settings/class-settings';
 import {Button, Box, Stack} from '@mui/material'
-import axios from 'axios'
 import AxiosContext from '../../../components/axios-context';
 
 export default function Dashboard(){
     const pageName = "Class Name"
     
     const [classPage, setClassPage] = React.useState("quiz")
-    const [isTeacher, setIsTeacher] = React.useState(false)
+    const {hostname, axiosConfig} = React.useContext(AxiosContext)
 
     React.useEffect(()=>{
-        setIsTeacher(true)
+        //axios.get(`${hostname}/`) //get class name
     },[])
-
 
     function switchPage(page){
         setClassPage(page)
     }
 
     let currentPage
-    if(classPage == "quiz")
-        currentPage = <QuizList isTeacher={isTeacher}/>
-    if(classPage == "students")
-        currentPage = <StudentList isTeacher={isTeacher}/>
+    switch(classPage){
+        case "quiz":
+            currentPage = <QuizList/>
+            break
+        case "students":
+            currentPage = <StudentList/>
+            break
+        case "settings":
+            currentPage = <ClassSettings/>
+            break
+    }
 
     return (
         <div>
@@ -44,6 +50,7 @@ export default function Dashboard(){
                 sx={{borderLeft:"solid black 1px", minHeight:"70vh"}}>
                     <h3 onClick={()=>switchPage("quiz")}>Quizzes</h3>
                     <h3 onClick={()=>switchPage("students")}>Students</h3>
+                    <h3 onClick={()=>switchPage("settings")}>Settings</h3>
                 </Stack>
             </Stack>
             </Box>

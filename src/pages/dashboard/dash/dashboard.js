@@ -14,9 +14,8 @@ export default function ClassList(){
     let pageName = "Dashboard";
 
     const [classes, setClasses] = React.useState([])
-    const [isTeacher, setIsTeacher] = React.useState(true)
     const [creatingClass, setCreatingClass] = React.useState(false)
-    const {hostname, axiosConfig} = React.useContext(AxiosContext)
+    const {hostname, axiosConfig, userType} = React.useContext(AxiosContext)
 
     React.useEffect(()=>{
         //api jargon
@@ -55,9 +54,9 @@ export default function ClassList(){
             <Box flexDirection='row' className="dashboard">
                 <Sidebar/>
                 <Stack spacing={3} sx={{ml: '25vw', mr: '5vw', pt: '2vw'}}>
-                    <h1>{isTeacher?"Classes you teach":"Classes you attend"}</h1>
+                    <h1>{userType =="teacher"?"Classes you teach":"Classes you attend"}</h1>
                     {classListElements}
-                    {isTeacher?<Button variant="contained" onClick={classView}>Create New Class</Button>:""}
+                    {userType =="teacher"?<Button variant="contained" onClick={classView}>Create New Class</Button>:""}
                 </Stack>
                 
             </Box>
