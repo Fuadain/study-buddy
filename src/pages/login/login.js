@@ -38,7 +38,7 @@ export default function Login(props){
             password: inputData.password
         })
         .then(res=>{
-            props.saveToken(res.data.token)
+            props.saveLogin(res.data.token, res.data.userType)
         })
     };
 

@@ -26,15 +26,16 @@ import {
 const hostname = "https://study-buddy-api.herokuapp.com"
 
 function App() {
-  const [cookies, setCookie, removeCookie] = useCookies(['authToken'])
-  const authToken = cookies.authToken
+  const [cookies, setCookie, removeCookie] = useCookies(['studyLogin'])
+  const authToken = cookies.studyLogin?.authToken
+  const userType = cookies.studyLogin?.userType
   
   let axiosConfig = null
   if(authToken)
     axiosConfig = { headers: {Authorization: `Bearer ${authToken}`} }
     
-  function saveToken(token){
-    setCookie('authToken', token, { path: '/' })
+  function saveLogin(token, userType){
+    setCookie('studyLogin', {authToken: token, userType: userType}, { path: '/' })
   }
 
   //need to also tell server to close session
@@ -44,12 +45,12 @@ function App() {
   
   return (
     <div>
-      <AxiosContext.Provider value={{hostname: hostname, axiosConfig: axiosConfig}}>
+      <AxiosContext.Provider value={{hostname: hostname, axiosConfig: axiosConfig, userType: userType}}>
       <Router>
         <Routes>
           <Route exact path="/" element={<Homepage />} />
           <Route path="/login" element={<UnprotectedRoute authToken={authToken}>
-              <Login saveToken={(token)=>saveToken(token)}/>
+              <Login saveLogin={saveLogin}/>
             </UnprotectedRoute>} />
           <Route path="/forgot-password" element={<UnprotectedRoute authToken={authToken}>
               <ForgotPassword />

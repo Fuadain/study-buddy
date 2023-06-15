@@ -1,5 +1,5 @@
-import React from 'react'
+import {createContext} from 'react'
 
-const AxiosContext = React.createContext()
+const AxiosContext = createContext()
 
 export default AxiosContext
