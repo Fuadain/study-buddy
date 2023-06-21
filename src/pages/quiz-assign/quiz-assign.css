@@ -6,3 +6,18 @@
     margin-top:5%;
     justify-content: center;
 }
+
+.print-question {
+    margin-top: 1rem;
+    display: block;
+    break-inside: avoid;
+    font-size: 12px;
+  }
+  
+.print-question p{
+    margin-left:1rem
+}
+  
+.print-question h3{
+    font-weight: normal;
+}

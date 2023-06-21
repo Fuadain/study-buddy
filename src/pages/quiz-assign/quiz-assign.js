@@ -1,8 +1,6 @@
 import React from 'react';
 import './quiz-assign.css';
 import QuizTime from './comp/quiz-time'
-import Select from 'react-select';
-import ClassSelectStyle from './comp/class-select-style';
 import { Button, Box, Stack, Divider } from '@mui/material';
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../../navbar/navbar'
@@ -13,39 +11,23 @@ import AxiosContext from '../../components/axios-context';
 export default function QuizAction(){
     const navigate = useNavigate()
     const [inputData, setInputData] = React.useState({
-        classes:[],
         dueDate: null,
         timeLimit: 30
     })
-    const [classOptions, setClassOptions] = React.useState()
+    const [printing, setPrinting] = React.useState()
     const {hostname, axiosConfig} = React.useContext(AxiosContext)
 
     React.useEffect(()=>{
-        setClassOptions(()=>{
-            const newClasses = [
-                {label:"1", value:"1"},
-                {label:"2", value:"2"},
-                {label:"3", value:"3"}
-            ] //api class jargon
-            return newClasses
-        })
-        /*
-        
-        */
+    
     },[])
 
-    function printQuiz(){
-        console.log("Quiz printed")
-        //quiz print format jargon
+    function printQuiz(bool){
+        setPrinting(bool)
     }
 
     function assignQuiz(){
         //quiz assign backend jargon
-        if(inputData.classes && inputData.dueDate){
-            axios.post(`${hostname}/`, inputData, axiosConfig)
-        } else {
-            alert("Invalid input")
-        }
+        axios.post(`${hostname}/`, inputData, axiosConfig)
     }
 
     //Keeping this here to deal with any addition inputs that don't need a library
@@ -69,15 +51,6 @@ export default function QuizAction(){
         })
     }
 
-    function changeSelectedClasses(selection){
-        setInputData(prevData=>{
-            return {
-                ...prevData,
-                classes: selection
-            }
-        })
-    }
-
     //didn't use navlink because it messed with the mui button's styling
     function goCreator(){
         navigate("/quiz-creator")
@@ -92,7 +65,7 @@ export default function QuizAction(){
                     <Stack direction="row" spacing={1}>
                         <Button
                             variant="contained" 
-                            onClick={printQuiz}
+                            onClick={()=>printQuiz(true)}
                             sx={{width:"50%", alignSelf: "center"}}
                         >
                             Print Out
@@ -107,20 +80,6 @@ export default function QuizAction(){
                         
                     </Stack>
                     <Divider/>
-                    <Box>
-                        <label>Assign Test To Class:</label>
-                        <Select
-                            isMulti
-                            name="classes"
-                            options={classOptions}
-                            className="basic-multi-select"
-                            classNamePrefix="select"
-                            onChange={changeSelectedClasses}
-                            defaultValue={inputData.classes}
-                            styles={ClassSelectStyle}
-                            required
-                        />
-                    </Box>
                     <Stack direction="row" spacing={4} justifyContent="center">
                         <Stack>
                             <label>Due Date:</label>
@@ -138,6 +97,7 @@ export default function QuizAction(){
                     >
                         Assign Quiz
                     </Button>
+                    {printing?<QuizPrint stopPrinting={()=>printQuiz(false)}/>:""}
                 </Stack>
             </Box>
         </Box>
