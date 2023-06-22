@@ -5,6 +5,7 @@ import QuizPreview from './comp/quiz-preview'
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../../navbar/navbar'
 import Sidebar from '../../sidebar/sidebar';
+import axios from 'axios'
 import AxiosContext from '../../components/axios-context';
 
 export default function QuizCreator(){
@@ -58,8 +59,16 @@ export default function QuizCreator(){
 
     function saveQuiz(){
         //api jargon, get id to navigate to quiz assign
-        //axios.post(`${hostname}/`)
-        //navigate("/quiz-assign")
+        // axios.post(`${hostname}/`,{
+        //     quizName: inputData.quizName,
+        //     quizDifficulty: inputData.difficulty,
+        //     quizSubject: inputData.quizType,
+        //     quizData: quizData
+        // })
+        // .then(res=>{
+        //     console.log(res.data)
+        // })
+        navigate("/quiz-assign")
     }
 
     const quizTypeElements = quizTypes.map(quizType=><option key={quizType} value={quizType}>{quizType}</option>)
