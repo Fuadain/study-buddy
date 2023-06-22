@@ -5,7 +5,7 @@ import Sidebar from '../../../sidebar/sidebar'
 import QuizList from './components/quiz-list/quiz-list';
 import StudentList from './components/student-list/student-list';
 import ClassSettings from './components/class-settings/class-settings';
-import {Button, Box, Stack} from '@mui/material'
+import {Button, Box, Stack, Typography} from '@mui/material'
 import AxiosContext from '../../../components/axios-context';
 
 export default function Dashboard(){
@@ -45,12 +45,13 @@ export default function Dashboard(){
                     {currentPage}
                 </Box>
                 <Stack className="class-pages" 
-                direction="column" spacing={2} justifyContent="flex-start" 
+                direction="column" spacing={2}
                 pt="70px" pl="20px" ml="10px" 
                 sx={{borderLeft:"solid black 1px", minHeight:"70vh"}}>
-                    <h3 onClick={()=>switchPage("quiz")}>Quizzes</h3>
-                    <h3 onClick={()=>switchPage("students")}>Students</h3>
-                    <h3 onClick={()=>switchPage("settings")}>Settings</h3>
+                    
+                    <Typography onClick={()=>switchPage("quiz")}>Quizzes</Typography>
+                    <Typography onClick={()=>switchPage("students")}>Students</Typography>
+                    <Typography onClick={()=>switchPage("settings")}>Settings</Typography>
                 </Stack>
             </Stack>
             </Box>
