@@ -42,8 +42,7 @@ function App() {
 
   //need to also tell server to close session
   function logout(){
-    //removeCookie('authToken')
-    console.log("logout")
+    removeCookie('authToken')
   }
   
   return (
