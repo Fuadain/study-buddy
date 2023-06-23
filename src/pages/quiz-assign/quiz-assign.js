@@ -1,6 +1,7 @@
 import React from 'react';
 import './quiz-assign.css';
 import QuizTime from './comp/quiz-time'
+import QuizPrint from './comp/quiz-print'
 import { Button, Box, Stack, Divider } from '@mui/material';
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../../navbar/navbar'
@@ -27,7 +28,10 @@ export default function QuizAction(){
 
     function assignQuiz(){
         //quiz assign backend jargon
-        axios.post(`${hostname}/`, inputData, axiosConfig)
+        axios.post(`${hostname}/setQuizDetails`, inputData, axiosConfig)
+        .then(res=>{
+            console.log(res.data)
+        })
     }
 
     //Keeping this here to deal with any addition inputs that don't need a library

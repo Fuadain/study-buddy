@@ -6,6 +6,7 @@ import ProtectedRoute from "./components/protected-route";
 import UnprotectedRoute from "./components/unprotected-route";
 
 import AxiosContext from "./components/axios-context";
+import LogoutContext from "./components/logout-context";
 
 import {
   Homepage,
@@ -25,6 +26,7 @@ import {
 
 const hostname = "https://study-buddy-api.herokuapp.com"
 
+
 function App() {
   const [cookies, setCookie, removeCookie] = useCookies(['studyLogin'])
   const authToken = cookies.studyLogin?.authToken
@@ -33,18 +35,20 @@ function App() {
   let axiosConfig = null
   if(authToken)
     axiosConfig = { headers: {Authorization: `Bearer ${authToken}`} }
-    
+  
   function saveLogin(token, userType){
     setCookie('studyLogin', {authToken: token, userType: userType}, { path: '/' })
   }
 
   //need to also tell server to close session
   function logout(){
-    removeCookie('authToken')
+    //removeCookie('authToken')
+    console.log("logout")
   }
   
   return (
     <div>
+      <LogoutContext.Provider value={logout}>
       <AxiosContext.Provider value={{hostname: hostname, axiosConfig: axiosConfig, userType: userType}}>
       <Router>
         <Routes>
@@ -83,6 +87,7 @@ function App() {
         </Routes>
       </Router>
       </AxiosContext.Provider>
+      </LogoutContext.Provider>
     </div>
   );
 }
