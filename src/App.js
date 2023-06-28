@@ -7,6 +7,7 @@ import UnprotectedRoute from "./components/unprotected-route";
 
 import AxiosContext from "./components/axios-context";
 import LogoutContext from "./components/logout-context";
+import testData from "./components/test.json"
 
 import {
   Homepage,
@@ -28,14 +29,28 @@ const hostname = "https://study-buddy-api.herokuapp.com"
 
 
 function App() {
+  const [userData, setUserData] = React.useState(testData)
   const [cookies, setCookie, removeCookie] = useCookies(['studyLogin'])
   const authToken = cookies.studyLogin?.authToken
-  const userType = cookies.studyLogin?.userType
+  const userType = "student"//cookies.studyLogin?.userType
   
   let axiosConfig = null
   if(authToken)
     axiosConfig = { headers: {Authorization: `Bearer ${authToken}`} }
   
+  React.useEffect(()=>{
+    // if(authToken){
+    //   axios.get(`${hostname}/getUserData`, axiosConfig)
+    //   .then(res=>{
+    //     setUserData(res.data)
+    //   })
+    // }
+
+    // return () => {
+    //   setUserData(null)
+    // }
+  },[authToken])
+
   function saveLogin(token, userType){
     setCookie('studyLogin', {authToken: token, userType: userType}, { path: '/' })
   }
@@ -62,13 +77,13 @@ function App() {
               <Registration />
             </UnprotectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute authToken={authToken}>
-              <Dashboard />
+              <Dashboard classes={userData.classes}/>
             </ProtectedRoute>} />
           <Route path="/classboard" element={<ProtectedRoute authToken={authToken}>
-              <ClassBoard />
+              <ClassBoard classes={userData.classes}/>
             </ProtectedRoute>} />
           <Route path="/quiz" element={<ProtectedRoute authToken={authToken}>
-              <Quiz />
+              <Quiz classes={userData.classes}/>
             </ProtectedRoute>} />
             <Route path="/quiz-assign" element={<ProtectedRoute authToken={authToken}>
               <QuizAssign />

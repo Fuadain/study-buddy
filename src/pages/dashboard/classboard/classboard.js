@@ -7,33 +7,38 @@ import StudentList from './components/student-list/student-list';
 import ClassSettings from './components/class-settings/class-settings';
 import {Button, Box, Stack, Typography} from '@mui/material'
 import AxiosContext from '../../../components/axios-context';
+import {useLocation, useNavigate} from 'react-router-dom'
 
-export default function Dashboard(){
+export default function Classboard(props){
     const pageName = "Class Name"
     
+    const navigate = useNavigate()
+    const location = useLocation()
+    const {classIndex} = location.state
     const [classPage, setClassPage] = React.useState("quiz")
-    const {hostname, axiosConfig} = React.useContext(AxiosContext)
 
     React.useEffect(()=>{
-        //axios.get(`${hostname}/`) //get class name
+        if(classIndex === null)
+            navigate("/dashboard")
     },[])
 
     function switchPage(page){
         setClassPage(page)
     }
 
-    let currentPage
-    switch(classPage){
-        case "quiz":
-            currentPage = <QuizList/>
-            break
-        case "students":
-            currentPage = <StudentList/>
-            break
-        case "settings":
-            currentPage = <ClassSettings/>
-            break
-    }
+    let currentPage = ""
+    if(classIndex !== null)
+        switch(classPage){
+            case "quiz":
+                currentPage = <QuizList quizzes={props.classes[classIndex].quizzes} classIndex={classIndex}/>
+                break
+            case "students":
+                currentPage = <StudentList/>
+                break
+            case "settings":
+                currentPage = <ClassSettings/>
+                break
+        }
 
     return (
         <div>

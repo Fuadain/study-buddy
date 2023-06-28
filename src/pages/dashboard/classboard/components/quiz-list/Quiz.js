@@ -11,21 +11,21 @@ export default function Quiz(props){
         //Navigate to /quiz-creator as teacher or /quiz as student
 
         if(userType == "teacher")
-             navigate("/quiz-creator")
+            navigate("/quiz-creator")
         else
-             navigate("/quiz")
+            navigate("/quiz", {state:{classIndex:props.classIndex, quizIndex:props.index}})
     }
 
 
     return(<Box sx={{width:"100%", border: "1px solid black", padding: "0px 10px 10px 10px"}}>
         <Stack direction="row" justifyContent="space-between">
             <Stack spacing={2} direction="column">
-                <h2>{props.item.number}</h2>
-                <h4>Time Limit: {props.item.time} </h4>
+                <h2>{props.name}</h2>
+                <h4>Time Limit: {props.timeLimit} </h4>
             </Stack>
             <Stack spacing={2} direction="column">
-                <h4>Due by: {props.item.date}</h4>
-                <Button variant="contained" onClick={goToQuiz}>{userType=="teacher"?"Start":"Edit"}</Button>
+                <h4>Due by: {props.dueDate}</h4>
+                <Button variant="contained" onClick={goToQuiz}>{userType=="teacher"?"Edit":"Start"}</Button>
             </Stack>
         </Stack>
     </Box>)

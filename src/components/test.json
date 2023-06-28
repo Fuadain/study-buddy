@@ -1,0 +1,30 @@
+{
+    "classes": [{
+        "classID": 1,
+        "className": "Test Class",
+        "quizzes": [{
+            "quizID": 1,
+            "quizName": "test quiz",
+            "quizDifficulty": 1,
+            "quizSubject": "Javascript",
+            "dueDate": null,
+            "timeLimit": null,
+            "questions": [
+                {
+                    "question": "Test question",
+                    "answer": 3,
+                    "choices": [
+                        {
+                            "choiceID": 1,
+                            "questionID": 1,
+                            "option1": "test1",
+                            "option2": "test2",
+                            "option3": "test3",
+                            "option4": "test4"
+                        }
+                    ]
+                }
+            ]
+        }]
+    }]
+}

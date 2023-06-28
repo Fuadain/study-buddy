@@ -1,91 +1,104 @@
 import React from 'react'
 import Question from './question'
 import { Button, Box, Container, Stack } from '@mui/material'
-import parsingMultipleMCQ from '../../regex'
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate} from 'react-router-dom';
 import Navbar from '../../navbar/navbar';
 import Sidebar from '../../sidebar/sidebar';
+import AxiosContext from '../../components/axios-context';
 
 //add timer and place submit to side of quiz?
 
 //location holds quiz id passed to it to pull quiz
-export default function Quiz({location}) {
+export default function Quiz(props) {
   //need to have page not pull up if quizId is null
-  const {quizId=null} = useLocation()
-  const [quizData, setQuizData] = React.useState([{
-    id: 0,
-    question: "test question",
-    choices: ["1", "2", "3", "4"],
-    // isWritten: false,
-    type: 'mcq',
-    answer: "1",
-    chosenAnswer: ""
-  },
-    // {
-    //     id: 1,
-    //     question: "test question 2",
-    //     choices: ["4","5","6"],
-    //     isWritten: true,
-    //     answer: "5",
-    //     chosenAnswer: ""
-    // }
-  ])
+  const {hostname, axiosConfig} = React.useContext(AxiosContext)
+  const navigate = useNavigate()
+  const location = useLocation()
+  const {quizIndex, classIndex} = location.state
+  const {questions, quizName, timeLimit}= props.classes[classIndex]?.quizzes[quizIndex]?props.classes[classIndex].quizzes[quizIndex]:{questions:[], quizName:null, timeLimit:null}
+  const [quizData, setQuizData] = React.useState([])
+  const [isFinished, setIsFinished] = React.useState(false)
+  const [score, setScore] = React.useState(0)
 
-  React.useEffect(() => {
-    //fetch api and update question data here
-    /*
-    axios.get(`${props.hostname}/quiz/${quizId}`)
-    .then(res=>{
-      need:
-        quiz name
-        question list {question, choices, correct answer}
-    })
-    */
-  }, [])
-
-
-  //subject to change based on api
-  function changeQuizData(data) {
-    setQuizData(data)
-  }
-
-  function updateChosenAnswer(id, choice) {
-    if (quizData[id].chosenAnswer)
-      setQuizData(prevData => {
-        let newData = [...prevData]
-        newData[id].chosenAnswer = choice
-        return newData
+  React.useEffect(()=>{
+    if(quizIndex === null)
+      navigate("/dashboard")
+    setQuizData(prev=>{
+      return questions.map((question, index)=>{
+        let choices = []
+        for(const row in question.choices[0]){
+          if(row.includes("option")){
+            choices.push(question.choices[0][row])
+          }
+        }
+        
+        return {
+          id: index,
+          question: question.question,
+          choices:choices,
+          answer: question.answer,
+          chosenAnswer: null
+        }
       })
+    })
+    
+  },[])
+  
+  function updateChosenAnswer(id, choice) {
+    setQuizData(prevData => {
+      let newData = [...prevData]
+      newData[id].chosenAnswer = choice
+      return newData
+    })
   }
 
   //subject to change based on backend
   function submitAnswers() {
-    let isFinished = true
-    const results = quizData.map(element => {
-      if (!element.chosenAnswer) {
-        isFinished = false
+    let finishing = true
+    quizData.forEach(element => {
+      if (element.chosenAnswer === null) {
+        finishing = false
       }
-      return isFinished
     })
-    if (isFinished) {
-      console.log('Finished Quiz')
+    console.log(`Finished: ${finishing}`)
+    if (finishing) {
       //Submit answer data
+      let score = 0
+      quizData.forEach(element =>{
+        if(element.chosenAnswer === element.answer)
+          score++
+      })
+      console.log(`Score: ${score}/${quizData.length}`)
+
+      // axios.post(`${hostname}/recordScore`, {
+      //   quizID: 1,
+      //   score: score
+      // }, axiosConfig)
+      // .then(res=>{
+      //   console.log(res.data)
+      // })
+
+      setIsFinished(true)
+      setScore(score)
     }
   }
 
+  function exitPage(){
+    navigate("/dashboard")
+  }
+
     const QuestionListElements = quizData.map(element => <Question
-      key={Math.random}
+      key={element.question}
       id={element.id}
       question={element.question}
       choices={element.choices}
-      /*isWritten={element.isWritten}*/
-      type={element.type}
       answer={element.answer}
       chooseAnswer={updateChosenAnswer}
       chosenAnswer={element.chosenAnswer}
+      isFinished={isFinished}
     />)
 
-
+    
     return (<Box>
         <Navbar pageName="Quiz"/>
         <Sidebar/>
@@ -93,11 +106,12 @@ export default function Quiz({location}) {
           <Stack spacing={3}>
             {QuestionListElements}
             <Button
-              onClick={submitAnswers}
+              onClick={isFinished?exitPage:submitAnswers}
               variant="contained"
             >
-              Submit
+              {isFinished?"Leave":"Submit"}
             </Button>
+            {isFinished?<p>Score: {score}/{quizData.length}</p>:""}
           </Stack>
         </Container>
       </Box>

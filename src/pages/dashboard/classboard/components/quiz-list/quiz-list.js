@@ -6,29 +6,17 @@ import {NavLink} from 'react-router-dom'
 import AxiosContext from '../../../../../components/axios-context'
 
 export default function QuizList(props){
-    const [quizData, setQuizData] = React.useState(Quizdata)
-    const {hostname, axiosConfig, userType} = React.useContext(AxiosContext)
+    const {userType} = React.useContext(AxiosContext)
 
-    React.useEffect(()=>{
-        /* get quizzes
-        axios.get(`${hostname}/`)
-        .then(res=>{
-            let newData = res.data.quizList.filter(quiz=>{
-                if(quiz.dueDate){
-                    return true
-                }
-                return false
-            })
-            setQuizData(newData)
-        })
-        */
-    },[])
-
-    const quizzes = quizData.map(item => {
+    const quizzes = props.quizzes.map((quiz, index) => {
         return (
             < Quiz
-                key={item.id}
-                item={item}
+                key={quiz.quizName}
+                index={index}
+                name={quiz.quizName}
+                dueDate={quiz.dueDate}
+                timeLimit={quiz.timeLimit}
+                classIndex={props.classIndex}
             />
         )
     })
