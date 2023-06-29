@@ -11,7 +11,7 @@ import AxiosContext from '../../components/axios-context';
 //location holds quiz id passed to it to pull quiz
 export default function Quiz(props) {
   //need to have page not pull up if quizId is null
-  const {hostname, axiosConfig} = React.useContext(AxiosContext)
+  const {hostname, axiosConfig, email} = React.useContext(AxiosContext)
   const navigate = useNavigate()
   const location = useLocation()
   const {quizIndex, classIndex} = location.state
@@ -70,13 +70,14 @@ export default function Quiz(props) {
       })
       console.log(`Score: ${score}/${quizData.length}`)
 
-      // axios.post(`${hostname}/recordScore`, {
-      //   quizID: 1,
-      //   score: score
-      // }, axiosConfig)
-      // .then(res=>{
-      //   console.log(res.data)
-      // })
+      axios.post(`${hostname}/recordScore`, {
+        email: email,
+        quizID: 1,
+        score: score
+      }, axiosConfig)
+      .then(res=>{
+        console.log(res.data)
+      })
 
       setIsFinished(true)
       setScore(score)

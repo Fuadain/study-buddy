@@ -6,21 +6,24 @@ import { useNavigate } from 'react-router-dom'
 
 export default function ClassSettings(props){
     const navigate = useNavigate()
-    const {hostname, axiosConfig, userType} = React.useContext(AxiosContext)
+    const {hostname, axiosConfig, userType, email} = React.useContext(AxiosContext)
 
     function deleteClass(){
-        axios.post(`${hostname}/delete-class`, {className: ""}, axiosConfig)
+        axios.post(`${hostname}/delete-class`, {
+            className: props.className,
+            email: email
+        }, axiosConfig)
         .then(res=>{
-            //confirm
+            console.log(res.data)
         })
     }
 
-    function leaveClass(){
-        /*axios.post(`${hostname}/delete-class`, {className: ""}, axiosConfig)
-        .then(res=>{
-            //confirm
-        })*/
-    }
+    // function leaveClass(){
+    //     axios.post(`${hostname}/delete-class`, {className: ""}, axiosConfig)
+    //     .then(res=>{
+    //         //confirm
+    //     })
+    // }
 
     return (<Box>
         <h3 className="class-title">Settings</h3>

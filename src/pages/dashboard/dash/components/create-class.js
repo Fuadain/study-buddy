@@ -13,7 +13,7 @@ export default function CreateClass(props){
     const [inputData, setInputData] = React.useState({
         className: ""
     })
-    const {hostname, axiosConfig} = React.useContext(AxiosContext)
+    const {hostname, axiosConfig, email} = React.useContext(AxiosContext)
 
     function changeInput(event){
         const input = event.target
@@ -26,9 +26,12 @@ export default function CreateClass(props){
 
     function newClass(){
         if(inputData.className)
-            axios.post(`${hostname}/`, inputData, axiosConfig)
+            axios.post(`${hostname}/`, {
+                email: email,
+                className: inputData.className,
+            }, axiosConfig)
             .then(res=>{
-                //confirm class was made
+                console.log(res.data)
             })
         else
             alert("A new class needs a name")

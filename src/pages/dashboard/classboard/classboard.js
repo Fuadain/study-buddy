@@ -36,7 +36,7 @@ export default function Classboard(props){
                 currentPage = <StudentList/>
                 break
             case "settings":
-                currentPage = <ClassSettings/>
+                currentPage = <ClassSettings className={props.classes[classIndex].className}/>
                 break
         }
 

@@ -3,7 +3,7 @@ import './quiz-assign.css';
 import QuizTime from './comp/quiz-time'
 import QuizPrint from './comp/quiz-print'
 import { Button, Box, Stack, Divider } from '@mui/material';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import Navbar from '../../navbar/navbar'
 import Sidebar from '../../sidebar/sidebar';
 import axios from 'axios'
@@ -11,16 +11,15 @@ import AxiosContext from '../../components/axios-context';
 
 export default function QuizAction(){
     const navigate = useNavigate()
+    // const location = useLocation()
+    // const {quizID=null} = location.state
+
     const [inputData, setInputData] = React.useState({
         dueDate: null,
         timeLimit: 30
     })
     const [printing, setPrinting] = React.useState()
-    const {hostname, axiosConfig} = React.useContext(AxiosContext)
-
-    React.useEffect(()=>{
-    
-    },[])
+    const {hostname, axiosConfig, email} = React.useContext(AxiosContext)
 
     function printQuiz(bool){
         setPrinting(bool)
@@ -28,7 +27,10 @@ export default function QuizAction(){
 
     function assignQuiz(){
         //quiz assign backend jargon
-        axios.post(`${hostname}/setQuizDetails`, inputData, axiosConfig)
+        axios.post(`${hostname}/setQuizDetails`, {
+            ...inputData,
+            email: email,
+        }, axiosConfig)
         .then(res=>{
             console.log(res.data)
         })

@@ -59,16 +59,17 @@ export default function QuizCreator(){
 
     function saveQuiz(){
         //api jargon, get id to navigate to quiz assign
-        // axios.post(`${hostname}/`,{
-        //     quizName: inputData.quizName,
-        //     quizDifficulty: inputData.difficulty,
-        //     quizSubject: inputData.quizType,
-        //     quizData: quizData
-        // })
-        // .then(res=>{
-        //     console.log(res.data)
-        // })
-        navigate("/quiz-assign")
+        let quizID = null
+        axios.post(`${hostname}/`,{
+            quizName: inputData.quizName,
+            quizDifficulty: inputData.difficulty,
+            quizSubject: inputData.quizType,
+            quizData: quizData
+        })
+        .then(res=>{
+            quizID = res.data.quizID
+        })
+        navigate("/quiz-assign", {state: {quizID: quizID}})
     }
 
     const quizTypeElements = quizTypes.map(quizType=><option key={quizType} value={quizType}>{quizType}</option>)

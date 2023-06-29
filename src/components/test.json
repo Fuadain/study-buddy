@@ -1,4 +1,5 @@
 {
+    "email": "example@example.com",
     "classes": [{
         "classID": 1,
         "className": "Test Class",

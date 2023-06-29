@@ -63,7 +63,7 @@ function App() {
   return (
     <div>
       <LogoutContext.Provider value={logout}>
-      <AxiosContext.Provider value={{hostname: hostname, axiosConfig: axiosConfig, userType: userType}}>
+      <AxiosContext.Provider value={{hostname: hostname, axiosConfig: axiosConfig, userType: userType, email: userData.email}}>
       <Router>
         <Routes>
           <Route exact path="/" element={<Homepage />} />
