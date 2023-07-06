@@ -14,9 +14,10 @@ export default function Classboard(props){
     
     const navigate = useNavigate()
     const location = useLocation()
-    const {classIndex} = location.state
+    const {classIndex = null} = location?.state || {}
+    const className = props?.classes[classIndex]?.className
     const [classPage, setClassPage] = React.useState("quiz")
-
+    
     React.useEffect(()=>{
         if(classIndex === null)
             navigate("/dashboard")
@@ -30,10 +31,10 @@ export default function Classboard(props){
     if(classIndex !== null)
         switch(classPage){
             case "quiz":
-                currentPage = <QuizList quizzes={props.classes[classIndex].quizzes} classIndex={classIndex}/>
+                currentPage = <QuizList quizzes={props.classes[classIndex].quizzes} classIndex={classIndex} className={props.classes[classIndex].className}/>
                 break
             case "students":
-                currentPage = <StudentList/>
+                currentPage = <StudentList className={className}/>
                 break
             case "settings":
                 currentPage = <ClassSettings className={props.classes[classIndex].className}/>

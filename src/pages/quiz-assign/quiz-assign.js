@@ -11,8 +11,8 @@ import AxiosContext from '../../components/axios-context';
 
 export default function QuizAction(){
     const navigate = useNavigate()
-    // const location = useLocation()
-    // const {quizID=null} = location.state
+    const location = useLocation()
+    const {quizID=null} = location?.state || {}
 
     const [inputData, setInputData] = React.useState({
         dueDate: null,
@@ -20,6 +20,7 @@ export default function QuizAction(){
     })
     const [printing, setPrinting] = React.useState()
     const {hostname, axiosConfig, email} = React.useContext(AxiosContext)
+    console.log(inputData.dueDate)
 
     function printQuiz(bool){
         setPrinting(bool)
@@ -28,8 +29,9 @@ export default function QuizAction(){
     function assignQuiz(){
         //quiz assign backend jargon
         axios.post(`${hostname}/setQuizDetails`, {
-            ...inputData,
-            email: email,
+            dueDate: inputData.dueDate.toJSON().slice(0, 19).replace('T', ' '),
+            timeLimit: inputData.timeLimit,
+            quizID: quizID
         }, axiosConfig)
         .then(res=>{
             console.log(res.data)

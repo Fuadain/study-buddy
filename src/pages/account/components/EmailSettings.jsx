@@ -2,6 +2,7 @@ import React from 'react'
 import {Button, Stack, TextField} from '@mui/material/'
 import AxiosContext from '../../../components/axios-context'
 import axios from 'axios'
+import LoggingContext from '../../../components/logging-context'
 
 function emailCheck(email){
   if(email === "")
@@ -14,7 +15,7 @@ function emailCheck(email){
     return false
 }
 
-const EmailSettings = () => {
+const EmailSettings = (props) => {
   const [inputData, setInputData] = React.useState(
     {
       email:"",
@@ -22,7 +23,8 @@ const EmailSettings = () => {
       isEmailValid: null
     }
   )
-  const {hostname, axiosConfig} = React.useContext(AxiosContext)
+  const {hostname, axiosConfig, email} = React.useContext(AxiosContext)
+  const {saveLogin} = React.useContext(LoggingContext)
 
   React.useEffect(()=>{
     /*
@@ -54,13 +56,27 @@ const EmailSettings = () => {
 
   function submitChange(){
     axios.post(`${hostname}/update-email`,{
+      oldEmail: email,
       newEmail: inputData.email,
       password: inputData.password
     }, axiosConfig)
     .then(res=>{
       //check if password was correct
       //check if email exists
+      changeLogin()
     })
+  }
+
+  function changeLogin(){
+    axios.post("https://study-buddy-api.herokuapp.com/login", 
+        {
+            email: inputData.email,
+            password: inputData.password
+        })
+        .then(res=>{
+            console.log(`Relogging`)
+            saveLogin(res.data.token, res.data.type, res.data.email)
+        })
   }
 
   let emailValidityStatement = ""

@@ -9,7 +9,7 @@ const PasswordSettings = () => {
     newPassword: "",
     confirmNewPassword: ""
   })
-  const {hostname, axiosConfig} = React.useContext(AxiosContext)
+  const {hostname, axiosConfig, email} = React.useContext(AxiosContext)
 
   function changeInputData(event){
     const input = event.target
@@ -27,10 +27,12 @@ const PasswordSettings = () => {
     && inputData.newPassword === inputData.confirmNewPassword && passwordCheck(inputData.newPassword)){
       axios.post(`${hostname}/update-password`, {
         oldPassword: inputData.oldPassword,
-        newPassword: inputData.newPassword
+        newPassword: inputData.newPassword,
+        email: email
       }, axiosConfig)
       .then(res=>{
         //check if password was correct
+        console.log(res.data)
       })
     } else {
       alert("Invalid input")

@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate} from 'react-router-dom';
 import Navbar from '../../navbar/navbar';
 import Sidebar from '../../sidebar/sidebar';
 import AxiosContext from '../../components/axios-context';
+import axios from 'axios'
 
 //add timer and place submit to side of quiz?
 
@@ -14,7 +15,7 @@ export default function Quiz(props) {
   const {hostname, axiosConfig, email} = React.useContext(AxiosContext)
   const navigate = useNavigate()
   const location = useLocation()
-  const {quizIndex, classIndex} = location.state
+  const {quizIndex=null, classIndex=null} = location?.state || {}
   const {questions, quizName, timeLimit}= props.classes[classIndex]?.quizzes[quizIndex]?props.classes[classIndex].quizzes[quizIndex]:{questions:[], quizName:null, timeLimit:null}
   const [quizData, setQuizData] = React.useState([])
   const [isFinished, setIsFinished] = React.useState(false)

@@ -34,7 +34,7 @@ export default function StudentList(props){
     ) 
 
     return(<Box>
-        {enrolling?<EnrollPopup closePopup={()=>enrollView(false)}/>:""}
+        {enrolling?<EnrollPopup className={props.className} closePopup={()=>enrollView(false)}/>:""}
         <h3 className="class-title">Students</h3>
         {students?<Grid container className="student-container" columns={3}  spacing={2} mb={2}>
             {students}

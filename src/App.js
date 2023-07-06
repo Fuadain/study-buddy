@@ -1,13 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import { useCookies } from 'react-cookie';
 
 import ProtectedRoute from "./components/protected-route";
 import UnprotectedRoute from "./components/unprotected-route";
 
 import AxiosContext from "./components/axios-context";
-import LogoutContext from "./components/logout-context";
+import LoggingContext from "./components/logging-context";
 import testData from "./components/test.json"
+import axios from 'axios'
 
 import {
   Homepage,
@@ -32,38 +33,47 @@ function App() {
   const [userData, setUserData] = React.useState(testData)
   const [cookies, setCookie, removeCookie] = useCookies(['studyLogin'])
   const authToken = cookies.studyLogin?.authToken
-  const userType = "student"//cookies.studyLogin?.userType
-  
+  const userType = cookies.studyLogin?.userType
+  const email = cookies.studyLogin?.email
+
+  const navigate = useNavigate()
+
   let axiosConfig = null
   if(authToken)
     axiosConfig = { headers: {Authorization: `Bearer ${authToken}`} }
   
   React.useEffect(()=>{
-    // if(authToken){
-    //   axios.get(`${hostname}/getUserData`, axiosConfig)
-    //   .then(res=>{
-    //     setUserData(res.data)
-    //   })
-    // }
+    if(authToken){
+      console.log(`Getting User Data ${authToken}`)
+      axios.get(`${hostname}/getUserData`, {...axiosConfig, params:{email:email}})
+      .then(res=>{
+        setUserData(res.data)
+        console.log(res.data)
+        navigate("/dashboard")
+      }
+      )
+    }
 
-    // return () => {
-    //   setUserData(null)
-    // }
+    return () => {
+      setUserData(null)
+    }
   },[authToken])
 
-  function saveLogin(token, userType){
-    setCookie('studyLogin', {authToken: token, userType: userType}, { path: '/' })
+  function saveLogin(token, type, userEmail){
+    setCookie('studyLogin', {authToken: token, userType: type, email: userEmail}, { path: '/' })
   }
 
   //need to also tell server to close session
   function logout(){
-    removeCookie('authToken')
+    console.log("logout")
+    removeCookie('studyLogin',{path:'/'})
+    navigate("/login")
   }
   
   return (
     <div>
-      <LogoutContext.Provider value={logout}>
-      <AxiosContext.Provider value={{hostname: hostname, axiosConfig: axiosConfig, userType: userType, email: userData.email}}>
+      <LoggingContext.Provider value={{logout: logout, savelogin: saveLogin}}>
+      <AxiosContext.Provider value={{hostname: hostname, axiosConfig: axiosConfig, userType: userType, email: email}}>
       <Router>
         <Routes>
           <Route exact path="/" element={<Homepage />} />
@@ -77,13 +87,13 @@ function App() {
               <Registration />
             </UnprotectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute authToken={authToken}>
-              <Dashboard classes={userData.classes}/>
+              <Dashboard classes={userData?.classes}/>
             </ProtectedRoute>} />
           <Route path="/classboard" element={<ProtectedRoute authToken={authToken}>
-              <ClassBoard classes={userData.classes}/>
+              <ClassBoard classes={userData?.classes}/>
             </ProtectedRoute>} />
           <Route path="/quiz" element={<ProtectedRoute authToken={authToken}>
-              <Quiz classes={userData.classes}/>
+              <Quiz classes={userData?.classes}/>
             </ProtectedRoute>} />
             <Route path="/quiz-assign" element={<ProtectedRoute authToken={authToken}>
               <QuizAssign />
@@ -92,7 +102,7 @@ function App() {
               <QuizCreator />
             </ProtectedRoute>} />
           <Route path="/account" element={<ProtectedRoute authToken={authToken}>
-              <AccountPage />
+              <AccountPage saveLogin={saveLogin}/>
             </ProtectedRoute>} />
 
           <Route path="/contact" element={<Contact />} />
@@ -101,7 +111,7 @@ function App() {
         </Routes>
       </Router>
       </AxiosContext.Provider>
-      </LogoutContext.Provider>
+      </LoggingContext.Provider>
     </div>
   );
 }

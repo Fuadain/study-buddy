@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import{Stack, Typography, Button, 
     FormControl, InputAdornment, OutlinedInput, 
     InputLabel, IconButton, FormLabel, RadioGroup, FormHelperText,
@@ -18,7 +18,7 @@ export default function Login(props){
     const handleMouseDownPassword = (event) => {
           event.preventDefault();
     };
-
+    const navigate = useNavigate()
 
     const changeInputData = (event) => {
         const input = event.target
@@ -38,7 +38,8 @@ export default function Login(props){
             password: inputData.password
         })
         .then(res=>{
-            props.saveLogin(res.data.token, res.data.userType)
+            console.log(res.data)
+            props.saveLogin(res.data.token, res.data.type, res.data.email)
         })
     };
 

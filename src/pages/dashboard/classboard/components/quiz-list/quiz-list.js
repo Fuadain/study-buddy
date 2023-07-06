@@ -7,7 +7,7 @@ import AxiosContext from '../../../../../components/axios-context'
 
 export default function QuizList(props){
     const {userType} = React.useContext(AxiosContext)
-
+    
     const quizzes = props.quizzes.map((quiz, index) => {
         return (
             < Quiz
@@ -17,6 +17,8 @@ export default function QuizList(props){
                 dueDate={quiz.dueDate}
                 timeLimit={quiz.timeLimit}
                 classIndex={props.classIndex}
+                className={props.className}
+                quizID={quiz.quizID}
             />
         )
     })
@@ -25,7 +27,7 @@ export default function QuizList(props){
         <h3 className="class-title">Available Quizzes</h3>
         <Stack direction="column" spacing={1}>
             {quizzes?quizzes:<h3>No quizzes available</h3>}
-            {userType == "teacher"?<NavLink to="/quiz-creator">
+            {userType == "teacher"?<NavLink to="/quiz-creator" state={{className: props.className}}>
                 <Button variant='contained'>Create New Quiz</Button>
             </NavLink>:""}
         </Stack>

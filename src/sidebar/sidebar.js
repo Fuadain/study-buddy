@@ -2,11 +2,11 @@ import React from 'react';
 import './sidebar.css';
 import { NavLink } from 'react-router-dom';
 import AxiosContext from '../components/axios-context';
-import LogoutContext from '../components/logout-context';
+import LoggingContext from '../components/logging-context';
 
 export default function Sidebar(){
     const {userType} = React.useContext(AxiosContext)
-    const logout = React.useContext(LogoutContext)
+    const {logout} = React.useContext(LoggingContext)
     
     function studentSidebar(){
         return (

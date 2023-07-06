@@ -1,8 +1,8 @@
 import React from 'react';
 import './quiz-creator.css';
-import { Button, Box, Container, Stack } from '@mui/material'
+import { Button, Box, Container, Stack, useThemeProps } from '@mui/material'
 import QuizPreview from './comp/quiz-preview'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import Navbar from '../../navbar/navbar'
 import Sidebar from '../../sidebar/sidebar';
 import axios from 'axios'
@@ -11,6 +11,8 @@ import AxiosContext from '../../components/axios-context';
 export default function QuizCreator(){
     const pageName = "Quiz Creator"
     const navigate = useNavigate()
+    const location = useLocation()
+    const {className=null} = location?.state || {}
     const [inputData, setInputData] = React.useState({
         quizName: "",
         quizType: "",
@@ -23,7 +25,7 @@ export default function QuizCreator(){
     const quizTypes = ["Math", "English", "History", "Javascript"]
     const [previewQuiz, setPreviewQuiz] = React.useState(false)
 
-    const {hostname} = React.useContext(AxiosContext)
+    const {hostname, axiosConfig, email} = React.useContext(AxiosContext)
 
     React.useEffect(()=>{
         setDifficultyElements(()=>{
@@ -60,16 +62,22 @@ export default function QuizCreator(){
     function saveQuiz(){
         //api jargon, get id to navigate to quiz assign
         let quizID = null
-        axios.post(`${hostname}/`,{
-            quizName: inputData.quizName,
-            quizDifficulty: inputData.difficulty,
-            quizSubject: inputData.quizType,
-            quizData: quizData
-        })
-        .then(res=>{
-            quizID = res.data.quizID
-        })
-        navigate("/quiz-assign", {state: {quizID: quizID}})
+        if(className !== null){
+            axios.post(`${hostname}/createQuiz`,{
+                className: className,
+                email: email,
+                quizName: inputData.quizName,
+                quizDifficulty: inputData.difficulty,
+                quizSubject: inputData.quizType,
+                quizData: quizData
+            })
+            .then(res=>{
+                quizID = res.data.quizID
+            })
+            navigate("/quiz-assign", {state: {quizID: quizID}})
+        } else {
+            alert("Error: No Class Selected")
+        }
     }
 
     const quizTypeElements = quizTypes.map(quizType=><option key={quizType} value={quizType}>{quizType}</option>)

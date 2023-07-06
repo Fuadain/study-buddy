@@ -12,14 +12,17 @@ export default function QuizPreview({quizData,setQuizData, ...props}){
 
     React.useEffect(()=>{
       //for production, remove test
-      axios.post("https://study-gen.up.railway.app/", {
+      axios.post("https://study-gen.vercel.app/", {
         difficulty: props.difficulty, 
         subject: props.subject, 
         questionNum: props.questionNum,
-        test: true
+        test: props.testing
       })
       .then(res=>{
-        setQuizData(res.data.quiz)
+        if(res.data.quiz)
+          setQuizData(res.data.quiz)
+        else
+          console.log(res.data)
       })
     },[])
 

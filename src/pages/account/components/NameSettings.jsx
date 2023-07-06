@@ -16,7 +16,7 @@ const NameSettings = () => {
     password: "",
     isNameValid: null
   })
-  const {hostname, axiosConfig} = React.useContext(AxiosContext)
+  const {hostname, axiosConfig, email} = React.useContext(AxiosContext)
   React.useEffect(()=>{
     //api name pull jargon
     /*
@@ -51,14 +51,16 @@ const NameSettings = () => {
   }
 
   function submitChange(){
-    if(inputData.isNameValid){
+    if(true){
       axios.post(`${hostname}/update-name`,{
-        firstName:inputData.firstName,
-        lastName:inputData.lastName,
+        email: email,
+        newFirstName:inputData.firstName,
+        newLastName:inputData.lastName,
         password:inputData.password
       }, axiosConfig)
       .then(res=>{
         //check if password was correct
+        console.log(res.data)
       })
     }else{
       alert("Name invalid")

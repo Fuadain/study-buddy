@@ -12,7 +12,7 @@ const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@
 
 export default function EnrollPopup(props){
     const [emails, setEmails] = React.useState("")
-    const {hostname, axiosConfig} = React.useContext(AxiosContext)
+    const {hostname, axiosConfig, email} = React.useContext(AxiosContext)
 
     function changeEmails(event){
         const input = event.target
@@ -23,9 +23,13 @@ export default function EnrollPopup(props){
         if(emails){
             const emailList = makeEmailArray(emails)
             if(emailListCheck(emailList))
-                axios.post(`${hostname}/`, {emails: emailList}, axiosConfig)
+                axios.post(`${hostname}/enroll`, {
+                    teacherEmail: email,
+                    emails: emailList,
+                    className: props.className
+                }, axiosConfig)
                 .then(res=>{
-                    //confirm users exist
+                    console.log(res.data)
                 })
             else
                 alert("One or more emails are invalid")

@@ -26,10 +26,10 @@ export default function CreateClass(props){
 
     function newClass(){
         if(inputData.className)
-            axios.post(`${hostname}/`, {
+            axios.post(`${hostname}/newClass`, {
                 email: email,
                 className: inputData.className,
-            }, axiosConfig)
+            }, {...axiosConfig, params:{email: email}})
             .then(res=>{
                 console.log(res.data)
             })

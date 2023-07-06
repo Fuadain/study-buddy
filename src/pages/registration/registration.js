@@ -1,6 +1,6 @@
 
 import { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./registration.css";
 import AxiosContext from "../../components/axios-context";
 import axios from 'axios'
@@ -16,6 +16,7 @@ const Register = () => {
     type: "",
   })
   const {hostname} = useContext(AxiosContext)
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -27,8 +28,8 @@ const Register = () => {
   && inputs.confirmPassword && inputs.type && emailCheck(inputs.email) &&
   passwordCheck(inputs.password) && inputs.password === inputs.confirmPassword){
     axios.post(`${hostname}/newUser`, {
-      firstName: inputs.firstName,
-      lastName: inputs.lastName,
+      first_name: inputs.firstName,
+      last_name: inputs.lastName,
       email: inputs.email,
       password: inputs.password,
       type: inputs.type
@@ -36,7 +37,11 @@ const Register = () => {
     .then(res=>{
       //check if email already in use
       //alert("Email already in use")
-    })
+      console.log("All good")
+      console.log(res.data)
+      navigate("/login")
+    }
+    )
   } else {
     alert("Complete form before submitting")
   }
@@ -116,7 +121,7 @@ const Register = () => {
                 onChange={handleChange}
               />
                {" "}
-              <label for="teacher" className="registration-label">
+              <label htmlFor="teacher" className="registration-label">
                 Teacher
               </label>
               <input
@@ -129,7 +134,7 @@ const Register = () => {
                 onChange={handleChange}
               />
                {" "}
-              <label for="student" className="registration-label">
+              <label htmlFor="student" className="registration-label">
                 Student
               </label>
             </div>
@@ -140,7 +145,7 @@ const Register = () => {
               Terms of Service
             </Link>
           </span>
-          <button type="submit" className="sign-up-btn" onClick={submitData}>
+          <button type="button" className="sign-up-btn" onClick={submitData}>
             Create account
           </button>
           <button className="google-btn">
