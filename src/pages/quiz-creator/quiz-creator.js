@@ -22,7 +22,7 @@ export default function QuizCreator(){
     })
     const [quizData, setQuizData] = React.useState([])
     const [difficultyElements, setDifficultyElements] = React.useState()
-    const quizTypes = ["Math", "English", "History", "Javascript"]
+    const quizTypes = ["Javascript"]
     const [previewQuiz, setPreviewQuiz] = React.useState(false)
 
     const {hostname, axiosConfig, email} = React.useContext(AxiosContext)
