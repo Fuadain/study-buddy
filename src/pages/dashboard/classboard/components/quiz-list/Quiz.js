@@ -12,13 +12,13 @@ export default function Quiz(props){
     function goToQuiz(){
         //Navigate to /quiz-creator as teacher or /quiz as student
         if(userType == "teacher")
-            navigate("/quiz-creator", {state:{className: props.className}})
+            navigate("/quiz-creator", {state:{className: props.className, classIndex: props.classIndex}})
         else
             navigate("/quiz", {state:{classIndex:props.classIndex, quizIndex:props.index}})
     }
     function goToAssign(){
         //Navigate to /quiz-assign as teacher
-        navigate("/quiz-assign", {state:{className: props.className, quizID: props.quizID}})
+        navigate("/quiz-assign", {state:{className: props.className, quizID: props.quizID, classIndex: props.classIndex}})
     }
 
     return(<Box sx={{width:"100%", border: "1px solid black", padding: "0px 10px 10px 10px"}}>

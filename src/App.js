@@ -36,7 +36,6 @@ function App() {
   const userType = cookies.studyLogin?.userType
   const email = cookies.studyLogin?.email
 
-  const navigate = useNavigate()
 
   let axiosConfig = null
   if(authToken)
@@ -49,7 +48,6 @@ function App() {
       .then(res=>{
         setUserData(res.data)
         console.log(res.data)
-        navigate("/dashboard")
       }
       )
     }
@@ -67,7 +65,6 @@ function App() {
   function logout(){
     console.log("logout")
     removeCookie('studyLogin',{path:'/'})
-    navigate("/login")
   }
   
   return (
@@ -96,7 +93,7 @@ function App() {
               <Quiz classes={userData?.classes}/>
             </ProtectedRoute>} />
             <Route path="/quiz-assign" element={<ProtectedRoute authToken={authToken}>
-              <QuizAssign />
+              <QuizAssign classes={userData?.classes}/>
             </ProtectedRoute>} />
           <Route path="/quiz-creator" element={<ProtectedRoute authToken={authToken}>
               <QuizCreator />

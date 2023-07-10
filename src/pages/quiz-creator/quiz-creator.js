@@ -12,7 +12,7 @@ export default function QuizCreator(){
     const pageName = "Quiz Creator"
     const navigate = useNavigate()
     const location = useLocation()
-    const {className=null} = location?.state || {}
+    const {className=null, classIndex=null} = location?.state || {}
     const [inputData, setInputData] = React.useState({
         quizName: "",
         quizType: "",
@@ -73,8 +73,9 @@ export default function QuizCreator(){
             })
             .then(res=>{
                 quizID = res.data.quizID
+                navigate("/quiz-assign", {state: {quizID: quizID, classIndex: classIndex}})
             })
-            navigate("/quiz-assign", {state: {quizID: quizID}})
+            
         } else {
             alert("Error: No Class Selected")
         }

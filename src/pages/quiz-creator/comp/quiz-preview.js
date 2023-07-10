@@ -9,6 +9,7 @@ export default function QuizPreview({quizData,setQuizData, ...props}){
       questionIndex: null,
       choiceIndex: null
     })
+    const [loading, setLoading] = React.useState(true)
 
     React.useEffect(()=>{
       //for production, remove test
@@ -19,9 +20,10 @@ export default function QuizPreview({quizData,setQuizData, ...props}){
         test: props.testing
       })
       .then(res=>{
-        if(res.data.quiz)
+        if(res.data.quiz){
           setQuizData(res.data.quiz)
-        else
+          setLoading(false)
+        }else
           console.log(res.data)
       })
     },[])
@@ -66,7 +68,7 @@ export default function QuizPreview({quizData,setQuizData, ...props}){
         answer={question.answer}
       />)
 
-    if(!quizData)
+    if(loading)
       return (<div>Generating Quiz...</div>)
 
     return (

@@ -9,18 +9,45 @@ import Sidebar from '../../sidebar/sidebar';
 import axios from 'axios'
 import AxiosContext from '../../components/axios-context';
 
-export default function QuizAction(){
+export default function QuizAction(props){
     const navigate = useNavigate()
     const location = useLocation()
-    const {quizID=null} = location?.state || {}
-
+    const {quizID=null, classIndex=null} = location?.state || {}
+    const [quizData, setQuizData] = React.useState([])
     const [inputData, setInputData] = React.useState({
         dueDate: null,
         timeLimit: 30
     })
     const [printing, setPrinting] = React.useState()
     const {hostname, axiosConfig, email} = React.useContext(AxiosContext)
-    console.log(inputData.dueDate)
+    
+    React.useEffect(()=>{
+        if(classIndex !== null){
+            let quizIndex = null
+            props.classes[classIndex].quizzes.forEach((quiz, index)=>{
+                if(quiz.quizID == quizID)
+                    quizIndex = index
+            })
+        setQuizData(prev=>{
+            return props.classes[classIndex].quizzes[quizIndex].questions.map((question, index)=>{
+            let choices = []
+            for(const row in question.choices[0]){
+                if(row.includes("option")){
+                choices.push(question.choices[0][row])
+                }
+            }
+            console.log(choices)
+            return {
+                id: index,
+                question: question.question,
+                choices:choices,
+                answer: question.answer,
+                chosenAnswer: null
+            }
+            })
+        })
+    }
+    },[classIndex])
 
     function printQuiz(bool){
         setPrinting(bool)
@@ -105,7 +132,7 @@ export default function QuizAction(){
                     >
                         Assign Quiz
                     </Button>
-                    {printing?<QuizPrint stopPrinting={()=>printQuiz(false)}/>:""}
+                    {printing?<QuizPrint stopPrinting={()=>printQuiz(false)} quizData={quizData}/>:""}
                 </Stack>
             </Box>
         </Box>

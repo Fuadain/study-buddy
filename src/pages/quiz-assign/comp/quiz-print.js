@@ -7,21 +7,13 @@ const pageStyle = `
     @page {margin: 2cm 2cm 2cm 2cm !important}
 `
 
-export default function QuizPrint({stopPrinting, ...props}){
+export default function QuizPrint({stopPrinting, quizData, ...props}){
     const printRef = React.useRef()
     const printScreen = useReactToPrint({
         content: ()=>printRef.current,
         onAfterPrint: ()=>stopPrinting()
       })
-    const [quizData, setQuizData] = React.useState([])
     const {hostname, axiosConfig} = React.useContext(AxiosContext)
-
-    React.useEffect(()=>{
-        axios.get(`${hostname}/`, axiosConfig)
-        .then(res=>{
-            setQuizData()
-        })
-    },[])
 
     React.useEffect(()=>{
         if(quizData)
@@ -29,12 +21,12 @@ export default function QuizPrint({stopPrinting, ...props}){
     },[quizData, printScreen])
 
     const pageContent = quizData.map((data, index)=>{
+        const choicesElements = data.choices.map(choice=>{
+            return <p>{choice}</p>
+        })
         return <div className="print-question">
             <h3>{index+1}) {data.question}</h3>
-            <p>{data.choice1}</p>
-            <p>{data.choice2}</p>
-            <p>{data.choice3}</p>
-            <p>{data.choice4}</p>
+            {choicesElements}
         </div>
     })
 
