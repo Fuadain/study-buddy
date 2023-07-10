@@ -10,11 +10,30 @@ export default function Sidebar(){
     
     function studentSidebar(){
         return (
-            <ul className="sidebar-list-container">
-            <li><h2 id="sidebar-welcome">Welcome {userType}!</h2></li>
-            <NavLink to="/dashboard" id="sidebar-profile" className="sidebar-option-link"><li className="sidebar-option">Home</li></NavLink>
-            <NavLink to="/account" id="sidebar-profile" className="sidebar-option-link"><li className="sidebar-option">Account</li></NavLink>
-            <li className="sidebar-option sidebar-option-link" onClick={logout}>Logout</li>
+        <ul className="sidebar-list-container">
+            <li>
+                <h2 id="sidebar-welcome">
+                    Welcome {userType}!
+                </h2>
+            </li>
+            <li className="sidebar-option">
+            <NavLink to="/dashboard" id="sidebar-profile" className="sidebar-option-link">
+                <i className="fa-solid fa-house"/> 
+                <span>Home</span>
+            </NavLink>
+            </li>
+            <li className="sidebar-option">
+                <NavLink to="/account" id="sidebar-profile" className="sidebar-option-link">
+                    <i className="fa-solid fa-user"/> 
+                    <span>Account</span>
+                </NavLink>
+            </li>
+            <li className="sidebar-option" id="sidebar-logout" onClick={logout}>
+                <div className="sidebar-option-link">
+                    <i className="fa-solid fa-arrow-right-from-bracket"/>
+                    <span>Logout</span>
+                </div>
+            </li>
         </ul>
         )
     }
