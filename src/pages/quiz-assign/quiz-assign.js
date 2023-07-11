@@ -49,8 +49,8 @@ export default function QuizAction(props){
     }
     },[classIndex])
 
-    function printQuiz(bool){
-        setPrinting(bool)
+    function printQuiz(bool, copyType=""){
+        setPrinting({isPrinting: bool, copyType: copyType})
     }
 
     function assignQuiz(){
@@ -100,10 +100,17 @@ export default function QuizAction(props){
                     <Stack direction="row" spacing={1}>
                         <Button
                             variant="contained" 
-                            onClick={()=>printQuiz(true)}
+                            onClick={()=>printQuiz(true, "student")}
                             sx={{width:"50%", alignSelf: "center"}}
                         >
-                            Print Out
+                            Print Student Copy
+                        </Button>
+                        <Button
+                            variant="contained" 
+                            onClick={()=>printQuiz(true, "teacher")}
+                            sx={{width:"50%", alignSelf: "center"}}
+                        >
+                            Print Teacher Copy
                         </Button>
                         <Button
                             variant="contained" 
@@ -132,7 +139,7 @@ export default function QuizAction(props){
                     >
                         Assign Quiz
                     </Button>
-                    {printing?<QuizPrint stopPrinting={()=>printQuiz(false)} quizData={quizData}/>:""}
+                    {printing?.isPrinting?<QuizPrint stopPrinting={()=>printQuiz(false)} quizData={quizData} copyType={printing.copyType}/>:""}
                 </Stack>
             </Box>
         </Box>

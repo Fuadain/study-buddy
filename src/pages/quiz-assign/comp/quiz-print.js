@@ -27,6 +27,7 @@ export default function QuizPrint({stopPrinting, quizData, ...props}){
         return <div className="print-question">
             <h3>{index+1}) {data.question}</h3>
             {choicesElements}
+            {props.copyType==="teacher"?<p>Answer: {()=>indexToLetter(data.answer)}</p>:""}
         </div>
     })
 
@@ -37,4 +38,19 @@ export default function QuizPrint({stopPrinting, quizData, ...props}){
         </div>
      </div>
     )
+}
+
+
+
+function indexToLetter(i){
+    switch(i){
+        case 0:
+            return 'A'
+        case 1:
+            return 'B'
+        case 2:
+            return 'C'
+        case 3:
+            return 'D'
+    }
 }

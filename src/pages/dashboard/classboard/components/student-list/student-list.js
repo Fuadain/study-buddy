@@ -13,12 +13,17 @@ export default function StudentList(props){
     const {hostname, axiosConfig, userType} = React.useContext(AxiosContext)
 
     React.useEffect(()=>{
-        /* get students
-        axios.get(`${hostname}/`)
+        // get students
+        axios.post(`${hostname}/retrieve-students`, {classIDs: [props.classID]})
         .then(res=>{
-            setStudentData(res.data.students)
+            const studentList = res.data[props.className].map(student=>{
+                return {
+                    id: student.userID,
+                    name: `${student.first_name} ${student.last_name}`
+                }
+            })
+            setStudentData(studentList)
         })
-        */
     },[])
 
     function enrollView(bool){
@@ -26,12 +31,12 @@ export default function StudentList(props){
     }
 
 
-    const students = studentData.map(item => 
+    const students = studentData.map(student => 
             <Student
-                key={item.id}
-                item={item}
+                key={student.id}
+                name={student.name}
             />
-    ) 
+    )
 
     return(<Box>
         {enrolling?<EnrollPopup className={props.className} closePopup={()=>enrollView(false)}/>:""}

@@ -31,13 +31,13 @@ export default function Classboard(props){
     if(classIndex !== null)
         switch(classPage){
             case "quiz":
-                currentPage = <QuizList quizzes={props.classes[classIndex].quizzes} classIndex={classIndex} className={props.classes[classIndex].className}/>
+                currentPage = <QuizList quizzes={props.classes[classIndex].quizzes} classIndex={classIndex} className={className}/>
                 break
             case "students":
-                currentPage = <StudentList className={className}/>
+                currentPage = <StudentList className={className} classID={props.classes[classIndex].classID}/>
                 break
             case "settings":
-                currentPage = <ClassSettings className={props.classes[classIndex].className}/>
+                currentPage = <ClassSettings className={className}/>
                 break
         }
 

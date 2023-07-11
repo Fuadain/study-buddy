@@ -6,9 +6,8 @@ export default function Student(props){
     return (
         <Grid xs={1}>
             <Stack direction="row" sx={{backgroundColor: "lightgreen"}}>
-                <img src={props.item.image} alt="Student"/>
-                <h4>{props.item.name}</h4>
-                <p>Grade: {props.item.grade}</p>
+                <img src={props.avatar?props.avatar:"https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"} alt="Student"/>
+                <h4>{props.name}</h4>
             </Stack>
         </Grid>
     )
