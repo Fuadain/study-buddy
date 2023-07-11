@@ -40,11 +40,11 @@
     display:flex;
     align-items: center;
 }
-#sidebar-logout i{
+#sidebar-logout .fontawesome-icon{
     transform: rotate(180deg);
     
 }
-.sidebar-option i{
+.fontawesome-icon{
     margin-right: 15px;
 }
 
