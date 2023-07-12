@@ -1,36 +1,48 @@
-
 #sidebar-container{
     position: fixed;
     top: 0;
     background-color: #00B2FF;
-    width: 20vw;
+    width: 250px;
     height: 100vh;
     min-width: 130px;
     display: flex;
     flex-flow: column;
-    align-items: flex-end;
     justify-content: flex-start;
 }
 .sidebar-list-container{
+    margin:0;
+    padding:0;
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: .5rem;
-}
-#sidebar-welcome{
-    font-size: 2rem;
-    text-align: center;
-}
-.sidebar-option-link{
-    font-size: 1.5rem;
-    text-align: center;
-    width: 20vw;
-}
-.sidebar-option-link:hover{
-   background-color: #017fb6;
-}
-#sidebar-container ul{
     width: 100%;
     list-style: none;
     line-height: 50px;
+}
+#sidebar-welcome{
+    font-size: 1.5rem;
+    text-align: center;
+}
+.sidebar-option{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sidebar-option:hover{
+    background-color: #017fb6;
+ }
+.sidebar-option-link{
+    font-size: 1.2rem;
+    width:50%;
+    display:flex;
+    align-items: center;
+}
+#sidebar-logout .fontawesome-icon{
+    transform: rotate(180deg);
+    
+}
+.fontawesome-icon{
+    margin-right: 15px;
 }

@@ -8,7 +8,7 @@ import AxiosContext from '../../../../../components/axios-context'
 import EnrollPopup from './enroll-popup'
 
 export default function StudentList(props){
-    const [studentData, setStudentData] = React.useState(Studentdata)
+    const [studentData, setStudentData] = React.useState()
     const [enrolling, setEnrolling] = React.useState(false)
     const {hostname, axiosConfig, userType} = React.useContext(AxiosContext)
 

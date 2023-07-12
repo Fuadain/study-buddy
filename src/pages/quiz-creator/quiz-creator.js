@@ -25,7 +25,7 @@ export default function QuizCreator(){
     const quizTypes = ["Javascript"]
     const [previewQuiz, setPreviewQuiz] = React.useState(false)
 
-    const {hostname, axiosConfig, email} = React.useContext(AxiosContext)
+    const {hostname, axiosConfig, email, forceUpdate} = React.useContext(AxiosContext)
 
     React.useEffect(()=>{
         setDifficultyElements(()=>{
@@ -73,6 +73,7 @@ export default function QuizCreator(){
             })
             .then(res=>{
                 quizID = res.data.quizID
+                forceUpdate()
                 navigate("/quiz-assign", {state: {quizID: quizID, classIndex: classIndex}})
             })
             

@@ -30,12 +30,14 @@ const hostname = "https://study-buddy-api.herokuapp.com"
 
 
 function App() {
-  const [userData, setUserData] = React.useState(testData)
+  const [userData, setUserData] = React.useState()
   const [cookies, setCookie, removeCookie] = useCookies(['studyLogin'])
   const authToken = cookies.studyLogin?.authToken
   const userType = cookies.studyLogin?.userType
   const email = cookies.studyLogin?.email
 
+  const [updateValue, setUpdateValue] = React.useState(true)
+  const forceUpdate = () => {setUpdateValue(prev=>!prev)}
 
   let axiosConfig = null
   if(authToken)
@@ -55,7 +57,7 @@ function App() {
     return () => {
       setUserData(null)
     }
-  },[authToken])
+  },[authToken, updateValue])
 
   function saveLogin(token, type, userEmail){
     setCookie('studyLogin', {authToken: token, userType: type, email: userEmail}, { path: '/' })
@@ -70,7 +72,7 @@ function App() {
   return (
     <div>
       <LoggingContext.Provider value={{logout: logout, savelogin: saveLogin}}>
-      <AxiosContext.Provider value={{hostname: hostname, axiosConfig: axiosConfig, userType: userType, email: email}}>
+      <AxiosContext.Provider value={{hostname: hostname, axiosConfig: axiosConfig, userType: userType, email: email, forceUpdate: forceUpdate}}>
       <Router>
         <Routes>
           <Route exact path="/" element={<Homepage />} />

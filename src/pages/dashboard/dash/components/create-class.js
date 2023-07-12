@@ -13,7 +13,7 @@ export default function CreateClass(props){
     const [inputData, setInputData] = React.useState({
         className: ""
     })
-    const {hostname, axiosConfig, email} = React.useContext(AxiosContext)
+    const {hostname, axiosConfig, email, forceUpdate} = React.useContext(AxiosContext)
 
     function changeInput(event){
         const input = event.target
@@ -32,6 +32,8 @@ export default function CreateClass(props){
             }, {...axiosConfig, params:{email: email}})
             .then(res=>{
                 console.log(res.data)
+                if(res.data)
+                    forceUpdate()
             })
         else
             alert("A new class needs a name")

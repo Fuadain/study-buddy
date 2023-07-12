@@ -1,7 +1,5 @@
 import React from 'react'
 import { useReactToPrint } from 'react-to-print'
-import AxiosContext from '../../../components/axios-context'
-import axios from 'axios'
 
 const pageStyle = `
     @page {margin: 2cm 2cm 2cm 2cm !important}
@@ -13,7 +11,6 @@ export default function QuizPrint({stopPrinting, quizData, ...props}){
         content: ()=>printRef.current,
         onAfterPrint: ()=>stopPrinting()
       })
-    const {hostname, axiosConfig} = React.useContext(AxiosContext)
 
     React.useEffect(()=>{
         if(quizData)
@@ -24,16 +21,18 @@ export default function QuizPrint({stopPrinting, quizData, ...props}){
         const choicesElements = data.choices.map(choice=>{
             return <p>{choice}</p>
         })
+        const letterAnswer = indexToLetter(data.answer)
         return <div className="print-question">
             <h3>{index+1}) {data.question}</h3>
             {choicesElements}
-            {props.copyType==="teacher"?<p>Answer: {()=>indexToLetter(data.answer)}</p>:""}
+            {props.copyType==="teacher"?<p>Answer: {letterAnswer}</p>:""}
         </div>
     })
 
     return(<div style={{display:"none"}}>
         <div ref={printRef}>
             <style>{pageStyle}</style>
+            {props.copyType==="teacher"?<h2>Teacher Copy</h2>:""}
             {pageContent}
         </div>
      </div>

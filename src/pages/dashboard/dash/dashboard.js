@@ -19,26 +19,28 @@ export default function Dashboard(props){
     function classView(bool=true){
         setCreatingClass(bool)
     }
-
-    const classListElements = props.classes.map((classElement, index) => <ClassElement
+    let classListElements
+    if(props.classes)
+        classListElements = props.classes.map((classElement, index) => <ClassElement
                                                             key={classElement.className}
                                                             className={classElement.className}
                                                             teacherName={classElement.teacherName}
                                                             quizzes={classElement.quizzes.length}
                                                             index={index}
                                                             />)
-
+    const classList = <Stack spacing={2}>
+            <h1>{userType =="teacher"?"Classes you teach":"Classes you attend"}</h1>
+            {classListElements}
+            {userType =="teacher"?<Button variant="contained" onClick={classView}>Create New Class</Button>:""}
+        </Stack>
     return(
         <Box>
             <Navbar pageName={pageName}/>
             <Box flexDirection='row' className="dashboard">
                 <Sidebar/>
-                <Stack spacing={3} sx={{ml: '25vw', mr: '5vw', pt: '2vw'}}>
-                    <h1>{userType =="teacher"?"Classes you teach":"Classes you attend"}</h1>
-                    {classListElements}
-                    {userType =="teacher"?<Button variant="contained" onClick={classView}>Create New Class</Button>:""}
-                </Stack>
-                
+                <Box  sx={{ml: '25vw', mr: '5vw', pt: '2vw'}}>
+                    {classList}
+                </Box>
             </Box>
             {creatingClass?<CreateClass closePopup={()=>classView(false)}/>:""}
         </Box>

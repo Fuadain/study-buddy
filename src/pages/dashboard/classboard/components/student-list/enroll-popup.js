@@ -12,7 +12,7 @@ const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@
 
 export default function EnrollPopup(props){
     const [emails, setEmails] = React.useState("")
-    const {hostname, axiosConfig, email} = React.useContext(AxiosContext)
+    const {hostname, axiosConfig, email, forceUpdate} = React.useContext(AxiosContext)
 
     function changeEmails(event){
         const input = event.target
@@ -30,6 +30,8 @@ export default function EnrollPopup(props){
                 }, axiosConfig)
                 .then(res=>{
                     console.log(res.data)
+                    if(res.data)
+                        forceUpdate()
                 })
             else
                 alert("One or more emails are invalid")
