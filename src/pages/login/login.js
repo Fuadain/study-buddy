@@ -40,6 +40,7 @@ export default function Login(props){
         .then(res=>{
             console.log(res.data)
             props.saveLogin(res.data.token, res.data.type, res.data.email)
+            navigate("/dashboard")
         })
     };
 
