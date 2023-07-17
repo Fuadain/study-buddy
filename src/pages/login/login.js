@@ -45,9 +45,8 @@ export default function Login(props){
     return (
         <Stack
             sx={{
-            padding: "7% 0 12.7% 0",
             width: '100%',
-            height: '100%',
+            height: '100vh',
             alignItems:'center', 
             justifyContent: 'center',
             backgroundColor: '#00b3ff83'
@@ -60,7 +59,7 @@ export default function Login(props){
             <Stack
                 sx={{
                     width: '60ch',
-                    height: '100%',
+                    height: '300px',
                     backgroundColor: '#00B2FF',
                     border: 1,
                     borderColor: 'black',
