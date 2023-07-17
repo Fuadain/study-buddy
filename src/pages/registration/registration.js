@@ -46,6 +46,10 @@ const Register = () => {
     alert("Complete form before submitting")
   }
 }
+  const returnToHome = () => {
+    navigate("/")
+  }
+
   let message = ""
   if(inputs.password && !passwordCheck(inputs.password))
     message = "Password have at least 8 characters and 1 number"
@@ -148,10 +152,10 @@ const Register = () => {
           <button type="button" className="sign-up-btn" onClick={submitData}>
             Create account
           </button>
-          <button className="google-btn">
-            <i class="fa-brands fa-google"></i>
+          <button className="google-btn" onClick={returnToHome}>
+            {/*<i class="fa-brands fa-google"></i>*/}
             <span className="registration-google-span">
-              Continue with Google
+              Return to Homepage
             </span>
           </button>
           <span className="registration-span">

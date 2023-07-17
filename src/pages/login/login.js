@@ -42,7 +42,11 @@ export default function Login(props){
             props.saveLogin(res.data.token, res.data.type, res.data.email)
             navigate("/dashboard")
         })
-    };
+    }
+
+    const returnToHome = () => {
+        navigate("/")
+    }
 
     return (
         <Stack
@@ -122,7 +126,7 @@ export default function Login(props){
                     <Button sx={{width: '25ch', alignSelf: 'center', backgroundColor:'#00b3ff8', color: 'black'}} type="submit" variant="contained" size="medium">Login</Button>
              
             <Divider sx={{marginTop: 2, marginBottom: 2}} variant="middle" />
-            <Button sx={{color: 'white', backgroundColor: '#ef4443', width: '25ch', alignSelf: 'center'}} type="submit" variant="outlined" size="medium">Login with Google</Button>
+            <Button sx={{color: 'white', backgroundColor: '#ef4443', width: '25ch', alignSelf: 'center'}} type="submit" variant="outlined" size="medium" onClick={returnToHome}>Return to Homepage</Button>
             </Stack></form>
         </Stack>
     )
