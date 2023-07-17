@@ -11,17 +11,17 @@ export default function StudentList(props){
     const [studentData, setStudentData] = React.useState()
     const [enrolling, setEnrolling] = React.useState(false)
     const {hostname, axiosConfig, userType} = React.useContext(AxiosContext)
-
+    
     React.useEffect(()=>{
         // get students
         axios.post(`${hostname}/retrieve-students`, {classIDs: [props.classID]})
         .then(res=>{
-            const studentList = res.data[props.className].map(student=>{
+            const studentList = res.data[props.className]?.map(student=>{
                 return {
                     id: student.userID,
                     name: `${student.first_name} ${student.last_name}`
                 }
-            })
+            }) || []
             setStudentData(studentList)
         })
     },[])
@@ -31,7 +31,7 @@ export default function StudentList(props){
     }
 
 
-    const students = studentData.map(student => 
+    const students = studentData?.map(student => 
             <Student
                 key={student.id}
                 name={student.name}

@@ -77,7 +77,7 @@ export default function Sidebar(){
     }
     return (
         <nav id="sidebar-container">
-        {userType ? teacherSidebar() : studentSidebar()}               
+            {userType==="teacher" ? teacherSidebar() : studentSidebar()}               
         </nav>
     )
 }
