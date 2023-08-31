@@ -39,7 +39,7 @@ export default function Dashboard(){
         <div>
             <Navbar pageName={pageName}/>
             <Sidebar />
-            <Box sx={{ml: '25vw', mr: '5vw', pt: '2vw'}}>
+            <Box className="class-quiz-container" sx={{ml: '25vw', mr: '5vw', pt: '2vw'}}>
             <Stack spacing={4} direction="row" height="100%">
                 <Box sx={{width: '70vw'}}>
                     {currentPage}

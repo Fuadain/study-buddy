@@ -156,6 +156,7 @@
     .mobile-menu-open  {
         display: flex;
         background-color: #00B2FF;
+        z-index: 100;
     }
 
     .mobile-menu-open .mobile-sidebar-list-container {
@@ -163,8 +164,10 @@
         top: 0;
         padding: 20px 0 0;
         background-color: #00B2FF;
+        z-index: 100;
     }
 
+    /* Individual menu options ... home, account, logout */
     .mobile-menu-open .sidebar-option {
         margin: 0;
         height: 100px;

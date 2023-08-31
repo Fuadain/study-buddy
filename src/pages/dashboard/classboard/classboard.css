@@ -33,3 +33,15 @@
     color: blue;
     text-decoration: underline;
 }
+
+
+@media screen and (max-width: 1050px) {
+    .class-quiz-container {
+        margin-left: 81px !important;
+    }
+}
+
+
+@media screen and (max-width: 530px) {
+
+}
