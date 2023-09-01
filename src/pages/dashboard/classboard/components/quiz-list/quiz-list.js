@@ -37,7 +37,7 @@ export default function QuizList(props){
         <h3 className="class-title">Available Quizzes</h3>
         <Stack direction="column" spacing={1}>
             {quizzes?quizzes:<h3>No quizzes available</h3>}
-            {userType == "teacher"?<NavLink to="/quiz-creator">
+            {userType === "teacher"?<NavLink to="/quiz-creator">
                 <Button variant='contained'>Create New Quiz</Button>
             </NavLink>:""}
         </Stack>

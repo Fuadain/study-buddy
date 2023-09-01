@@ -19,7 +19,7 @@ export default function Quiz(props){
 
     return (
     <Box sx={{width:"100%", border: "1px solid black", padding: "0px 10px 10px 10px"}}>
-        <Stack direction="row"  
+        <Stack 
                 sx={{
                     height:{
                           xs: 280,
@@ -36,8 +36,7 @@ export default function Quiz(props){
                     },
                     alignItems:{
                         xs: 'flex-start',
-                        sm: 'center',
-                        md: 'none'
+                        sm: 'center'
                     },
                     flexDirection:{
                         xs: 'column',

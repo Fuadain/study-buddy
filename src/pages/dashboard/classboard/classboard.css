@@ -15,12 +15,6 @@
     margin-left: 4px;
 }
 
-.student-container p {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right: 4px;
-    margin-left: auto;
-}
 
 .class-pages > * {
     cursor: pointer;
@@ -39,9 +33,4 @@
     .class-quiz-container {
         margin-left: 81px !important;
     }
-}
-
-
-@media screen and (max-width: 530px) {
-
 }
