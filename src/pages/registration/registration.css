@@ -13,12 +13,15 @@
 }
 
 .registration-header {
-  font-size: 20px;
+  font-size: 3rem;
+  font-weight: 400;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
   color: black;
   margin: 0px 0px 20px 0px;
 }
 
 .registration-form {
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
   display: flex;
   flex-direction: column;
   padding: 30px;
@@ -34,6 +37,7 @@
   background-color: #ef4443;
   color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   opacity: 0.9;
 }
@@ -43,7 +47,6 @@
 .registration-google-span {
   margin-left: 10px;
   font-weight: 700;
-  font-family:'Inter,sans-serif';
 }
 .registration-input {
   padding: 10px;
@@ -81,15 +84,16 @@
 
 .sign-up-btn {
   padding: 10px;
-  background-color: #00b2ff;
-  color: black;
+  background-color: #1976d2;
+  color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   opacity: 0.9;
   font-weight: bold;
 }
 .sign-up-btn:hover{
-  background-color: #0059ff;
+  background-color: rgb(21, 101, 192);
 }
 .sign-up-btn:active{
   box-shadow: inset 0 0 5px black;
