@@ -54,7 +54,6 @@ const Register = () => {
       <div className="register">
         <h1 className="registration-header">Create a New Account</h1>
         <form className="registration-form" action="">
-          
 
           <input
             className="registration-input"
@@ -64,9 +63,29 @@ const Register = () => {
             name="email"
             onChange={handleChange}
           />
-          <Stack direction={"row"} spacing={1} justifyContent="space-between">
+          <Stack
+            sx={{
+                 width:{
+                  sm: '100%'
+                 },
+                 height:{
+                  xs: '100px',
+                  sm: 'auto'
+                 },
+                 flexDirection: {
+                  xs: 'column',
+                  sm: 'row'
+                 },
+                 justifyContent:{
+                  xs: 'space-between',
+                  sm: 'space-between' 
+                 },
+                 alignItems:{
+                  sm: 'center'
+                 }
+            }}>
             <input
-              className="registration-input"
+              className="registration-input row-of-inputs"
               required
               type="text"
               placeholder="First Name"
@@ -74,7 +93,7 @@ const Register = () => {
               onChange={handleChange}
             />
             <input
-              className="registration-input"
+              className="registration-input row-of-inputs"
               required
               type="text"
               placeholder="Last Name"
@@ -82,9 +101,29 @@ const Register = () => {
               onChange={handleChange}
             />
           </Stack>
-          <Stack direction={"row"} spacing={1} justifyContent="space-between">
+          <Stack
+              sx={{
+                 width:{
+                  sm: '100%'
+                 },
+                 height:{
+                  xs: '100px',
+                  sm: 'auto'
+                 },
+                 flexDirection: {
+                  xs: 'column',
+                  sm: 'row'
+                 },
+                 justifyContent:{
+                  xs: 'space-between',
+                  sm: 'space-between' 
+                 },
+                 alignItems:{
+                  sm: 'center'
+                 }
+            }}>
             <input
-              className="registration-input"
+              className="registration-input row-of-inputs"
               required
               type="password"
               placeholder="Password"
@@ -92,7 +131,7 @@ const Register = () => {
               onChange={handleChange}
             />
             <input
-              className="registration-input"
+              className="registration-input row-of-inputs"
               required
               type="password"
               placeholder="Confirm Password"
@@ -144,7 +183,7 @@ const Register = () => {
             Create account
           </button>
           <button className="google-btn">
-            <i class="fa-brands fa-google"></i>
+            <i className="fa-brands fa-google"/>
             <span className="registration-google-span">
               Continue with Google
             </span>

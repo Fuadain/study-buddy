@@ -11,7 +11,7 @@ export default function ForgotPassword() {
       <Stack
         sx={{
           width: '100%',
-          height: '100%',
+          height: '100vh',
           alignItems: 'center',
           justifyContent: 'center',
           pt: 15,

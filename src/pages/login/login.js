@@ -46,7 +46,7 @@ export default function Login(props){
         <Stack
             sx={{
             width: '100%',
-            height: '100vh',
+            height: '90vh',
             alignItems:{
                         sm:'center'
                         }, 

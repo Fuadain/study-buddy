@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 100%;
   background-color: #00b3ff83;
 }
 
@@ -50,12 +51,14 @@
 }
 .registration-input {
   padding: 10px;
-  border-bottom: 10px;
   color: gray;
   background-color: lightgray;
   border: 1px solid white;
 }
-
+.row-of-inputs {
+  width: 45%;
+  align-self: flex-start !important;
+}
 .registration-radio-p {
   margin-top: 3px;
   margin-bottom: 7px;
@@ -116,4 +119,22 @@
 
   color:red;
   align-self: center;
+}
+
+@media screen and (max-width: 600px) {
+    .register {
+      width: 100vw;
+      height: 120vh;
+      padding: 0;
+    }
+    .registration-header {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    .registration-form {
+      width: 70%;
+    }
+    .registration-input {
+      width: 90%;
+    }
 }
