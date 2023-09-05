@@ -49,7 +49,7 @@ export default function Quiz(props){
             </Stack>
             <Stack spacing={2} direction="column">
                 <h4>Due by: {props.item.date}</h4>
-                <Button variant="contained" onClick={goToQuiz} zIndex='-1' disableElevation>
+                <Button variant="contained" onClick={goToQuiz} sx={{zIndex:'-1'}} disableElevation>
                     {userType==="teacher" ? "Start" : "Edit"}
                 </Button>
             </Stack>

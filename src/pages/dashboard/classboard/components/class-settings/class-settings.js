@@ -26,8 +26,8 @@ export default function ClassSettings(props){
         <h3 className="class-title">Settings</h3>
         <Stack>
             {userType == "teacher"?
-            <Button variant="contained" onClick={deleteClass}>Delete Class</Button>:
-            <Button variant="contained" onClick={leaveClass}>Leave Class</Button>
+            <Button variant="contained" sx={{zIndex:'-1'}} onClick={deleteClass}>Delete Class</Button>:
+            <Button variant="contained" sx={{zIndex:'-1'}} onClick={leaveClass}>Leave Class</Button>
             }
         </Stack>
     </Box>)

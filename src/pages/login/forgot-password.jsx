@@ -20,22 +20,48 @@ export default function ForgotPassword() {
 
         }}
       >
-        <Typography variant="h2" sx={{ marginBottom: '10px', p: 2 }} gutterBottom>Forgot Password?</Typography>
-        <Typography variant="h5" gutterBottom>Enter your email to reset your password. </Typography>
+        <Typography variant="h2" 
+            sx={{ 
+                marginBottom: '10px', 
+                p: 2, 
+                fontSize:{
+                  xs:'50px'
+                },
+                textAlign:'center' 
+                }} gutterBottom>
+                  Forgot Password?
+        </Typography>
+        <Typography variant="h5" gutterBottom
+            sx={{
+                textAlign:'center'
+              }}>
+          Enter your email to reset your password. 
+        </Typography>
 
         <form>
           <Stack
-            sx={{
+            sx={{ 
               border: 2,
               borderRadius: 2,
               borderColor: 'rgba(0,0,0,0.4)',
-              mt: 6,
+              mt: 6,  
               alignItems: 'center',
               justifyContent: 'center',
-              p: 3
+              p: {
+                xs:'20px 0.8rem',
+                sm:3
+              }
             }}
           >
-            <FormControl sx={{ m: 1, width: '40vw', marginBottom: '20px' }}>
+            <FormControl sx={{ 
+                              m: 1, 
+                              width: {
+                                      xs:'70vw',
+                                      sm:'70vw',
+                                      md: '500px'
+                                      }, 
+                              marginBottom: '20px' 
+                              }}>
               <InputLabel htmlFor="email">Email</InputLabel>
               <OutlinedInput
                 fullWidth

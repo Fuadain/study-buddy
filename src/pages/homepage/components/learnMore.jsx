@@ -1,6 +1,7 @@
 import React from 'react';
 import { Stack, Button, Box, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { GifBox } from '@mui/icons-material';
 
 const LearnMore = () => {
   return (
@@ -9,29 +10,55 @@ const LearnMore = () => {
       alignItems='center'
       justifyContent='center'
       sx={{
-        flexDirection: { sx: "column", md: "row" }
+        width: {
+          xs: '100%'
+        },
+        height: {
+                xs: 'auto',
+                sm:'100%'
+                },
+        flexDirection: { 
+                        sm: "column", 
+                        md: "row" 
+                      },
+        backgroundColor: 'gray',
+        border: '2px solid orange',
+        padding: 0,
+        margin: 0
       }}
     >
+      {/* Img container */}
       <Box
         display='flex'
         alignItems='center'
         justifyItems='center'
         sx={{
-          height: '100vh',
-          backgroundColor: 'none'
+          width: {
+            xs: '90%',
+            sm:'auto'
+          },
+          backgroundColor: 'none',
+          padding: 0,
+          margin: {
+                    xs:'60px 0 100px',
+                    sm: 0
+                  },
+          textAlign: 'center'
         }}
       >
         <img
           src={require('../logo.png')}
           alt={'logo'}
           style={{
-            height: '500px',
-            margin: '20px'
+            height: 'auto',
+            maxWidth: '100%',
+            width:'500px'
           }}
-
+          className='learn-more-image'
         />
       </Box>
-
+      
+      {/* Text container */}
       <Box
         display='flex'
         alignItems='center'
@@ -39,18 +66,32 @@ const LearnMore = () => {
         sx={{
           height: '100vh',
           backgroundColor: 'none',
-          marginX: '-100px'
+          marginX: {
+                    xs: 0,
+                    sm:'-100px'
+                    },
+          border: '2px solid pink'
         }}
       >
-        <Box>
+        <Box
+        sx={{
+            width: {
+                    xs:'300px', 
+                    sm: '500px', 
+                    md:'auto'
+                   },border:'2px solid blue'
+            }}>
           <Typography
+            variant='h3'
+            padding={2}
             sx={{
               color: '#000',
               backgroundColor: '#00B2FF',
-
+              fontSize: {
+                xs: '30px',
+                sm: 'h3'
+              }
             }}
-            variant='h3'
-            padding={2}
           >
             Here is all you need to know <br /> about us
           </Typography>
