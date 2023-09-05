@@ -33,10 +33,18 @@ export default function Login() {
     
       <Box
         sx={{
-          width: '50ch',
+          height: {
+                  xs:'50%',
+                  sm:'100%'
+                },
+          width: {
+                  xs:'90%', 
+                  sm:'50%'
+                },
+          display: 'flex',
           flexDirection: 'column',
-          border: '2px solid red'
-          
+          justifyContent: 'center',
+          alignItems: 'center'
         }}
         component='form'
         onSubmit={handleSubmit}
@@ -47,7 +55,14 @@ export default function Login() {
           label='Full Name'
           value={formData.fullName}
           onChange={handleChange}
-          sx={{ m: 1}}
+          sx={{
+                width: {
+                        xs:'100%', 
+                        md:'50ch'
+                      }, 
+                margin:'10px 0 20px', 
+                backgroundColor:'white'
+              }}
           variant='outlined'
           fullWidth
         />
@@ -58,7 +73,13 @@ export default function Login() {
           type='email'
           value={formData.email}
           onChange={handleChange}
-          sx={{ m: 1 }}
+          sx={{
+                width: {
+                        sm:'50ch'
+                      },
+                margin:'0 0 20px', 
+                backgroundColor:'white'
+              }}
           variant='outlined'
           fullWidth
         />
@@ -68,7 +89,13 @@ export default function Login() {
           label='Phone Number'
           value={formData.phoneNumber}
           onChange={handleChange}
-          sx={{ m: 1}}
+          sx={{
+                width: {
+                        sm:'50ch'
+                      },
+                margin:'0 0 20px', 
+                backgroundColor:'white'
+              }}
           variant='outlined'
           fullWidth
         />
@@ -80,7 +107,13 @@ export default function Login() {
           rows={4}
           value={formData.message}
           onChange={handleChange}
-          sx={{ m: 1}}
+          sx={{
+                width: {
+                        sm:'50ch'
+                      },
+                margin:'0 0 20px', 
+                backgroundColor:'white'
+              }}
           variant='outlined'
           fullWidth
         />
@@ -90,7 +123,7 @@ export default function Login() {
             width: '20ch',
             backgroundColor: '#00B2FF',
             color: 'black',
-            ml: '25%'
+            justifySelf: 'center'
           }}
           type='submit'
           variant='contained'

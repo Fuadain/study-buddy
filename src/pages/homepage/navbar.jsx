@@ -1,27 +1,60 @@
 import React from 'react';
-import { AppBar, Toolbar, Button } from '@mui/material';
+import { AppBar, Toolbar, Button, Typography, Stack } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => (
     <AppBar position="sticky" sx={{ background: 'gray'}}>
         <Toolbar sx={{ justifyContent:'space-between' }}>
             <Link to='/'>
-                <h1 style={{
+                <Typography sx={{
                             fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
                             color: 'white',
-                            fontWeight: 500
+                            fontWeight: 500,
+                            fontSize: {
+                                        xs: '1.3rem',
+                                        sm: 'h4'
+                                    }
                             }}>
                     Study Buddy
-                </h1>
+                </Typography>
             </Link>
-            <div>
-            <Link to='/login' > 
-                <Button variant="contained" sx={{ marginRight: '20px' }}>Login</Button>
-            </Link>
-            <Link to='/registration'>
-                <Button variant="contained">Sign Up</Button>
-            </Link>
-            </div>
+            <Stack
+                sx={{
+                    maxWidth: {
+                                xs: '10rem',
+                                sm: '15rem'
+                             },
+                    width: {
+                            xs: '220px',
+                            sm: 'auto'
+                            },
+                    flexDirection: 'row',
+                    justifyContent: 'space-between'
+                }}>
+                <Link to='/login' > 
+                    <Button variant="contained" 
+                        sx={{ 
+                            mr: {
+                                xs: 0,
+                                sm:'20px'
+                                },
+                            height: {xs:'30px', sm: 'auto'},
+                            width: {xs:'20px', sm: 'auto'}
+                            }}>
+                            Login
+                    </Button>
+                </Link>
+                <Link to='/registration'>
+                    <Button variant="contained"
+                        sx={{
+                            ml: '0px',
+                            height: {xs:'30px', sm: 'auto'},
+                            width: {xs:'auto', sm: 'auto'}
+                        }}>
+                        Sign Up
+                    </Button>
+                </Link>
+            </Stack>
         </Toolbar>
     </AppBar>
 );
