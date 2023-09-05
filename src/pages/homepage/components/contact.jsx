@@ -5,7 +5,7 @@ import { Navbar, Footer } from '../';
 
 const Contact = () => (
   <>
-    <Stack>
+    <Stack height="100vh">
       <Navbar />
           <Stack
           width='100vw'
@@ -20,10 +20,8 @@ const Contact = () => (
               sx={{
                 backgroundColor: '#00B2FF',
                 borderRadius: '0.5em',
-                height: '80vh',
-                marginBottom: {
-                  xs: '200px'
-                }
+                height: '100%',
+                
               }}
             >
                 <Typography variant='h3' sx={{ color: '#000' }} padding={2}>GET IN TOUCH WITH US!</Typography>

@@ -33,8 +33,9 @@ export default function Login() {
     
       <Box
         sx={{
-          width: '40%',
-          flexDirection: 'column'
+          width: '50ch',
+          flexDirection: 'column',
+          border: '2px solid red'
           
         }}
         component='form'
@@ -46,7 +47,7 @@ export default function Login() {
           label='Full Name'
           value={formData.fullName}
           onChange={handleChange}
-          sx={{ m: 1, width: '50ch' }}
+          sx={{ m: 1}}
           variant='outlined'
           fullWidth
         />
@@ -57,7 +58,7 @@ export default function Login() {
           type='email'
           value={formData.email}
           onChange={handleChange}
-          sx={{ m: 1, width: '50ch' }}
+          sx={{ m: 1 }}
           variant='outlined'
           fullWidth
         />
@@ -67,7 +68,7 @@ export default function Login() {
           label='Phone Number'
           value={formData.phoneNumber}
           onChange={handleChange}
-          sx={{ m: 1, width: '50ch' }}
+          sx={{ m: 1}}
           variant='outlined'
           fullWidth
         />
@@ -79,7 +80,7 @@ export default function Login() {
           rows={4}
           value={formData.message}
           onChange={handleChange}
-          sx={{ m: 1, width: '50ch' }}
+          sx={{ m: 1}}
           variant='outlined'
           fullWidth
         />
@@ -94,7 +95,6 @@ export default function Login() {
           type='submit'
           variant='contained'
           size='medium'
-          
         >
           Send Message
         </Button>

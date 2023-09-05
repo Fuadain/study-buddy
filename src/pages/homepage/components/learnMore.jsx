@@ -15,14 +15,13 @@ const LearnMore = () => {
         },
         height: {
                 xs: 'auto',
-                sm:'100%'
+                sm:'100vh'
                 },
         flexDirection: { 
                         sm: "column", 
                         md: "row" 
                       },
         backgroundColor: 'gray',
-        border: '2px solid orange',
         padding: 0,
         margin: 0
       }}
@@ -64,22 +63,22 @@ const LearnMore = () => {
         alignItems='center'
         justifyItems='center'
         sx={{
-          height: '100vh',
           backgroundColor: 'none',
+          margin: '0 0 50px',
           marginX: {
                     xs: 0,
                     sm:'-100px'
-                    },
-          border: '2px solid pink'
+                    }
         }}
       >
+        {/* Text Box */}
         <Box
         sx={{
             width: {
                     xs:'300px', 
                     sm: '500px', 
                     md:'auto'
-                   },border:'2px solid blue'
+                   }
             }}>
           <Typography
             variant='h3'
