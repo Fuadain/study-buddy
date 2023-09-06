@@ -4,7 +4,16 @@ import { Navbar, Body, Footer } from './';
 
 const Homepage = () => {
     return (
-        <Stack height="100vh">
+        <Stack  
+            sx={{
+                height: {
+                        xs: '100vh',
+                        sm: '100vh',
+                        md: '120vh',
+                        lg: '100vh'
+                        },
+                minWidth: '100%',
+            }}>
             <Navbar />
             <Body />
             <Footer />

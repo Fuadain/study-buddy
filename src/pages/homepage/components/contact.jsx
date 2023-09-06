@@ -48,11 +48,12 @@ const Contact = () => (
                 <Typography  
                     sx={{ 
                         color: '#000',
+                        width: '80%',
                         padding: 2,
                         fontWeight: 600,
                         fontSize: {
                           xs: '30px',
-                          md:'h2'
+                          md:'h4'
                         },
                         textAlign: 'center'
                         }}>
