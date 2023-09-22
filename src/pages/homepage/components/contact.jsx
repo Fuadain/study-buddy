@@ -18,7 +18,8 @@ const Contact = () => (
           sx={{
             height:{
                   xs:'100%',
-                  sm: '100vh'
+                  sm: '350vh',
+                  lg: '100vh'
                 },
             flexDirection: { 
                             sm: "column", 
