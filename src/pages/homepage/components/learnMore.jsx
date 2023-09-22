@@ -6,19 +6,24 @@ import { GifBox } from '@mui/icons-material';
 const LearnMore = () => {
   return (
     <Stack
-      display='flex'
-      alignItems='center'
-      justifyContent='center'
       sx={{
         width: {
-          xs: '100%'
-        },
+              xs: '100%',
+              md: '100vw'
+              },
         height: {
-                xs: 'auto',
+                xs: '300vh',
                 sm:'100vh'
                 },
+        minHeight:'100vh',
+        display:'flex',
+        justifyContent:{
+                        xs:'flex-start',
+                        sm:'center'
+                      },
+        alignItems:'center',
         flexDirection: { 
-                        sm: "column", 
+                        xs: "column", 
                         md: "row" 
                       },
         backgroundColor: 'gray',
@@ -34,15 +39,22 @@ const LearnMore = () => {
         sx={{
           width: {
             xs: '90%',
-            sm:'auto'
+            sm: '70%',
+            md: '70%',
+            lg: '50%'
           },
+          maxWidth: '700px',
           backgroundColor: 'none',
           padding: 0,
           margin: {
-                    xs:'60px 0 100px',
+                    xs:'60px 0 40px',
                     sm: 0
-                  },
-          textAlign: 'center'
+                  }, 
+          justifyContent:{
+                          xs: 'center',
+                          md:'flex-start',
+                          lg:'center'
+                        }
         }}
       >
         <img
@@ -50,35 +62,35 @@ const LearnMore = () => {
           alt={'logo'}
           style={{
             height: 'auto',
-            maxWidth: '100%',
-            width:'500px'
+            width: '100%'
           }}
-          className='learn-more-image'
+          className='learn-more-image'    
         />
       </Box>
       
       {/* Text container */}
       <Box
-        display='flex'
-        alignItems='center'
-        justifyItems='center'
         sx={{
           backgroundColor: 'none',
           margin: '0 0 50px',
-          marginX: {
-                    xs: 0,
-                    sm:'-100px'
-                    }
+          ml: {
+              xs: 0,
+              md: '-100px'
+              },
+              width: {
+                      xs:'90%', 
+                      sm: '90%', 
+                      md:'80%',
+                      lg: '40%'
+                     }
         }}
       >
         {/* Text Box */}
         <Box
-        sx={{
-            width: {
-                    xs:'300px', 
-                    sm: '500px', 
-                    md:'auto'
-                   }
+        sx={{ 
+            width: '100%',
+            backgroundColor: '#00B2FF',
+            alignItems: 'center'
             }}>
           <Typography
             variant='h3'
@@ -92,38 +104,37 @@ const LearnMore = () => {
               }
             }}
           >
-            Here is all you need to know <br /> about us
+            Here is all you need to know about us
           </Typography>
           <Typography
             sx={{
               color: '#000',
-              backgroundColor: '#00B2FF',
+              backgroundColor: '#00B2FF'
             }}
             variant='body1'
             padding={2}
             flexDirection='column'
           >
-            Whether article spirits new her covered hastily sitting her. Money witty <br />
-            books nor son add. Chicken age had evening believe but proceed pretend mrs. <br />
-            At missed advice my it no sister. Miss told ham dull knew see she spot near can. <br />
-            Spirit her entire her called.No opinions answered oh felicity is resolved <br />
-            hastened. Produced it friendly my if opinions humoured. Enjoy is wrong folly no taken.<br />
-            <Link
-              to='/'
-            >
+            Whether article spirits new her covered hastily sitting her. Money witty 
+            books nor son add. Chicken age had evening believe but proceed pretend mrs. 
+            At missed advice my it no sister. Miss told ham dull knew see she spot near can.
+            Spirit her entire her called.No opinions answered oh felicity is resolved 
+            hastened. Produced it friendly my if opinions humoured. Enjoy is wrong folly no taken.
+           
+          </Typography>
+          <Link to='/'>
               <Button
                 variant="contained"
                 sx={{
                   color: 'black',
                   backgroundColor: 'red',
-                  mt: '20px'
+                  m: 2,
+                  alignSelf:'center'
                 }}
               >
                 BACK TO HOMEPAGE
               </Button>
             </Link>
-          </Typography>
-
         </Box>
 
       </Box>

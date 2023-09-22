@@ -37,7 +37,7 @@ const AccordionSummary = styled((props) => (
   },
   '& .MuiAccordionSummary-content': {
     marginLeft: theme.spacing(1),
-  },
+  }
 }));
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
@@ -62,11 +62,12 @@ const Account = () => {
           ml: '20vw', 
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          zIndex: -1000
         }} height='90vh'>
-          <Box>
+          <Box sx={{zIndex: -1000}}>
 
-            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} >
+            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}  >
               <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                 <Typography>Profile Picture Settings</Typography>
               </AccordionSummary>

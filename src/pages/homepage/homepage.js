@@ -12,7 +12,7 @@ const Homepage = () => {
                         md: '120vh',
                         lg: '100vh'
                         },
-                minWidth: '100%',
+                minWidth: '100%'
             }}>
             <Navbar />
             <Body />
