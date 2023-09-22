@@ -3,7 +3,22 @@ import { Stack, Button, Box, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { GifBox } from '@mui/icons-material';
 
-const LearnMore = () => {
+const LearnMore = () => { 
+  let smallPhoneSidewaysHeight;
+
+  if(window.innerWidth > 650 && window.innerWidth < 900 && window.innerHeight < 550)
+  {  
+     smallPhoneSidewaysHeight = '250vh'
+ } else{ 
+     smallPhoneSidewaysHeight = '120vh'
+ };
+
+ if((window.innerWidth === 914 || window.innerWidth === 915) && window.innerHeight === 412)
+ {  
+    smallPhoneSidewaysHeight = '150vh'
+};
+
+
   return (
     <Stack
       sx={{
@@ -12,8 +27,8 @@ const LearnMore = () => {
               md: '100vw'
               },
         height: {
-                xs: '300vh',
-                sm:'100vh'
+                xs: '100vh',
+                sm: smallPhoneSidewaysHeight
                 },
         minHeight:'100vh',
         display:'flex',

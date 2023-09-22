@@ -13,10 +13,10 @@ const Homepage = () => {
     } else{ 
         smallPhoneSideHeight = '100vh'
     };
+ 
 
-
-    //for Samsung Galaxy A51/71 Sideways res
-    if(window.innerWidth === 914 && window.innerHeight === 412)
+    //for Samsung Galaxy A51/71 + Galaxy S20 Sideways res
+    if((window.innerWidth === 914 || window.innerWidth === 915) && window.innerHeight === 412)
      {  
         mediumPhoneSideHeight = '150vh'
     } else{ 
