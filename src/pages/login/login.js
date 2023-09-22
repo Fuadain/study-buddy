@@ -19,6 +19,9 @@ export default function Login(props){
           event.preventDefault();
     };
 
+    let smallPhoneSideHeight;
+    let mediumPhoneSideHeight;
+
 
     const changeInputData = (event) => {
         const input = event.target
@@ -42,11 +45,31 @@ export default function Login(props){
         })
     };
 
+    //Small res sideways phones
+     if(window.innerWidth > 650 && window.innerWidth < 900 && window.innerHeight < 550)
+     {  
+        smallPhoneSideHeight = 'auto'
+    } else{ 
+        smallPhoneSideHeight = '100vh'
+    };
+ 
+
+    //for Samsung Galaxy A51/71 + Galaxy S20 Sideways res
+    if((window.innerWidth === 914 || window.innerWidth === 915) && window.innerHeight === 412)
+     {  
+        mediumPhoneSideHeight = 'auto' 
+    } else{ 
+        mediumPhoneSideHeight = '100vh'
+    };
     return (
         <Stack
             sx={{
             width: '100%',
-            height: '100vh',
+            height: {
+                    xs: '100vh',
+                    sm: smallPhoneSideHeight,
+                    md: mediumPhoneSideHeight
+                    },
             alignItems:{
                         sm:'center'
                         }, 
