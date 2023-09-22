@@ -4,20 +4,15 @@ import { Link } from 'react-router-dom';
 import { GifBox } from '@mui/icons-material';
 
 const LearnMore = () => { 
-  let smallPhoneSidewaysHeight;
-
-  if(window.innerWidth > 650 && window.innerWidth < 900 && window.innerHeight < 550)
-  {  
-     smallPhoneSidewaysHeight = '250vh'
- } else{ 
-     smallPhoneSidewaysHeight = '120vh'
- };
+  let SamsungPhoneSidewaysRes;
 
  if((window.innerWidth === 914 || window.innerWidth === 915) && window.innerHeight === 412)
  {  
-    smallPhoneSidewaysHeight = '150vh'
-};
-
+  SamsungPhoneSidewaysRes = '150vh' 
+}else{ 
+  SamsungPhoneSidewaysRes = '100vh'
+};;
+ 
 
   return (
     <Stack
@@ -27,8 +22,8 @@ const LearnMore = () => {
               md: '100vw'
               },
         height: {
-                xs: '100vh',
-                sm: smallPhoneSidewaysHeight
+                xs: 'auto',
+                md: SamsungPhoneSidewaysRes
                 },
         minHeight:'100vh',
         display:'flex',
