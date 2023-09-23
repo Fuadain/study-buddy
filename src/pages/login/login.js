@@ -77,8 +77,14 @@ export default function Login(props){
                             sm:'center'
                             },
             backgroundColor: '#00b3ff83'
-        }}
-        >
+        }} 
+        > 
+            <Link to='/'>
+                <Typography variant='h5' gutterBottom
+                    sx={{ position: 'absolute', top: '2%', left: '2%'}}>
+                    Home
+                </Typography>
+            </Link>
             <Typography variant='h3' gutterBottom
                 sx={{ textAlign: 'center', padding:'20px 0'}}>
                 Login

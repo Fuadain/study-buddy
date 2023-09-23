@@ -52,6 +52,12 @@ const Register = () => {
   return (
     <>
       <div className="register">
+            <Link to='/'>
+                <h3 className="register-home-button" 
+                  style={{ position: 'absolute', top: '2%', left: '2%'}}>
+                    Home
+                </h3>
+            </Link>
         <h1 className="registration-header">Create a New Account</h1>
         <form className="registration-form" action="">
 
